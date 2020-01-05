@@ -350,6 +350,8 @@ repo = 'lambdalisue/gina.vim'
 # }}}
 
 # Set looks{{{
+[[plugins]]
+  repo = 'micchy326/lightline-lsp-progress'
 # status line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -358,7 +360,7 @@ if !has('nvim')
   let g:lightline={
         \'active': {
         \'left': [ [ 'mode', 'paste' ],
-        \[ 'gitbranch', 'gitstatus', 'readonly', 'filename' ]
+        \[ 'gitbranch', 'gitstatus', 'readonly', 'filename', 'lsp_status']
         \],
         \'right':[
         \[ 'lsp_errors', 'lsp_warnings', 'lsp_ok' ],
@@ -373,6 +375,7 @@ if !has('nvim')
         \  'lsp_warnings': 'LightlineLSPWarnings',
         \  'lsp_errors':   'LightlineLSPErrors',
         \  'lsp_ok':       'LightlineLSPOk',
+        \  'lsp_status':'lightline_lsp_progress#progress',
         \ },
         \ 'component_type': {
         \   'lsp_warnings': 'warning',

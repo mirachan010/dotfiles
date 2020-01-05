@@ -18,7 +18,7 @@ cnoremap <C-p> <UP>
 let mapleader = "\\"
 "
 noremap [vim] <Nop>
-nnoremap <leader>v [vim]
+nmap <Leader>v [vim]
 nnoremap  [vim]e :e ++enc=<CR>
 nnoremap  [vim]t :%retab!<CR>
 
