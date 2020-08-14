@@ -1,0 +1,12 @@
+[user]
+	email = mirachan010@gmail.com
+	name = mirachan010
+[color]
+    ui = true
+[url "github:"]
+    Instead0f = https://github.com/
+    Instead0f = git@github.com
+[core]
+	editor = nvim -c \"set fenc=utf-8\"
+[ghq]
+	root = /home/mira/git

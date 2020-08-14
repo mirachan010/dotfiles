@@ -1,0 +1,311 @@
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if='''! has('nvim')'''
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if='''! has('nvim')'''
+
+[[plugins]]
+repo = 'c000/rapidfire.vim'
+hook_add = '''
+    let g:rapidfire#persistent_filename="~/dotfiles/common/vim/key_setting.json"
+    nnoremap <F1>    :<C-u>Rapidfire F1<CR>
+    nnoremap <F2>    :<C-u>Rapidfire F2<CR>
+    nnoremap <F3>    :<C-u>Rapidfire F3<CR>
+    nnoremap <Up>    :<C-u>Rapidfire Up<CR>
+    nnoremap <Left>  :<C-u>Rapidfire Left<CR>
+    nnoremap <Right> :<C-u>Rapidfire Right<CR>
+    nnoremap <Down>  :<C-u>Rapidfire Down<CR>
+'''
+
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja.git'
+hook_add = '''
+    set helplang=ja,en
+'''
+
+#status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+set showtabline=2
+if !has('nvim')
+  let g:lightline={
+    \'colorscheme':'wombat',
+    \'active': {
+      \'left': [ [ 'mode', 'paste' ],
+      \[ 'readonly', 'filename' ] ],
+      \'right':[ [ 'lineinfo' ], [ 'percent' ],
+      \[ 'fileformat', 'fileencoding', 'filetype' ] ],
+      \},
+    \'component_function': {
+      \'filename': 'LightlineFilename',
+      \ },
+    \ 'mode_map': {
+      \ 'n' : 'N',
+      \ 'i' : 'I',
+      \ 'R' : 'R',
+      \ 'v' : 'V',
+      \ 'V' : 'VL',
+      \ "\<C-v>": 'VB',
+      \ 'c' : 'C',
+      \ 's' : 'S',
+      \ 'S' : 'SL',
+      \ "\<C-s>": 'SB',
+      \ 't': 'T',
+      \},
+    \}
+else
+  let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename' ] ]
+    \ },
+    \ 'component_function': {
+    \   'filename': 'LightlineFilename',
+    \   'cocstatus': 'coc#status',
+    \   'currentfunction': 'CocCurrentFunction'
+    \ },
+    \ }
+endif
+  let g:lightline.tab_component_function = {
+    \'filename':'LightlineTabFilename',
+    \ 'modified': 'lightline#tab#modified',
+    \ 'readonly': 'lightline#tab#readonly',
+    \ 'tabnum': 'lightline#tab#tabnum'}
+let g:lightline.tab = {
+  \ 'active': [ 'tabnum', 'filename', 'modified' ],
+  \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
+    \ }
+
+function! LightlineFilename()
+  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let modified = &modified ? ' +' : ''
+return filename . modified
+endfunction
+
+function! LightlineTabFilename(n) abort
+  let buflist = tabpagebuflist(a:n)
+  let winnr = tabpagewinnr(a:n)
+  let _ = pathshorten(expand('#'.buflist[winnr - 1].':f'))
+return _ !=# '' ? _ : '[No Name]'
+endfunction
+
+function! LightlineModified()
+  if &filetype == 'help'
+    return ''
+  elseif &modified
+    return '+'
+  elseif &modifiable
+    return ''
+  else
+    return '-'
+  endif
+endfunction
+
+function! LightlineReadonly()
+  if &filetype == 'help'
+    return ''
+  elseif &readonly
+    return 'x'
+  else
+    return ''
+  endif
+endfunction
+
+function! LightlineFugitive()
+return exists('*fugitive#head') ? fugitive#head() : ''
+endfunction
+'''
+
+#make indentline
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_cmd = ['IndentLinesToggle']
+#auto enable
+hook_add = '''
+    let g:loaded_indentLine = 1
+    nnoremap <20>i <C-u>:IndentLineToggle<CR>
+'''
+
+# make start menu
+#[[plugins]]
+#repo='mhinz/vim-startify'
+
+#help for f or F
+[[plugins]]
+repo='unblevable/quick-scope'
+hook_add='''
+    let g:qs_highlight_on_keys = ['f','F']
+'''
+
+#it can easy to maeke "surround"
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+
+#easy to change word
+[[plugins]]
+repo = 'lambdalisue/reword.vim'
+
+#user markdown
+[[plugins]]
+repo = 'godlygeek/tabular'
+
+#It can run and test in vim
+[[plugins]]
+repo='thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add='''
+    let g:tagbar_width = 20
+    "Map for toggle
+    nn <silent> <leader>t :TagbarToggle<CR>
+'''
+
+[[plugins]]
+repo = 'wesleyche/SrcExpl'
+if='0'
+hook_add= '''
+    let g:SrcExpl_RefreshTime = 1000
+    " Is update tags when SrcExpl is opened
+    let g:SrcExpl_isUpdateTags = 0
+    " Tag update command
+    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase %'
+    " Update all tags
+    function! g:SrcExpl_UpdateAllTags()
+    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase -R .'
+    call g:SrcExpl_UpdateTags()
+    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase %'
+    endfunction
+    " Source Explorer Window Height
+    let g:SrcExpl_winHeight = 14
+    " Mappings
+    nn [srce] <Nop>
+    nm <Leader>E [srce]
+    nn <silent> [srce]<CR> :SrcExplToggle<CR>
+    nn <silent> [srce]u :call g:SrcExpl_UpdateTags()<CR>
+    nn <silent> [srce]a :call g:SrcExpl_UpdateAllTags()<CR>
+    nn <silent> [srce]n :call g:SrcExpl_NextDef()<CR>
+    nn <silent> [srce]p :call g:SrcExpl_PrevDef()<CR>
+'''
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo='neoclide/coc.nvim'
+rev='release'
+if=''' has('nvim')'''
+hook_add = '''
+source ~\dotfiles\common\vim\cocseting.vim
+'''
+
+[[plugins]]
+repo='twitvim/twitvim'
+hook_add='''
+    source ~\dotfiles\twitkeys.vim
+    map <Leader>t [Twit]
+    noremap [Twit]t :<C-u>PosttoTwitter<CR>
+    noremap [Twit]f :<C-u>FriendsTwitter<CR>
+    noremap [Twit]u :<C-u>UserTwitter<CR>
+    noremap [Twit]r :<C-u>MentionsTwitter<CR>
+    noremap [Twit]d :<C-u>DMTwitter<CR>
+    noremap [Twit]s :<C-u>DMSentTwitter<CR>
+    noremap [Twit]n :<C-u>NextTwitter<CR>
+    nnoremap [Twit]p :<C-u>PreviousTwitter<CR>
+    nnoremap <Leader><Leader> :<C-u>RefreshTwitter<CR>
+'''
+[[plugins]]
+repo='tomasr/molokai'
+
+#check git diff in numberline
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add='''
+    set signcolumn=yes
+    let g:gitgutter_map_keys = 0
+    nnoremap [Git] <Nop>
+    nmap <Leader>g [Git]
+    nmap [Git]p <Plug>(GitGutterPrevHunk)
+    nmap [Git]n <Plug>(GitGutterNextHunk)
+    nmap [Git]a <Plug>(GitGutterStageHunk)
+    nmap [Git]u <Plug>(GitGutterRevertHunk)
+    nmap [Git]v <Plug>(GitGutterPreviewHunk)
+'''
+
+#To use git in vim
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'skanehira/translate.vim'
+if='''!has('nvim')'''
+rev = 'v0.0.3'
+hook_add = '''
+    let g:translate_source = "en"
+    let g:translate_target = "ja"
+    let g:translate_winsize = 10
+    vmap tj <Plug>(VTranslate)
+    vmap te <Plug>(VTranslateBang)
+'''
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo='Shougo/defx.nvim'
+hook_sourse = '''
+let g:WebDevIclet g:defx_icons_enable_syntax_highlight = 1
+let g:defx_icons_column_length = 2
+let g:defx_icons_directory_icon = ''
+let g:defx_icons_mark_icon = '*'
+let g:defx_icons_copy_icon = ''
+let g:defx_icons_move_icon = ''
+let g:defx_icons_parent_icon = ''
+let g:defx_icons_default_icon = ''
+let g:defx_icons_directory_symlink_icon = ''
+" Options below are applicable only when using "tree" feature
+let g:defx_icons_root_opened_tree_icon = ''
+let g:defx_icons_nested_opened_tree_icon = ''
+let g:defx_icons_nested_closed_tree_icon = ''onsUnicodeDecorateFolderNodes = 1
+'''
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+
+[[plugins]]
+if='''0'''
+repo = 'ryanoasis/vim-devicons'
+[[plugins]]
+repo = 'lambdalisue/session.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+if='0'
+depends = 'context_filetype.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+
+[[plugins]]
+repo = 'skanehira/code2img.vim'
+hook_add = '''
+let g:code2img_theme='monokai'
+'''

@@ -1,0 +1,21 @@
+{
+    "suggest.noselect": true,
+    "suggest.preferCompleteThanJumpPlaceholder": true,
+    "languageserver":{
+        "clangd":{
+            "command":"clangd",
+            "args":["--background-index"],
+            "rootPatterns":["compile_flags.txt","compile_commands.json",".vim/",".git/",".hg/"],
+            "filetypes":["c","cpp"],
+            "initializationOptions":{
+                "cacheDirectory":"/temp/cquery"
+            }
+        }
+    },
+    "diagnostic.enable": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+    "python.linting.enabled":"true",
+    "python.jediPath":"c:\\Python38\\lib\\site-packages",
+    "snippets.ultisnips.enable": true
+}
