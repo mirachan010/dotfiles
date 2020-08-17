@@ -305,7 +305,13 @@ depends = 'context_filetype.vim'
 repo = 'lambdalisue/fern.vim'
 
 [[plugins]]
-repo = 'skanehira/code2img.vim'
+repo = 'mirachan010/code2img.vim'
 hook_add = '''
 let g:code2img_theme='monokai'
+"let g:code2img_line=0
+'''
+[[plugins]]
+repo='reireias/vim-cheatsheet'
+hook_add = '''
+let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\cheatsheet.md'
 '''

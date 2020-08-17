@@ -1,3 +1,4 @@
+scriptencoding=utf-8
 "外部プログラムの場所の確認
 "WinとUbuntuの決定的に分かれるところ
 if has("win32")
