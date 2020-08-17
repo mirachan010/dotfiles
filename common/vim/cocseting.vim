@@ -1,3 +1,6 @@
+if empty(globpath(&rtp, 'autoload/coc.nvim'))
+  finish
+endif
 nmap <Leader>c [coc]
 " Using CocList
 " Show all diagnostics
