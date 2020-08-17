@@ -14,9 +14,9 @@ set termguicolors
 set background=dark
 
 if empty(globpath(&rtp, 'colors/vim-monokai-tasty.vim'))
-    colorscheme darkblue
     if empty(globpath(&rtp, 'colors/gruvbox-material.vim'))
         if empty(globpath(&rtp, 'colors/molokai.vim'))
+            colorscheme darkblue
         else
             colorscheme molokai
         endif
@@ -27,5 +27,5 @@ else
     colorscheme vim-monokai-tasty
 endif
 
-filetype plugin indent on 
+filetype plugin indent on
 syntax enable
