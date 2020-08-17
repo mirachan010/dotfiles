@@ -12,7 +12,20 @@ source ~/dotfiles/common/vim/cocseting.vim
 
 set termguicolors
 set background=dark
-colorscheme vim-monokai-tasty
+
+if empty(globpath(&rtp, 'colors/vim-monokai-tasty.vim'))
+    colorscheme darkblue
+    if empty(globpath(&rtp, 'colors/gruvbox-material.vim'))
+        if empty(globpath(&rtp, 'colors/molokai.vim'))
+        else
+            colorscheme molokai
+        endif
+    else
+        colorscheme gruvbox-material
+    endif
+else
+    colorscheme vim-monokai-tasty
+endif
 
 filetype plugin indent on 
 syntax enable

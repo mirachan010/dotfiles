@@ -124,8 +124,6 @@ repo = 'honza/vim-snippets'
 repo='neoclide/coc.nvim'
 rev='release'
 if=''' has('nvim')'''
-hook_add = '''
-'''
 
 [[plugins]]
 repo='twitvim/twitvim'
