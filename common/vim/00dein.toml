@@ -220,7 +220,7 @@ source ~\dotfiles\common\vim\cocseting.vim
 [[plugins]]
 repo='twitvim/twitvim'
 hook_add='''
-    source ~\dotfiles\twitkeys.vim
+    runtime! ~\dotfiles\twitkeys.vim
     map <Leader>t [Twit]
     noremap [Twit]t :<C-u>PosttoTwitter<CR>
     noremap [Twit]f :<C-u>FriendsTwitter<CR>

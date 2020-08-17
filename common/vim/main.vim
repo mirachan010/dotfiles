@@ -1,3 +1,4 @@
+scriptencoding=utf-8
 "外部プログラムの場所の確認
 "WinとUbuntuの決定的に分かれるところ
 if has("win32")
@@ -10,8 +11,6 @@ if has("win32")
   let g:deoplete#sources#clang#clang_header = 'C:\Program Files\LLVM\lib\clang\'
   let g:deoplete#sources#clang#libclang_path = 'C:\Program Files\LLVM\bin\libclang.dll'
 elseif has("unix")
-  set fileencoding=utf-8
-  set fileencodings=utf-8,cp932,sjis
   let s:undo_path = expand('~/.cache/vim/undo')
   let g:python3_host_prog = '/usr/bin/python3'
 endif
@@ -80,5 +79,3 @@ set updatetime=100
 
 set clipboard+=unnamedplus,unnamed
 set synmaxcol=0
-
-syntax enable
