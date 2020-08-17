@@ -11,7 +11,7 @@ source ~/dotfiles/common/vim/plugin.vim
 
 set termguicolors
 set background=dark
-colorscheme molokai
+colorscheme vim-monokai-tasty
 
 filetype plugin indent on 
 syntax enable

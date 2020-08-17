@@ -39,7 +39,6 @@ hook_add = '''
 set showtabline=2
 if !has('nvim')
   let g:lightline={
-    \'colorscheme':'wombat',
     \'active': {
       \'left': [ [ 'mode', 'paste' ],
       \[ 'readonly', 'filename' ] ],
@@ -65,7 +64,6 @@ if !has('nvim')
     \}
 else
   let g:lightline = {
-    \ 'colorscheme': 'wombat',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename' ] ]
@@ -309,3 +307,11 @@ repo = 'skanehira/code2img.vim'
 hook_add = '''
 let g:code2img_theme='monokai'
 '''
+[[plugins]]
+repo = 'patstockwell/vim-monokai-tasty'
+hook_add = '''
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
+let g:lightline.colorscheme = 'monokai_tasty'
+'''
+
