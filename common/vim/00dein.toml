@@ -1,7 +1,4 @@
 [[plugins]]
-repo = 'sainnhe/gruvbox-material'
-
-[[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
@@ -35,16 +32,6 @@ hook_add = '''
 #status line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-
-#make indentline
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-on_cmd = ['IndentLinesToggle']
-#auto enable
-hook_add = '''
-    let g:loaded_indentLine = 1
-    nnoremap <20>i <C-u>:IndentLineToggle<CR>
-'''
 
 # make start menu
 #[[plugins]]
@@ -149,30 +136,6 @@ hook_add = '''
 repo = 'lambdalisue/gina.vim'
 
 [[plugins]]
-repo='Shougo/defx.nvim'
-hook_sourse = '''
-let g:WebDevIclet g:defx_icons_enable_syntax_highlight = 1
-let g:defx_icons_column_length = 2
-let g:defx_icons_directory_icon = ''
-let g:defx_icons_mark_icon = '*'
-let g:defx_icons_copy_icon = ''
-let g:defx_icons_move_icon = ''
-let g:defx_icons_parent_icon = ''
-let g:defx_icons_default_icon = ''
-let g:defx_icons_directory_symlink_icon = ''
-" Options below are applicable only when using "tree" feature
-let g:defx_icons_root_opened_tree_icon = ''
-let g:defx_icons_nested_opened_tree_icon = ''
-let g:defx_icons_nested_closed_tree_icon = ''onsUnicodeDecorateFolderNodes = 1
-'''
-
-[[plugins]]
-repo = 'kristijanhusak/defx-icons'
-
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
 repo = 'lambdalisue/session.vim'
 
 [[plugins]]
@@ -199,4 +162,5 @@ repo = 'patstockwell/vim-monokai-tasty'
 hook_add = '''
 let g:vim_monokai_tasty_italic = 1
 '''
-
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'

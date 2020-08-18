@@ -5,6 +5,33 @@ on_cmd = 'Grepper'
 on_map = '<plug>(GrepperOperator)'
 
 [[plugins]]
+repo='Shougo/defx.nvim'
+on_cmd = ['Defx']
+hook_sourse = '''
+let g:WebDevIclet g:defx_icons_enable_syntax_highlight = 1
+let g:defx_icons_column_length = 2
+let g:defx_icons_directory_icon = ''
+let g:defx_icons_mark_icon = '*'
+let g:defx_icons_copy_icon = ''
+let g:defx_icons_move_icon = ''
+let g:defx_icons_parent_icon = ''
+let g:defx_icons_default_icon = ''
+let g:defx_icons_directory_symlink_icon = ''
+" Options below are applicable only when using "tree" feature
+let g:defx_icons_root_opened_tree_icon = ''
+let g:defx_icons_nested_opened_tree_icon = ''
+let g:defx_icons_nested_closed_tree_icon = ''onsUnicodeDecorateFolderNodes = 1
+'''
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+on_source = ['defx.nvim']
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+on_source = ['defx.nvim']
+
+[[plugins]]
 repo = 'Shougo/deoplete.nvim'
 if='''!has('nvim')'''
 depends = 'context_filetype.vim'
@@ -273,3 +300,40 @@ if='''has('unix')'''
 [[plugins]]
 repo = 'andymass/vim-matchup'
 on_event = 'vimEnter'
+
+#make indentline
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_cmd = ['IndentLinesToggle']
+#auto enable
+hook_add = '''
+    let g:loaded_indentLine = 1
+    nnoremap <20>i <C-u>:IndentLineToggle<CR>
+'''
+
+[[plugins]]
+repo='Shougo/defx.nvim'
+on_cmd = ['Defx']
+hook_sourse = '''
+let g:WebDevIclet g:defx_icons_enable_syntax_highlight = 1
+let g:defx_icons_column_length = 2
+let g:defx_icons_directory_icon = ''
+let g:defx_icons_mark_icon = '*'
+let g:defx_icons_copy_icon = ''
+let g:defx_icons_move_icon = ''
+let g:defx_icons_parent_icon = ''
+let g:defx_icons_default_icon = ''
+let g:defx_icons_directory_symlink_icon = ''
+" Options below are applicable only when using "tree" feature
+let g:defx_icons_root_opened_tree_icon = ''
+let g:defx_icons_nested_opened_tree_icon = ''
+let g:defx_icons_nested_closed_tree_icon = ''onsUnicodeDecorateFolderNodes = 1
+'''
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+on_source = ['defx.nvim']
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+on_source = ['defx.nvim']
