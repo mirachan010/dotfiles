@@ -22,7 +22,6 @@ hook_add = '''
     nnoremap <Down>  :<C-u>Rapidfire Down<CR>
 '''
 
-
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja.git'
 hook_add = '''
@@ -32,10 +31,6 @@ hook_add = '''
 #status line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-
-# make start menu
-#[[plugins]]
-#repo='mhinz/vim-startify'
 
 #help for f or F
 [[plugins]]
@@ -66,14 +61,6 @@ repo = 'godlygeek/tabular'
 #It can run and test in vim
 [[plugins]]
 repo='thinca/vim-quickrun'
-
-[[plugins]]
-repo = 'majutsushi/tagbar'
-hook_add='''
-    let g:tagbar_width = 20
-    "Map for toggle
-    nn <silent> <leader>t :TagbarToggle<CR>
-'''
 
 [[plugins]]
 repo = 'honza/vim-snippets'
@@ -133,18 +120,12 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'lambdalisue/gina.vim'
-
-[[plugins]]
 repo = 'lambdalisue/session.vim'
 
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 if='0'
 depends = 'context_filetype.vim'
-
-[[plugins]]
-repo = 'lambdalisue/fern.vim'
 
 [[plugins]]
 repo = 'skanehira/code2img.vim'
