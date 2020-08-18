@@ -85,8 +85,6 @@ hook_add='''
     nnoremap [Twit]p :<C-u>PreviousTwitter<CR>
     nnoremap <Leader><Leader> :<C-u>RefreshTwitter<CR>
 '''
-[[plugins]]
-repo='tomasr/molokai'
 
 #check git diff in numberline
 [[plugins]]
@@ -123,21 +121,21 @@ hook_add = '''
 repo = 'lambdalisue/session.vim'
 
 [[plugins]]
-repo = 'osyo-manga/vim-precious'
-if='0'
-depends = 'context_filetype.vim'
-
-[[plugins]]
 repo = 'skanehira/code2img.vim'
 hook_add = '''
 let g:code2img_theme = 'monokai'
 let g:code2img_line_number = 1
 '''
+
+#use cheatsheet
 [[plugins]]
 repo='reireias/vim-cheatsheet'
 hook_add = '''
 let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\cheatsheet.md'
+nmap <Leader>cc :<c-u>Cheat<CR>
 '''
+
+#colorschemes
 [[plugins]]
 repo = 'patstockwell/vim-monokai-tasty'
 hook_add = '''
@@ -145,3 +143,6 @@ let g:vim_monokai_tasty_italic = 1
 '''
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
+
+[[plugins]]
+repo='tomasr/molokai'
