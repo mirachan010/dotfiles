@@ -1,8 +1,10 @@
+# startsetting
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,cp932,sjis
 scriptencoding=utf-8
 
+#read setting runtimeに移行したい
 source ~/dotfiles/common/vim/main.vim
 source ~/dotfiles/common/vim/filetype_setting.vim
 source ~/dotfiles/common/vim/keymapping.vim
