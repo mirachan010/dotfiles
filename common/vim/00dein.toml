@@ -2,13 +2,37 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'vim-jp/vimdoc-ja.git'
+hook_add = '''
+    set helplang=ja,en
+'''
+
+# Set if use Vim{{{
+#    use for remote plugins{{{
+[[plugins]]
 repo = 'roxma/nvim-yarp'
 if='''! has('nvim')'''
 
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
 if='''! has('nvim')'''
+#    }}}
+# Set easy translate
+[[plugins]]
+repo = 'skanehira/translate.vim'
+if='''!has('nvim')'''
+rev = 'v0.0.3'
+hook_add = '''
+    let g:translate_source = "en"
+    let g:translate_target = "ja"
+    let g:translate_winsize = 10
+    vmap tj <Plug>(VTranslate)
+    vmap te <Plug>(VTranslateBang)
+'''
+# }}}
 
+
+# Set shortcut commands
 [[plugins]]
 repo = 'c000/rapidfire.vim'
 hook_add = '''
@@ -22,53 +46,68 @@ hook_add = '''
     nnoremap <Down>  :<C-u>Rapidfire Down<CR>
 '''
 
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja.git'
-hook_add = '''
-    set helplang=ja,en
-'''
-
-#status line
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-
-#help for f or F
+# Make new Function{{{
+# help for f or F
 [[plugins]]
 repo='unblevable/quick-scope'
 hook_add='''
     let g:qs_highlight_on_keys = ['f','F']
 '''
 
-#it can easy to maeke "surround"
+#    Easy action motions{{{
+# it can easy to maeke "surround"
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'tpope/vim-repeat'
-
+# it can easy to make "comment"
 [[plugins]]
 repo = 'tpope/vim-commentary'
+# it can easy to repeate command
+[[plugins]]
+repo = 'tpope/vim-repeat'
+#    }}}
 
-
-#easy to change word
+#    Easy action commands{{{
+# easy to change word
 [[plugins]]
 repo = 'lambdalisue/reword.vim'
 
-#user markdown
+# use for markdown
 [[plugins]]
 repo = 'godlygeek/tabular'
 
-#It can run and test in vim
+# It can run and test in vim
 [[plugins]]
 repo='thinca/vim-quickrun'
 
+# use cheatsheet
 [[plugins]]
-repo = 'honza/vim-snippets'
+repo='reireias/vim-cheatsheet'
+hook_add = '''
+let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\cheatsheet.md'
+nmap <Leader>cc :<c-u>Cheat<CR>
+'''
+#    }}}
+# }}}
 
+# To use git in vim{{{
 [[plugins]]
-repo='neoclide/coc.nvim'
-rev='release'
-if=''' has('nvim')'''
+repo = 'tpope/vim-fugitive'
+
+# Check git diff in numberline
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add='''
+    set signcolumn=yes
+    let g:gitgutter_map_keys = 0
+    nnoremap [Git] <Nop>
+    nmap <Leader>g [Git]
+    nmap [Git]p <Plug>(GitGutterPrevHunk)
+    nmap [Git]n <Plug>(GitGutterNextHunk)
+    nmap [Git]a <Plug>(GitGutterStageHunk)
+    nmap [Git]u <Plug>(GitGutterRevertHunk)
+    nmap [Git]v <Plug>(GitGutterPreviewHunk)
+'''
+# }}}
 
 [[plugins]]
 repo='twitvim/twitvim'
@@ -86,40 +125,6 @@ hook_add='''
     nnoremap <Leader><Leader> :<C-u>RefreshTwitter<CR>
 '''
 
-#check git diff in numberline
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-hook_add='''
-    set signcolumn=yes
-    let g:gitgutter_map_keys = 0
-    nnoremap [Git] <Nop>
-    nmap <Leader>g [Git]
-    nmap [Git]p <Plug>(GitGutterPrevHunk)
-    nmap [Git]n <Plug>(GitGutterNextHunk)
-    nmap [Git]a <Plug>(GitGutterStageHunk)
-    nmap [Git]u <Plug>(GitGutterRevertHunk)
-    nmap [Git]v <Plug>(GitGutterPreviewHunk)
-'''
-
-#To use git in vim
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'skanehira/translate.vim'
-if='''!has('nvim')'''
-rev = 'v0.0.3'
-hook_add = '''
-    let g:translate_source = "en"
-    let g:translate_target = "ja"
-    let g:translate_winsize = 10
-    vmap tj <Plug>(VTranslate)
-    vmap te <Plug>(VTranslateBang)
-'''
-
-[[plugins]]
-repo = 'lambdalisue/session.vim'
-
 [[plugins]]
 repo = 'skanehira/code2img.vim'
 hook_add = '''
@@ -127,22 +132,31 @@ let g:code2img_theme = 'monokai'
 let g:code2img_line_number = 1
 '''
 
-#use cheatsheet
+# Set looks{{{
+
+# status line
 [[plugins]]
-repo='reireias/vim-cheatsheet'
+repo = 'itchyny/lightline.vim'
+
+# Make indentline
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_cmd = ['IndentLinesToggle']
 hook_add = '''
-let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\cheatsheet.md'
-nmap <Leader>cc :<c-u>Cheat<CR>
+    let g:loaded_indentLine = 1
 '''
 
-#colorschemes
+#    Colorschemes{{{
 [[plugins]]
 repo = 'patstockwell/vim-monokai-tasty'
 hook_add = '''
 let g:vim_monokai_tasty_italic = 1
 '''
+
 [[plugins]]
 repo = 'sainnhe/gruvbox-material'
 
 [[plugins]]
 repo='tomasr/molokai'
+#    }}}
+# }}}
