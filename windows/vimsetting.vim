@@ -8,13 +8,6 @@ set runtimepath+=~/dotfiles/common/vim
 runtime! pure_setting/*.vim
 runtime! plug_setting/*.vim
 
-"source ~/dotfiles/common/vim/main.vim
-"source ~/dotfiles/common/vim/filetype_setting.vim
-"source ~/dotfiles/common/vim/keymapping.vim
-"source ~/dotfiles/common/vim/plugin.vim
-"source ~/dotfiles/common/vim/lightline.vim
-"source ~/dotfiles/common/vim/cocseting.vim
-
 set termguicolors
 set background=dark
 
