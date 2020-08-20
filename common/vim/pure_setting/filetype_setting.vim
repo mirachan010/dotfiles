@@ -16,6 +16,7 @@ augroup MyTabStop
     autocmd BufNewFile,BufRead *.yaml      setlocal tabstop=2 shiftwidth=2
     autocmd BufNewFile,BufRead *.toml      setlocal tabstop=2 shiftwidth=2 fenc=utf-8
     autocmd BufNewFile,BufRead *.vim       setlocal tabstop=2 shiftwidth=2 fenc=utf-8
+    autocmd FileType           vim         setlocal tabstop=2 shiftwidth=2 fenc=utf-8
 augroup END
 
 augroup MyGitSpellCheck
