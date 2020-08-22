@@ -200,24 +200,13 @@ nnoremap [Lsp]s :<C-u>LspDocumentFormat<CR>
 '''
 
 [[plugins]]
-repo = 'thomasfaingnaert/vim-lsp-snippets'
-if='''!has('nvim')'''
-on_event = 'InsertEnter'
-
-[[plugins]]
-repo = 'thomasfaingnaert/vim-lsp-neosnippet'
-if='''!has('nvim')'''
-on_event = 'InsertEnter'
-
-[[plugins]]
 repo = 'junegunn/fzf'
 build='./install -all'
-on_event = ['VimEnter']
+on_cmd = ['FZF']
 marged=0
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
-on_event = ['VimEnter']
 
 [[plugins]]
 repo = 'iamcco/markdown-preview.nvim'
@@ -229,8 +218,6 @@ cd app & yarn install
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html','css','java','javascript','php','perl']
-hook_add = '''
-'''
 
 #filetype highligt
 #toml
