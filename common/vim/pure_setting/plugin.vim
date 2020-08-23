@@ -2,15 +2,27 @@
 if has('nvim')
   if has("win32")
     let s:dein_dir = expand('~\AppData\Local\nvim\dein\')
+    let g:rc_dir    = expand('~\dotfiles\common\vim\')
   elseif has("unix")
-    let s:dein_dir = expand('~\.cache\nvim\dein\')
+    let s:dein_dir = expand('~/.cache/nvim/dein/')
+    let g:rc_dir    = expand('~/dotfiles/common/vim/')
   endif
 elseif !has('nvim')
-  let s:dein_dir = expand('~\.cache\vim\dein\')
+  if has("win32")
+    let s:dein_dir = expand('~\.cache\vim\dein\')
+    let g:rc_dir    = expand('~\dotfiles\common\vim\')
+  elseif has("unix")
+    let s:dein_dir = expand('~/.cache/vim/dein/')
+    let g:rc_dir    = expand('~/dotfiles/common/vim/')
+  endif
 endif
 
 " dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
+if has('win32')
+  let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
+elseif has('unix')
+  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+endif
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '\dein.vim'
   if !isdirectory(s:dein_repo_dir)
@@ -23,9 +35,8 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   " プラグインリストを収めた TOML ファイル
   " ~/.vim/rc/dein.toml,deinlazy.tomlを用意する
-  let g:rc_dir    = expand('~\dotfiles\common\vim\')
-  let s:toml      = g:rc_dir . '\00dein.toml'
-  let s:lazy_toml = g:rc_dir . '\01dein.toml'
+  let s:toml      = g:rc_dir . '00dein.toml'
+  let s:lazy_toml = g:rc_dir . '01dein.toml'
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,      {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})

@@ -111,6 +111,7 @@ hook_add='''
 
 [[plugins]]
 repo='twitvim/twitvim'
+if='''0'''
 hook_add='''
     source ~\dotfiles\twitkeys.vim
     map <Leader>t [Twit]

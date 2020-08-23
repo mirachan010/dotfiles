@@ -30,6 +30,7 @@ mkdir ~/.config/nvim
 ln -snfv "$THIS_DIR"/../ubuntu/init.vim ~/.config/nvim/
 rm -rf ~/.gitconfig
 ln -snfv "$THIS_DIR"/../common/.gitconfig ~/.gitconfig
+ln -snfv "$THIS_DIR"/../common/vim/vimsetting.vim ~/.vimrc
 
 cat << END
 
