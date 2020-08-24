@@ -1,4 +1,6 @@
 "プラグインのインストール
+"プラグインの保存場所の設定
+"nvim ( win unix )の組み合わせでのそれぞれの設定
 if has('nvim')
   if has("win32")
     let s:dein_dir = expand('~\AppData\Local\nvim\dein\')
@@ -13,7 +15,7 @@ elseif !has('nvim')
   endif
 endif
 
-" dein.vim 本体
+" dein.vimの保存場所、プラグインリストの場所を記載
 if has('win32')
   let g:rc_dir    = expand('~\dotfiles\common\vim\')
   let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
@@ -32,7 +34,6 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   " プラグインリストを収めた TOML ファイル
-  " ~/.vim/rc/dein.toml,deinlazy.tomlを用意する
   let s:toml      = g:rc_dir . '00dein.toml'
   let s:lazy_toml = g:rc_dir . '01dein.toml'
   " TOML を読み込み、キャッシュしておく
