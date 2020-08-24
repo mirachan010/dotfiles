@@ -2,25 +2,23 @@
 if has('nvim')
   if has("win32")
     let s:dein_dir = expand('~\AppData\Local\nvim\dein\')
-    let g:rc_dir    = expand('~\dotfiles\common\vim\')
   elseif has("unix")
     let s:dein_dir = expand('~/.cache/nvim/dein/')
-    let g:rc_dir    = expand('~/dotfiles/common/vim/')
   endif
 elseif !has('nvim')
   if has("win32")
     let s:dein_dir = expand('~\.cache\vim\dein\')
-    let g:rc_dir    = expand('~\dotfiles\common\vim\')
   elseif has("unix")
     let s:dein_dir = expand('~/.cache/vim/dein/')
-    let g:rc_dir    = expand('~/dotfiles/common/vim/')
   endif
 endif
 
 " dein.vim 本体
 if has('win32')
+  let g:rc_dir    = expand('~\dotfiles\common\vim\')
   let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
 elseif has('unix')
+  let g:rc_dir    = expand('~/dotfiles/common/vim/')
   let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 endif
 " dein.vim がなければ github から落としてくる
