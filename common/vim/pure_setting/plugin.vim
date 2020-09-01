@@ -35,6 +35,7 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   " プラグインリストを収めた TOML ファイル
   " ~/.vim/rc/dein.toml,deinlazy.tomlを用意する
+  " let s:toml      = g:rc_dir . 'list.toml'
   let s:toml      = g:rc_dir . '00dein.toml'
   let s:lazy_toml = g:rc_dir . '01dein.toml'
   " TOML を読み込み、キャッシュしておく
