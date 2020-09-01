@@ -1,0 +1,1802 @@
+[[plugins]]
+repo = 'airblade/vim-accent'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'airblade/vim-helptab'
+[[plugins]]
+repo = 'airblade/vim-localorie'
+[[plugins]]
+repo = 'airblade/vim-matchquote'
+[[plugins]]
+repo = 'airblade/vim-rooter'
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+[[plugins]]
+repo = 'c000/rapidfire.vim'
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+[[plugins]]
+repo = 'dense-analysis/ale'
+[[plugins]]
+repo = 'dhruvasagar/packup'
+[[plugins]]
+repo = 'dhruvasagar/vim-audiobox'
+[[plugins]]
+repo = 'dhruvasagar/vim-buffer-history'
+[[plugins]]
+repo = 'dhruvasagar/vim-comp'
+[[plugins]]
+repo = 'dhruvasagar/vim-dotoo'
+[[plugins]]
+repo = 'dhruvasagar/vim-highlight-word'
+[[plugins]]
+repo = 'dhruvasagar/vim-markify'
+[[plugins]]
+repo = 'dhruvasagar/vim-marp'
+[[plugins]]
+repo = 'dhruvasagar/vim-open-url'
+[[plugins]]
+repo = 'dhruvasagar/vim-pairify'
+[[plugins]]
+repo = 'dhruvasagar/vim-prosession'
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+[[plugins]]
+repo = 'dhruvasagar/vim-testify'
+[[plugins]]
+repo = 'dhruvasagar/vim-zoom'
+[[plugins]]
+repo = 'farmergreg/vim-lastplace'
+[[plugins]]
+repo = 'godlygeek/colorchart'
+[[plugins]]
+repo = 'godlygeek/csapprox'
+[[plugins]]
+repo = 'godlygeek/from_c_to_pep249'
+[[plugins]]
+repo = 'godlygeek/netlib'
+[[plugins]]
+repo = 'godlygeek/tabular'
+[[plugins]]
+repo = 'godlygeek/vim-files'
+[[plugins]]
+repo = 'godlygeek/windowlayout'
+[[plugins]]
+repo = 'itchyny/calendar.vim'
+[[plugins]]
+repo = 'itchyny/dictionary.vim'
+[[plugins]]
+repo = 'itchyny/landscape.vim'
+[[plugins]]
+repo = 'itchyny/lightline-powerful'
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+[[plugins]]
+repo = 'itchyny/screensaver.vim'
+[[plugins]]
+repo = 'itchyny/thumbnail.vim'
+[[plugins]]
+repo = 'itchyny/unite-auto-open'
+[[plugins]]
+repo = 'itchyny/unite-changetime'
+[[plugins]]
+repo = 'itchyny/unite-eject'
+[[plugins]]
+repo = 'itchyny/unite-preview'
+[[plugins]]
+repo = 'itchyny/vim-autoft'
+[[plugins]]
+repo = 'itchyny/vim-closebuffer'
+[[plugins]]
+repo = 'itchyny/vim-cmdline-escape'
+[[plugins]]
+repo = 'itchyny/vim-cmdline-ranges'
+[[plugins]]
+repo = 'itchyny/vim-cursorword'
+[[plugins]]
+repo = 'itchyny/vim-external'
+[[plugins]]
+repo = 'itchyny/vim-extracmd'
+[[plugins]]
+repo = 'itchyny/vim-gitbranch'
+[[plugins]]
+repo = 'itchyny/vim-gof'
+[[plugins]]
+repo = 'itchyny/vim-grep'
+[[plugins]]
+repo = 'itchyny/vim-haskell-sort-import'
+[[plugins]]
+repo = 'itchyny/vim-hatena-link'
+[[plugins]]
+repo = 'itchyny/vim-highlighturl'
+[[plugins]]
+repo = 'itchyny/vim-histexclude'
+[[plugins]]
+repo = 'itchyny/vim-increx'
+[[plugins]]
+repo = 'itchyny/vim-insert-mode-motion'
+[[plugins]]
+repo = 'itchyny/vim-parenmatch'
+[[plugins]]
+repo = 'itchyny/vim-pdf'
+[[plugins]]
+repo = 'itchyny/vim-qfedit'
+[[plugins]]
+repo = 'itchyny/vim-qffrom'
+[[plugins]]
+repo = 'itchyny/vim-quickrun-lightline-hooks'
+[[plugins]]
+repo = 'itchyny/vim-spellbad-pattern'
+[[plugins]]
+repo = 'itchyny/vim-term'
+[[plugins]]
+repo = 'itchyny/vim-tmpbuffer'
+[[plugins]]
+repo = 'itchyny/vim-winfix'
+[[plugins]]
+repo = 'jiangmiao/advancer-abbreviation'
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+[[plugins]]
+repo = 'junegunn/dummy1'
+[[plugins]]
+repo = 'junegunn/dummy2'
+[[plugins]]
+repo = 'junegunn/dummy3'
+[[plugins]]
+repo = 'junegunn/fzf'
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+[[plugins]]
+repo = 'junegunn/goyo.vim'
+[[plugins]]
+repo = 'junegunn/gv.vim'
+[[plugins]]
+repo = 'junegunn/heytmux'
+[[plugins]]
+repo = 'junegunn/limelight.vim'
+[[plugins]]
+repo = 'junegunn/vader.vim'
+[[plugins]]
+repo = 'junegunn/vim-after-object'
+[[plugins]]
+repo = 'junegunn/vim-easy-align'
+[[plugins]]
+repo = 'junegunn/vim-emoji'
+[[plugins]]
+repo = 'junegunn/vim-fnr'
+[[plugins]]
+repo = 'junegunn/vim-github-dashboard'
+[[plugins]]
+repo = 'junegunn/vim-journal'
+[[plugins]]
+repo = 'junegunn/vim-oblique'
+[[plugins]]
+repo = 'junegunn/vim-peekaboo'
+[[plugins]]
+repo = 'junegunn/vim-pseudocl'
+[[plugins]]
+repo = 'junegunn/vim-redis'
+[[plugins]]
+repo = 'junegunn/vim-ruby-x'
+[[plugins]]
+repo = 'junegunn/vim-slash'
+[[plugins]]
+repo = 'junegunn/vim-xmark'
+[[plugins]]
+repo = 'justinmk/nvim-repl'
+[[plugins]]
+repo = 'justinmk/vim-dirvish'
+[[plugins]]
+repo = 'justinmk/vim-gtfo'
+[[plugins]]
+repo = 'justinmk/vim-sneak'
+[[plugins]]
+repo = 'justinmk/vim-syntax-extra'
+[[plugins]]
+repo = 'lambdalisue/attorney.vim'
+[[plugins]]
+repo = 'lambdalisue/battery.vim'
+[[plugins]]
+repo = 'lambdalisue/cactus.vim'
+[[plugins]]
+repo = 'lambdalisue/compl-local-filename.vim'
+[[plugins]]
+repo = 'lambdalisue/denite.nvim'
+[[plugins]]
+repo = 'lambdalisue/doctest.vim'
+[[plugins]]
+repo = 'lambdalisue/edita.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-bookmark.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-comparator-lexical.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-grantor-git.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-mapping-git.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-mapping-project-top.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-mapping-quickfix.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-devicons.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-tabpage.vim'
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+[[plugins]]
+repo = 'lambdalisue/filta.vim'
+[[plugins]]
+repo = 'lambdalisue/gilt.vim'
+[[plugins]]
+repo = 'lambdalisue/gina-blame.vim'
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
+[[plugins]]
+repo = 'lambdalisue/golangci-lint.vim'
+[[plugins]]
+repo = 'lambdalisue/grea.vim'
+[[plugins]]
+repo = 'lambdalisue/lista.nvim'
+[[plugins]]
+repo = 'lambdalisue/lista.vim'
+[[plugins]]
+repo = 'lambdalisue/loupe.vim'
+[[plugins]]
+repo = 'lambdalisue/macra.vim'
+[[plugins]]
+repo = 'lambdalisue/manipulist.vim'
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+[[plugins]]
+repo = 'lambdalisue/pinkyless.vim'
+[[plugins]]
+repo = 'lambdalisue/platex.vim'
+[[plugins]]
+repo = 'lambdalisue/pyvenv.vim'
+[[plugins]]
+repo = 'lambdalisue/pywin.nvim'
+[[plugins]]
+repo = 'lambdalisue/qfloc.vim'
+[[plugins]]
+repo = 'lambdalisue/rapidfire-persistent.vim'
+[[plugins]]
+repo = 'lambdalisue/readablefold.vim'
+[[plugins]]
+repo = 'lambdalisue/redi.nvim'
+[[plugins]]
+repo = 'lambdalisue/reword.vim'
+[[plugins]]
+repo = 'lambdalisue/seethrough.vim'
+[[plugins]]
+repo = 'lambdalisue/session.vim'
+[[plugins]]
+repo = 'lambdalisue/shareboard.vim'
+[[plugins]]
+repo = 'lambdalisue/smartcl.vim'
+[[plugins]]
+repo = 'lambdalisue/smarthl.vim'
+[[plugins]]
+repo = 'lambdalisue/smarttw.vim'
+[[plugins]]
+repo = 'lambdalisue/suda.vim'
+[[plugins]]
+repo = 'lambdalisue/themis-helper-global'
+[[plugins]]
+repo = 'lambdalisue/trashbin.vim'
+[[plugins]]
+repo = 'lambdalisue/trea.vim'
+[[plugins]]
+repo = 'lambdalisue/trimmer.vim'
+[[plugins]]
+repo = 'lambdalisue/unite-exrename'
+[[plugins]]
+repo = 'lambdalisue/unite-grep-vcs'
+[[plugins]]
+repo = 'lambdalisue/unite-linephrase'
+[[plugins]]
+repo = 'lambdalisue/vim-amake'
+[[plugins]]
+repo = 'lambdalisue/vim-autest'
+[[plugins]]
+repo = 'lambdalisue/vim-backslash'
+[[plugins]]
+repo = 'lambdalisue/vim-diffa'
+[[plugins]]
+repo = 'lambdalisue/vim-django-support'
+[[plugins]]
+repo = 'lambdalisue/vim-findent'
+[[plugins]]
+repo = 'lambdalisue/vim-foldround'
+[[plugins]]
+repo = 'lambdalisue/vim-fullscreen'
+[[plugins]]
+repo = 'lambdalisue/vim-giit'
+[[plugins]]
+repo = 'lambdalisue/vim-gista'
+[[plugins]]
+repo = 'lambdalisue/vim-gista-ctrlp'
+[[plugins]]
+repo = 'lambdalisue/vim-gista-unite'
+[[plugins]]
+repo = 'lambdalisue/vim-gita'
+[[plugins]]
+repo = 'lambdalisue/vim-improve-diff'
+[[plugins]]
+repo = 'lambdalisue/vim-lambdatex'
+[[plugins]]
+repo = 'lambdalisue/vim-ledi'
+[[plugins]]
+repo = 'lambdalisue/vim-localhook'
+[[plugins]]
+repo = 'lambdalisue/vim-manpager'
+[[plugins]]
+repo = 'lambdalisue/vim-marron'
+[[plugins]]
+repo = 'lambdalisue/vim-operator-breakline'
+[[plugins]]
+repo = 'lambdalisue/vim-pager'
+[[plugins]]
+repo = 'lambdalisue/vim-pandoc-preview'
+[[plugins]]
+repo = 'lambdalisue/vim-protocol'
+[[plugins]]
+repo = 'lambdalisue/vim-pyenv'
+[[plugins]]
+repo = 'lambdalisue/vim-quickrun-neovim-job'
+[[plugins]]
+repo = 'lambdalisue/vim-rplugin'
+[[plugins]]
+repo = 'lambdalisue/vim-rplugin-test'
+[[plugins]]
+repo = 'lambdalisue/vim-themis-test'
+[[plugins]]
+repo = 'lambdalisue/vim-unified-diff'
+[[plugins]]
+repo = 'lambdalisue/vim-wttrin'
+[[plugins]]
+repo = 'lambdalisue/vim-z'
+[[plugins]]
+repo = 'lambdalisue/vital-ArgumentParser'
+[[plugins]]
+repo = 'lambdalisue/vital-Data-Dict-Option'
+[[plugins]]
+repo = 'lambdalisue/vital-Data-String-Formatter'
+[[plugins]]
+repo = 'lambdalisue/vital-Network-HTTP'
+[[plugins]]
+repo = 'lambdalisue/vital-ProgressBar'
+[[plugins]]
+repo = 'lambdalisue/vital-Rx'
+[[plugins]]
+repo = 'lambdalisue/vital-System-Cache-File'
+[[plugins]]
+repo = 'lambdalisue/vital-System-Cache-Simple'
+[[plugins]]
+repo = 'lambdalisue/vital-System-Cache-Unified'
+[[plugins]]
+repo = 'lambdalisue/vital-Text-INI'
+[[plugins]]
+repo = 'lambdalisue/vital-VCS-Git'
+[[plugins]]
+repo = 'lambdalisue/vital-Vim-Buffer-Anchor'
+[[plugins]]
+repo = 'lambdalisue/vital-Vim-Guard'
+[[plugins]]
+repo = 'lambdalisue/vital-Vim-Lua-String'
+[[plugins]]
+repo = 'lambdalisue/vital-Vim-Prompt'
+[[plugins]]
+repo = 'lambdalisue/vital-Vim-Python'
+[[plugins]]
+repo = 'lambdalisue/vital-Vim-Validate'
+[[plugins]]
+repo = 'lambdalisue/vital-Web-API-GitHub'
+[[plugins]]
+repo = 'lambdalisue/vital-Whisky'
+[[plugins]]
+repo = 'lambdalisue/wifi.vim'
+[[plugins]]
+repo = 'machakann/asyncomplete-ezfilter.vim'
+[[plugins]]
+repo = 'machakann/asyncomplete-unicodesymbol.vim'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-imas'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-kemonofriends'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-reki'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-snowtrek'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-tatami'
+[[plugins]]
+repo = 'machakann/vim-columnmove'
+[[plugins]]
+repo = 'machakann/vim-event-DotCommandPre'
+[[plugins]]
+repo = 'machakann/vim-highlightedundo'
+[[plugins]]
+repo = 'machakann/vim-highlightedyank'
+[[plugins]]
+repo = 'machakann/vim-lsp-julia'
+[[plugins]]
+repo = 'machakann/vim-masquerade'
+[[plugins]]
+repo = 'machakann/vim-multiselect'
+[[plugins]]
+repo = 'machakann/vim-operator-jerk'
+[[plugins]]
+repo = 'machakann/vim-patternjump'
+[[plugins]]
+repo = 'machakann/vim-sandwich'
+[[plugins]]
+repo = 'machakann/vim-scilabcomplete'
+[[plugins]]
+repo = 'machakann/vim-swap'
+[[plugins]]
+repo = 'machakann/vim-textobj-char'
+[[plugins]]
+repo = 'machakann/vim-textobj-delimited'
+[[plugins]]
+repo = 'machakann/vim-textobj-equation'
+[[plugins]]
+repo = 'machakann/vim-textobj-functioncall'
+[[plugins]]
+repo = 'machakann/vim-Verdin'
+[[plugins]]
+repo = 'machakann/vital-Schedule'
+[[plugins]]
+repo = 'majutsushi/tagbar'
+[[plugins]]
+repo = 'mattn/asyncomplete-google-suggest.vim'
+[[plugins]]
+repo = 'mattn/asyncomplete-lsp.vim'
+[[plugins]]
+repo = 'mattn/asyncomplete.vim'
+[[plugins]]
+repo = 'mattn/async.vim'
+[[plugins]]
+repo = 'mattn/benchvimrc-vim'
+[[plugins]]
+repo = 'mattn/bingtranslate-vim'
+[[plugins]]
+repo = 'mattn/calendar-vim'
+[[plugins]]
+repo = 'mattn/chop-vim'
+[[plugins]]
+repo = 'mattn/codepad-vim'
+[[plugins]]
+repo = 'mattn/ctrlp-cmdmatch'
+[[plugins]]
+repo = 'mattn/ctrlp-cmus'
+[[plugins]]
+repo = 'mattn/ctrlp-codic'
+[[plugins]]
+repo = 'mattn/ctrlp-everything'
+[[plugins]]
+repo = 'mattn/ctrlp-filer'
+[[plugins]]
+repo = 'mattn/ctrlp-ghq'
+[[plugins]]
+repo = 'mattn/ctrlp-gist'
+[[plugins]]
+repo = 'mattn/ctrlp-git'
+[[plugins]]
+repo = 'mattn/ctrlp-gitchanges'
+[[plugins]]
+repo = 'mattn/ctrlp-google'
+[[plugins]]
+repo = 'mattn/ctrlp-hackernews'
+[[plugins]]
+repo = 'mattn/ctrlp-hotentry'
+[[plugins]]
+repo = 'mattn/ctrlp-jazzradio'
+[[plugins]]
+repo = 'mattn/ctrlp-kaomoji'
+[[plugins]]
+repo = 'mattn/ctrlp-launcher'
+[[plugins]]
+repo = 'mattn/ctrlp-mark'
+[[plugins]]
+repo = 'mattn/ctrlp-mcdonald'
+[[plugins]]
+repo = 'mattn/ctrlp-mpc'
+[[plugins]]
+repo = 'mattn/ctrlp-rebuildfm'
+[[plugins]]
+repo = 'mattn/ctrlp-register'
+[[plugins]]
+repo = 'mattn/ctrlp-sudden-death'
+[[plugins]]
+repo = 'mattn/ctrlp-swoop'
+[[plugins]]
+repo = 'mattn/ctrlp-veco'
+[[plugins]]
+repo = 'mattn/ctrlp-vimhacks'
+[[plugins]]
+repo = 'mattn/ctrlp-vimhelpjp'
+[[plugins]]
+repo = 'mattn/ctrlp-vimkaruta'
+[[plugins]]
+repo = 'mattn/ctrlp-vimpatches'
+[[plugins]]
+repo = 'mattn/ctrlp-windowselector'
+[[plugins]]
+repo = 'mattn/cuiaboutme-vim'
+[[plugins]]
+repo = 'mattn/davfs'
+[[plugins]]
+repo = 'mattn/die-vim'
+[[plugins]]
+repo = 'mattn/disableitalic-vim'
+[[plugins]]
+repo = 'mattn/eject-vim'
+[[plugins]]
+repo = 'mattn/emmet-vim'
+[[plugins]]
+repo = 'mattn/emoji-vim'
+[[plugins]]
+repo = 'mattn/excelview-vim'
+[[plugins]]
+repo = 'mattn/excitetranslate-vim'
+[[plugins]]
+repo = 'mattn/exportdoc-vim'
+[[plugins]]
+repo = 'mattn/fastladder-vim'
+[[plugins]]
+repo = 'mattn/favotter-vim'
+[[plugins]]
+repo = 'mattn/favstar-vim'
+[[plugins]]
+repo = 'mattn/flappyvird-vim'
+[[plugins]]
+repo = 'mattn/funcutil-vim'
+[[plugins]]
+repo = 'mattn/gal-vim'
+[[plugins]]
+repo = 'mattn/getsid-vim'
+[[plugins]]
+repo = 'mattn/ginger-vim'
+[[plugins]]
+repo = 'mattn/gmigemo-vim'
+[[plugins]]
+repo = 'mattn/go-ieproxy'
+[[plugins]]
+repo = 'mattn/googlereader-vim'
+[[plugins]]
+repo = 'mattn/googlesuggest-complete-vim'
+[[plugins]]
+repo = 'mattn/googletasks-vim'
+[[plugins]]
+repo = 'mattn/googletranslate-vim'
+[[plugins]]
+repo = 'mattn/habatobi-vim'
+[[plugins]]
+repo = 'mattn/hahhah-vim'
+[[plugins]]
+repo = 'mattn/httpstatus-vim'
+[[plugins]]
+repo = 'mattn/ideone-vim'
+[[plugins]]
+repo = 'mattn/invader-vim'
+[[plugins]]
+repo = 'mattn/jscomplete-vim'
+[[plugins]]
+repo = 'mattn/kimoto-vim'
+[[plugins]]
+repo = 'mattn/lambda-vim'
+[[plugins]]
+repo = 'mattn/lgtm-vim'
+[[plugins]]
+repo = 'mattn/libcallex-vim'
+[[plugins]]
+repo = 'mattn/lisper-vim'
+[[plugins]]
+repo = 'mattn/livestyle-vim'
+[[plugins]]
+repo = 'mattn/lleval-vim'
+[[plugins]]
+repo = 'mattn/mahjong-vim'
+[[plugins]]
+repo = 'mattn/marquee-vim'
+[[plugins]]
+repo = 'mattn/mkdpreview-vim'
+[[plugins]]
+repo = 'mattn/msgpack-vim'
+[[plugins]]
+repo = 'mattn/multi-vim'
+[[plugins]]
+repo = 'mattn/mumbles-github-growler'
+[[plugins]]
+repo = 'mattn/pastebin-vim'
+[[plugins]]
+repo = 'mattn/pasteubuntu-vim'
+[[plugins]]
+repo = 'mattn/perldoc-vim'
+[[plugins]]
+repo = 'mattn/plugins-update-vim'
+[[plugins]]
+repo = 'mattn/pocoo-vim'
+[[plugins]]
+repo = 'mattn/qfixhowm'
+[[plugins]]
+repo = 'mattn/qiita-vim'
+[[plugins]]
+repo = 'mattn/random_colorscheme-vim'
+[[plugins]]
+repo = 'mattn/redir-vim'
+[[plugins]]
+repo = 'mattn/salaryman-complete-vim'
+[[plugins]]
+repo = 'mattn/seeks.vim'
+[[plugins]]
+repo = 'mattn/ssh-add-vim'
+[[plugins]]
+repo = 'mattn/startmenu-vim'
+[[plugins]]
+repo = 'mattn/streamer-vim'
+[[plugins]]
+repo = 'mattn/streem-vim'
+[[plugins]]
+repo = 'mattn/tablist-vim'
+[[plugins]]
+repo = 'mattn/todaysfortune-vim'
+[[plugins]]
+repo = 'mattn/togetter-vim'
+[[plugins]]
+repo = 'mattn/togglecolorscheme-vim'
+[[plugins]]
+repo = 'mattn/transparency-windows-vim'
+[[plugins]]
+repo = 'mattn/tweetnotify-vim'
+[[plugins]]
+repo = 'mattn/twipass-vim'
+[[plugins]]
+repo = 'mattn/unite-advent_calendar'
+[[plugins]]
+repo = 'mattn/unite-genpatsu-fukushima-vim'
+[[plugins]]
+repo = 'mattn/unite-gist'
+[[plugins]]
+repo = 'mattn/unite-gyukaku-vim'
+[[plugins]]
+repo = 'mattn/unite-mcdonalds-vim'
+[[plugins]]
+repo = 'mattn/unite-moukoneyo'
+[[plugins]]
+repo = 'mattn/unite-mpc'
+[[plugins]]
+repo = 'mattn/unite-nyancat'
+[[plugins]]
+repo = 'mattn/unite-oppai'
+[[plugins]]
+repo = 'mattn/unite-remotefile'
+[[plugins]]
+repo = 'mattn/unite-rhythmbox'
+[[plugins]]
+repo = 'mattn/unite-source-projectfiles'
+[[plugins]]
+repo = 'mattn/unite-source-simplenote'
+[[plugins]]
+repo = 'mattn/unite-vim_advent-calendar'
+[[plugins]]
+repo = 'mattn/vdbi-vim'
+[[plugins]]
+repo = 'mattn/vim-airline-hahhah'
+[[plugins]]
+repo = 'mattn/vim-airline-weather'
+[[plugins]]
+repo = 'mattn/vim-ale-icons'
+[[plugins]]
+repo = 'mattn/vim-asyncgrep'
+[[plugins]]
+repo = 'mattn/vim-brain'
+[[plugins]]
+repo = 'mattn/vim-cheat'
+[[plugins]]
+repo = 'mattn/vim-clipboardwatcher'
+[[plugins]]
+repo = 'mattn/vim-colorss'
+[[plugins]]
+repo = 'mattn/vim-complete-gh-issues'
+[[plugins]]
+repo = 'mattn/vim-completer'
+[[plugins]]
+repo = 'mattn/vim-corona-stats'
+[[plugins]]
+repo = 'mattn/vim-ctrlp-chemrtron'
+[[plugins]]
+repo = 'mattn/vim-filewatcher'
+[[plugins]]
+repo = 'mattn/vim-findroot'
+[[plugins]]
+repo = 'mattn/vim-fixedsearch'
+[[plugins]]
+repo = 'mattn/vim-fz'
+[[plugins]]
+repo = 'mattn/vim-fz-launcher'
+[[plugins]]
+repo = 'mattn/vim-gist'
+[[plugins]]
+repo = 'mattn/vim-git-appraise'
+[[plugins]]
+repo = 'mattn/vim-godoc'
+[[plugins]]
+repo = 'mattn/vim-go-fizzbuzz'
+[[plugins]]
+repo = 'mattn/vim-goimports'
+[[plugins]]
+repo = 'mattn/vimgolfer-vim'
+[[plugins]]
+repo = 'mattn/vimgon-quest-menu'
+[[plugins]]
+repo = 'mattn/vim-iobuf'
+[[plugins]]
+repo = 'mattn/vim-kaikyaku-buster'
+[[plugins]]
+repo = 'mattn/vim-left-pad'
+[[plugins]]
+repo = 'mattn/vim-lexiv'
+[[plugins]]
+repo = 'mattn/vim-lsp'
+[[plugins]]
+repo = 'mattn/vim-lsp1'
+[[plugins]]
+repo = 'mattn/vim-lsp-icons'
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+[[plugins]]
+repo = 'mattn/vim-maketable'
+[[plugins]]
+repo = 'mattn/vim-mastodon'
+[[plugins]]
+repo = 'mattn/vim-metarw-etcd'
+[[plugins]]
+repo = 'mattn/vim-metarw-gdrive'
+[[plugins]]
+repo = 'mattn/vim-metarw-redmine'
+[[plugins]]
+repo = 'mattn/vim-metarw-simplenote'
+[[plugins]]
+repo = 'mattn/vim-metarw-webdav'
+[[plugins]]
+repo = 'mattn/vim-mynumber'
+[[plugins]]
+repo = 'mattn/vim-nekokak'
+[[plugins]]
+repo = 'mattn/vim-nyancat'
+[[plugins]]
+repo = 'mattn/vim-open-atom'
+[[plugins]]
+repo = 'mattn/vim-p6doc'
+[[plugins]]
+repo = 'mattn/vim-particle'
+[[plugins]]
+repo = 'mattn/vim-pixela'
+[[plugins]]
+repo = 'mattn/vimplenote-vim'
+[[plugins]]
+repo = 'mattn/vim-prompter'
+[[plugins]]
+repo = 'mattn/vim-quickrunex'
+[[plugins]]
+repo = 'mattn/vim-quickrun-mingw_python_sucks'
+[[plugins]]
+repo = 'mattn/vim-quickrun-switcher'
+[[plugins]]
+repo = 'mattn/vim-reading-vimrc'
+[[plugins]]
+repo = 'mattn/vim-rtags'
+[[plugins]]
+repo = 'mattn/vim-rubyfmt'
+[[plugins]]
+repo = 'mattn/vim-say-mode'
+[[plugins]]
+repo = 'mattn/vim-sl'
+[[plugins]]
+repo = 'mattn/vim-sonictemplate'
+[[plugins]]
+repo = 'mattn/vim-sonots'
+[[plugins]]
+repo = 'mattn/vim-soundcloud'
+[[plugins]]
+repo = 'mattn/vimspeak-vim'
+[[plugins]]
+repo = 'mattn/vim-starwars'
+[[plugins]]
+repo = 'mattn/vim-switch-esc-capslock'
+[[plugins]]
+repo = 'mattn/vim-tanakh'
+[[plugins]]
+repo = 'mattn/vim-terminal'
+[[plugins]]
+repo = 'mattn/vim-textobj-cell'
+[[plugins]]
+repo = 'mattn/vim-textobj-url'
+[[plugins]]
+repo = 'mattn/vim-trex'
+[[plugins]]
+repo = 'mattn/vim-trump'
+[[plugins]]
+repo = 'mattn/vimtweak'
+[[plugins]]
+repo = 'mattn/vim-usa_president_2016'
+[[plugins]]
+repo = 'mattn/vim-vimstreamer'
+[[plugins]]
+repo = 'mattn/vim-vsopen'
+[[plugins]]
+repo = 'mattn/vim-webapp'
+[[plugins]]
+repo = 'mattn/vim-yomikata'
+[[plugins]]
+repo = 'mattn/vital-complete'
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'mattn/webapp-foo-vim'
+[[plugins]]
+repo = 'mattn/webapp-sinatra-vim'
+[[plugins]]
+repo = 'mattn/webapp-vim'
+[[plugins]]
+repo = 'mattn/winmove.vim'
+[[plugins]]
+repo = 'mattn/wiseman-f-vim'
+[[plugins]]
+repo = 'mattn/wwwrenderer-vim'
+[[plugins]]
+repo = 'mattn/xpmenu-vim'
+[[plugins]]
+repo = 'mattn/yamada2-vim'
+[[plugins]]
+repo = 'mattn/yamada-vim'
+[[plugins]]
+repo = 'mattn/yapc-asia-timetable-viewer-vim'
+[[plugins]]
+repo = 'mattn/zencoding-vim'
+[[plugins]]
+repo = 'natebosch/vim-lsc'
+[[plugins]]
+repo = 'natebosch/vim-lsc-dart'
+[[plugins]]
+repo = 'ncm2/float-preview.nvim'
+[[plugins]]
+repo = 'ncm2/ncm2'
+[[plugins]]
+repo = 'ncm2/ncm2-bufword'
+[[plugins]]
+repo = 'ncm2/ncm2-clang'
+[[plugins]]
+repo = 'ncm2/ncm2-d'
+[[plugins]]
+repo = 'ncm2/ncm2-github'
+[[plugins]]
+repo = 'ncm2/ncm2-go'
+[[plugins]]
+repo = 'ncm2/ncm2-gtags'
+[[plugins]]
+repo = 'ncm2/ncm2-jedi'
+[[plugins]]
+repo = 'ncm2/ncm2-libclang'
+[[plugins]]
+repo = 'ncm2/ncm2-neoinclude'
+[[plugins]]
+repo = 'ncm2/ncm2-neosnippet'
+[[plugins]]
+repo = 'ncm2/ncm2-path'
+[[plugins]]
+repo = 'ncm2/ncm2-pyclang'
+[[plugins]]
+repo = 'ncm2/ncm2-racer'
+[[plugins]]
+repo = 'ncm2/ncm2-snipmate'
+[[plugins]]
+repo = 'ncm2/ncm2-syntax'
+[[plugins]]
+repo = 'ncm2/ncm2-tagprefix'
+[[plugins]]
+repo = 'ncm2/ncm2-tern'
+[[plugins]]
+repo = 'ncm2/ncm2-tmux'
+[[plugins]]
+repo = 'ncm2/ncm2-ultisnips'
+[[plugins]]
+repo = 'ncm2/ncm2-vim'
+[[plugins]]
+repo = 'ncm2/ncm2-vim-lsp'
+[[plugins]]
+repo = 'ncm2/nvim-typescript'
+[[plugins]]
+repo = 'neoclide/coc-jedi'
+[[plugins]]
+repo = 'neoclide/coc-neco'
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+[[plugins]]
+repo = 'neoclide/denite-extra'
+[[plugins]]
+repo = 'neoclide/denite-git'
+[[plugins]]
+repo = 'neoclide/macdown.vim'
+[[plugins]]
+repo = 'neoclide/macnote.vim'
+[[plugins]]
+repo = 'neoclide/mycomment.vim'
+[[plugins]]
+repo = 'neoclide/neovim'
+[[plugins]]
+repo = 'neoclide/npm.nvim'
+[[plugins]]
+repo = 'neoclide/plug.nvim'
+[[plugins]]
+repo = 'neoclide/redismru.vim'
+[[plugins]]
+repo = 'neoclide/rename.nvim'
+[[plugins]]
+repo = 'neoclide/SpaceVim'
+[[plugins]]
+repo = 'neoclide/tern'
+[[plugins]]
+repo = 'neoclide/tern-neovim'
+[[plugins]]
+repo = 'neoclide/todoapp.vim'
+[[plugins]]
+repo = 'neoclide/ultisnips'
+[[plugins]]
+repo = 'neoclide/vim-easygit'
+[[plugins]]
+repo = 'neoclide/vim-hug-neovim-rpc'
+[[plugins]]
+repo = 'neoclide/vim-node-rpc'
+[[plugins]]
+repo = 'neoclide/vim-prettier'
+[[plugins]]
+repo = 'pangloss/vim-erlang'
+[[plugins]]
+repo = 'pangloss/vim-simplefold'
+[[plugins]]
+repo = 'patstockwell/vim-monokai-tasty'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-buffer.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-emmet.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-emoji.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-file.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-flow.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-gocode.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-necosyntax.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-necovim.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-tags.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-tscompletejob.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-ultisnips.vim'
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+[[plugins]]
+repo = 'prabirshrestha/callbag.vim'
+[[plugins]]
+repo = 'prabirshrestha/ctrlp-env'
+[[plugins]]
+repo = 'prabirshrestha/monthcomplete.vim'
+[[plugins]]
+repo = 'prabirshrestha/quickpick-colorschemes.vim'
+[[plugins]]
+repo = 'prabirshrestha/quickpick-filetypes.vim'
+[[plugins]]
+repo = 'prabirshrestha/quickpick-lsp.vim'
+[[plugins]]
+repo = 'prabirshrestha/quickpick-npm.vim'
+[[plugins]]
+repo = 'prabirshrestha/quickpick.vim'
+[[plugins]]
+repo = 'prabirshrestha/unite-hackernews'
+[[plugins]]
+repo = 'prabirshrestha/unite-nuget'
+[[plugins]]
+repo = 'prabirshrestha/vim-fz-extras'
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+[[plugins]]
+repo = 'prabirshrestha/vim-ts'
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+[[plugins]]
+repo = 'roxma/ncm2'
+[[plugins]]
+repo = 'roxma/ncm2-phpactor'
+[[plugins]]
+repo = 'roxma/ncm2-racer'
+[[plugins]]
+repo = 'roxma/ncm2-snipmate'
+[[plugins]]
+repo = 'roxma/ncm2-tagprefix'
+[[plugins]]
+repo = 'roxma/ncm2-tmux'
+[[plugins]]
+repo = 'roxma/ncm2-ultisnips'
+[[plugins]]
+repo = 'roxma/ncm2-vim-lsp'
+[[plugins]]
+repo = 'roxma/ncm-clang'
+[[plugins]]
+repo = 'roxma/ncm-ruby'
+[[plugins]]
+repo = 'roxma/nvim-ascript'
+[[plugins]]
+repo = 'roxma/nvim-completion-manager'
+[[plugins]]
+repo = 'roxma/nvim-pyplugin'
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+[[plugins]]
+repo = 'roxma/python-support.nvim'
+[[plugins]]
+repo = 'roxma/SimpleAutoComplPop'
+[[plugins]]
+repo = 'roxma/vim-encode'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+[[plugins]]
+repo = 'roxma/vim-paste-easy'
+[[plugins]]
+repo = 'roxma/vim-syntax-compl-pop'
+[[plugins]]
+repo = 'roxma/vim-tmux-clipboard'
+[[plugins]]
+repo = 'roxma/vim-window-resize-easy'
+[[plugins]]
+repo = 'sainnhe/archived-colors'
+[[plugins]]
+repo = 'sainnhe/artify.vim'
+[[plugins]]
+repo = 'sainnhe/edge'
+[[plugins]]
+repo = 'sainnhe/forest-night'
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'
+[[plugins]]
+repo = 'sainnhe/lightline_foobar.vim'
+[[plugins]]
+repo = 'sainnhe/sonokai'
+[[plugins]]
+repo = 'scrooloose/code_complete'
+[[plugins]]
+repo = 'scrooloose/nerdcommenter'
+[[plugins]]
+repo = 'scrooloose/nerdsnippets'
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+[[plugins]]
+repo = 'scrooloose/syntastic'
+[[plugins]]
+repo = 'scrooloose/vim-colon-therapy'
+[[plugins]]
+repo = 'scrooloose/vimfiles'
+[[plugins]]
+repo = 'scrooloose/vim-orgymode'
+[[plugins]]
+repo = 'scrooloose/vim-slumlord'
+[[plugins]]
+repo = 'scrooloose/whitespace2.0.vim'
+[[plugins]]
+repo = 'sheerun/vim-inspect'
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+[[plugins]]
+repo = 'sheerun/vimrc'
+[[plugins]]
+repo = 'sheerun/vim-wombat-scheme'
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+[[plugins]]
+repo = 'Shougo/dein.vim'
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+[[plugins]]
+repo = 'Shougo/deoplete-lsp'
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+[[plugins]]
+repo = 'Shougo/deoppet.nvim'
+[[plugins]]
+repo = 'Shougo/deorise.nvim'
+[[plugins]]
+repo = 'Shougo/echodoc.vim'
+[[plugins]]
+repo = 'Shougo/eev.vim'
+[[plugins]]
+repo = 'Shougo/junkfile.vim'
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+[[plugins]]
+repo = 'Shougo/neco-vim'
+[[plugins]]
+repo = 'Shougo/neobundle.vim'
+[[plugins]]
+repo = 'Shougo/neocomplcache-clang'
+[[plugins]]
+repo = 'Shougo/neocomplcache-rsense.vim'
+[[plugins]]
+repo = 'Shougo/neocomplcache-snippets-complete'
+[[plugins]]
+repo = 'Shougo/neocomplcache.vim'
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+[[plugins]]
+repo = 'Shougo/neopairs.vim'
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+[[plugins]]
+repo = 'Shougo/neossh.vim'
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+[[plugins]]
+repo = 'Shougo/tabpagebuffer.vim'
+[[plugins]]
+repo = 'Shougo/unite-build'
+[[plugins]]
+repo = 'Shougo/unite-help'
+[[plugins]]
+repo = 'Shougo/unite-session'
+[[plugins]]
+repo = 'Shougo/unite-sudo'
+[[plugins]]
+repo = 'Shougo/unite.vim'
+[[plugins]]
+repo = 'Shougo/vesting'
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+[[plugins]]
+repo = 'Shougo/vim-hug-neovim-rpc'
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
+[[plugins]]
+repo = 'SirVer/ultisnips'
+[[plugins]]
+repo = 'skanehira/badapple.vim'
+[[plugins]]
+repo = 'skanehira/code2img.vim'
+[[plugins]]
+repo = 'skanehira/docker-compose.vim'
+[[plugins]]
+repo = 'skanehira/docker.vim'
+[[plugins]]
+repo = 'skanehira/generatedir.vim'
+[[plugins]]
+repo = 'skanehira/google-map.vim'
+[[plugins]]
+repo = 'skanehira/gql.vim'
+[[plugins]]
+repo = 'skanehira/jo.vim'
+[[plugins]]
+repo = 'skanehira/popupfiles.vim'
+[[plugins]]
+repo = 'skanehira/popuphelp.vim'
+[[plugins]]
+repo = 'skanehira/preview-markdown.vim'
+[[plugins]]
+repo = 'skanehira/regpop.vim'
+[[plugins]]
+repo = 'skanehira/say.vim'
+[[plugins]]
+repo = 'skanehira/session.vim'
+[[plugins]]
+repo = 'skanehira/sql-client.vim'
+[[plugins]]
+repo = 'skanehira/tapioca.vim'
+[[plugins]]
+repo = 'skanehira/translate.vim'
+[[plugins]]
+repo = 'skanehira/vsession'
+[[plugins]]
+repo = 'skywind3000/asyncrun.vim'
+[[plugins]]
+repo = 'skywind3000/asynctasks.vim'
+[[plugins]]
+repo = 'skywind3000/gutentags_plus'
+[[plugins]]
+repo = 'skywind3000/quickmenu.vim'
+[[plugins]]
+repo = 'skywind3000/vim-auto-popmenu'
+[[plugins]]
+repo = 'skywind3000/vim-cppman'
+[[plugins]]
+repo = 'skywind3000/vim-dict'
+[[plugins]]
+repo = 'skywind3000/vim-keysound'
+[[plugins]]
+repo = 'skywind3000/vim-preview'
+[[plugins]]
+repo = 'skywind3000/vim-quickui'
+[[plugins]]
+repo = 'skywind3000/vim-terminal-help'
+[[plugins]]
+repo = 'skywind3000/yamlvim'
+[[plugins]]
+repo = 'thinca/vim-ambicmd'
+[[plugins]]
+repo = 'thinca/vim-auto_source'
+[[plugins]]
+repo = 'thinca/vim-befunge'
+[[plugins]]
+repo = 'thinca/vim-blink1'
+[[plugins]]
+repo = 'thinca/vim-editvar'
+[[plugins]]
+repo = 'thinca/vim-fontzoom'
+[[plugins]]
+repo = 'thinca/vim-ft-clojure'
+[[plugins]]
+repo = 'thinca/vim-ft-markdown_fold'
+[[plugins]]
+repo = 'thinca/vim-github'
+[[plugins]]
+repo = 'thinca/vim-guicolorscheme'
+[[plugins]]
+repo = 'thinca/vim-ikaring'
+[[plugins]]
+repo = 'thinca/vim-jautil'
+[[plugins]]
+repo = 'thinca/vim-ku_source'
+[[plugins]]
+repo = 'thinca/vim-localrc'
+[[plugins]]
+repo = 'thinca/vim-logcat'
+[[plugins]]
+repo = 'thinca/vim-openbuf'
+[[plugins]]
+repo = 'thinca/vim-operator-sequence'
+[[plugins]]
+repo = 'thinca/vim-painter'
+[[plugins]]
+repo = 'thinca/vim-partedit'
+[[plugins]]
+repo = 'thinca/vim-plz_donate'
+[[plugins]]
+repo = 'thinca/vim-portal'
+[[plugins]]
+repo = 'thinca/vim-poslist'
+[[plugins]]
+repo = 'thinca/vim-prettyprint'
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
+[[plugins]]
+repo = 'thinca/vim-quickmemo'
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+[[plugins]]
+repo = 'thinca/vim-ref'
+[[plugins]]
+repo = 'thinca/vim-rtputil'
+[[plugins]]
+repo = 'thinca/vim-scall'
+[[plugins]]
+repo = 'thinca/vim-scouter'
+[[plugins]]
+repo = 'thinca/vim-showtime'
+[[plugins]]
+repo = 'thinca/vim-singleton'
+[[plugins]]
+repo = 'thinca/vim-splash'
+[[plugins]]
+repo = 'thinca/vim-tabrecent'
+[[plugins]]
+repo = 'thinca/vim-template'
+[[plugins]]
+repo = 'thinca/vim-textobj-between'
+[[plugins]]
+repo = 'thinca/vim-textobj-comment'
+[[plugins]]
+repo = 'thinca/vim-textobj-function-javascript'
+[[plugins]]
+repo = 'thinca/vim-textobj-function-perl'
+[[plugins]]
+repo = 'thinca/vim-textobj-plugins'
+[[plugins]]
+repo = 'thinca/vim-themis'
+[[plugins]]
+repo = 'thinca/vim-threes'
+[[plugins]]
+repo = 'thinca/vim-unite-chef'
+[[plugins]]
+repo = 'thinca/vim-unite-history'
+[[plugins]]
+repo = 'thinca/vim-vcs'
+[[plugins]]
+repo = 'thinca/vim-vimconf_timer'
+[[plugins]]
+repo = 'thinca/vim-visualstar'
+[[plugins]]
+repo = 'thinca/vim-vparsec'
+[[plugins]]
+repo = 'thinca/vim-winenv'
+[[plugins]]
+repo = 'thinca/vim-wtrans'
+[[plugins]]
+repo = 'thinca/vim-zenspace'
+[[plugins]]
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'tomtom/autolinker_vim'
+[[plugins]]
+repo = 'tomtom/autopack_vim'
+[[plugins]]
+repo = 'tomtom/autoproject_vim'
+[[plugins]]
+repo = 'tomtom/brep_vim'
+[[plugins]]
+repo = 'tomtom/cfilehandler_vim'
+[[plugins]]
+repo = 'tomtom/checksyntax_vim'
+[[plugins]]
+repo = 'tomtom/cmdlinehelp_vim'
+[[plugins]]
+repo = 'tomtom/enabler_vim'
+[[plugins]]
+repo = 'tomtom/foldtext_vim'
+[[plugins]]
+repo = 'tomtom/gdocs_vim'
+[[plugins]]
+repo = 'tomtom/hookcursormoved_vim'
+[[plugins]]
+repo = 'tomtom/indentfolds_vim'
+[[plugins]]
+repo = 'tomtom/likelycomplete_vim'
+[[plugins]]
+repo = 'tomtom/linglang_vim'
+[[plugins]]
+repo = 'tomtom/listitem_vim'
+[[plugins]]
+repo = 'tomtom/pluginstats_vim'
+[[plugins]]
+repo = 'tomtom/presets_vim'
+[[plugins]]
+repo = 'tomtom/prototype_vim'
+[[plugins]]
+repo = 'tomtom/quickfixsigns_vim'
+[[plugins]]
+repo = 'tomtom/rcom_vim'
+[[plugins]]
+repo = 'tomtom/reclojure_vim'
+[[plugins]]
+repo = 'tomtom/rer_vim'
+[[plugins]]
+repo = 'tomtom/rescreen_vim'
+[[plugins]]
+repo = 'tomtom/scalefont_vim'
+[[plugins]]
+repo = 'tomtom/setsyntax_vim'
+[[plugins]]
+repo = 'tomtom/shymenu_vim'
+[[plugins]]
+repo = 'tomtom/simpletest_vim'
+[[plugins]]
+repo = 'tomtom/spec_vim'
+[[plugins]]
+repo = 'tomtom/stakeholders_vim'
+[[plugins]]
+repo = 'tomtom/tassert_vim'
+[[plugins]]
+repo = 'tomtom/tbibtools_vim'
+[[plugins]]
+repo = 'tomtom/tcalc_vim'
+[[plugins]]
+repo = 'tomtom/tcommand_vim'
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+[[plugins]]
+repo = 'tomtom/templator_vim'
+[[plugins]]
+repo = 'tomtom/tfiles_vim'
+[[plugins]]
+repo = 'tomtom/tgpg_vim'
+[[plugins]]
+repo = 'tomtom/tinykeymap_vim'
+[[plugins]]
+repo = 'tomtom/tjumps_vim'
+[[plugins]]
+repo = 'tomtom/tlib_vim'
+[[plugins]]
+repo = 'tomtom/tmarks_vim'
+[[plugins]]
+repo = 'tomtom/tmru_vim'
+[[plugins]]
+repo = 'tomtom/TortoiseSVN_vim'
+[[plugins]]
+repo = 'tomtom/tplugin_vim'
+[[plugins]]
+repo = 'tomtom/trag_vim'
+[[plugins]]
+repo = 'tomtom/tregisters_vim'
+[[plugins]]
+repo = 'tomtom/tselectbuffer_vim'
+[[plugins]]
+repo = 'tomtom/tselectfiles_vim'
+[[plugins]]
+repo = 'tomtom/tskeleton_vim'
+[[plugins]]
+repo = 'tomtom/tstatus_vim'
+[[plugins]]
+repo = 'tomtom/ttagecho_vim'
+[[plugins]]
+repo = 'tomtom/ttags_vim'
+[[plugins]]
+repo = 'tomtom/tterminal_vim'
+[[plugins]]
+repo = 'tomtom/ttext_vim'
+[[plugins]]
+repo = 'tomtom/ttoc_vim'
+[[plugins]]
+repo = 'tomtom/ttodo_vim'
+[[plugins]]
+repo = 'tomtom/tversions_vim'
+[[plugins]]
+repo = 'tomtom/vikibase_vim'
+[[plugins]]
+repo = 'tomtom/vikitasks_vim'
+[[plugins]]
+repo = 'tomtom/viki_vim'
+[[plugins]]
+repo = 'tomtom/vimform_vim'
+[[plugins]]
+repo = 'tomtom/vimtags_vim'
+[[plugins]]
+repo = 'tomtom/workbook_vim'
+[[plugins]]
+repo = 'tomtom/worksheet_vim'
+[[plugins]]
+repo = 'tomtom/zeal_vim'
+[[plugins]]
+repo = 'tpope/pickler'
+[[plugins]]
+repo = 'tpope/timl'
+[[plugins]]
+repo = 'tpope/vim-abolish'
+[[plugins]]
+repo = 'tpope/vim-afterimage'
+[[plugins]]
+repo = 'tpope/vim-apathy'
+[[plugins]]
+repo = 'tpope/vim-bundler'
+[[plugins]]
+repo = 'tpope/vim-capslock'
+[[plugins]]
+repo = 'tpope/vim-characterize'
+[[plugins]]
+repo = 'tpope/vim-classpath'
+[[plugins]]
+repo = 'tpope/vim-commentary'
+[[plugins]]
+repo = 'tpope/vim-dadbod'
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+[[plugins]]
+repo = 'tpope/vim-dotenv'
+[[plugins]]
+repo = 'tpope/vim-endwise'
+[[plugins]]
+repo = 'tpope/vim-eunuch'
+[[plugins]]
+repo = 'tpope/vim-fireplace'
+[[plugins]]
+repo = 'tpope/vim-flagship'
+[[plugins]]
+repo = 'tpope/vim-flatfoot'
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+[[plugins]]
+repo = 'tpope/vim-haystack'
+[[plugins]]
+repo = 'tpope/vim-heroku'
+[[plugins]]
+repo = 'tpope/vim-jdaddy'
+[[plugins]]
+repo = 'tpope/vim-obsession'
+[[plugins]]
+repo = 'tpope/vim-pastie'
+[[plugins]]
+repo = 'tpope/vim-pathogen'
+[[plugins]]
+repo = 'tpope/vim-projectionist'
+[[plugins]]
+repo = 'tpope/vim-ragtag'
+[[plugins]]
+repo = 'tpope/vim-rails'
+[[plugins]]
+repo = 'tpope/vim-rake'
+[[plugins]]
+repo = 'tpope/vim-rbenv'
+[[plugins]]
+repo = 'tpope/vim-repeat'
+[[plugins]]
+repo = 'tpope/vim-rhubarb'
+[[plugins]]
+repo = 'tpope/vim-rsi'
+[[plugins]]
+repo = 'tpope/vim-rvm'
+[[plugins]]
+repo = 'tpope/vim-salve'
+[[plugins]]
+repo = 'tpope/vim-scriptease'
+[[plugins]]
+repo = 'tpope/vim-sensible'
+[[plugins]]
+repo = 'tpope/vim-sexp-mappings-for-regular-people'
+[[plugins]]
+repo = 'tpope/vim-sleuth'
+[[plugins]]
+repo = 'tpope/vim-speeddating'
+[[plugins]]
+repo = 'tpope/vim-surround'
+[[plugins]]
+repo = 'tpope/vim-tbone'
+[[plugins]]
+repo = 'tpope/vim-unimpaired'
+[[plugins]]
+repo = 'tpope/vim-vinegar'
+[[plugins]]
+repo = 'tyru/autochmodx.vim'
+[[plugins]]
+repo = 'tyru/autocmd-tabclose.vim'
+[[plugins]]
+repo = 'tyru/banban.vim'
+[[plugins]]
+repo = 'tyru/bevaldemo.vim'
+[[plugins]]
+repo = 'tyru/capture.vim'
+[[plugins]]
+repo = 'tyru/caw.vim'
+[[plugins]]
+repo = 'tyru/chdir-proj-root.vim'
+[[plugins]]
+repo = 'tyru/closesubwin.vim'
+[[plugins]]
+repo = 'tyru/cmdwincomplete.vim'
+[[plugins]]
+repo = 'tyru/codingstyle.vim'
+[[plugins]]
+repo = 'tyru/columnskip.vim'
+[[plugins]]
+repo = 'tyru/command-buffer.vim'
+[[plugins]]
+repo = 'tyru/coolgrep.vim'
+[[plugins]]
+repo = 'tyru/current-func-info.vim'
+[[plugins]]
+repo = 'tyru/detect-coding-style.vim'
+[[plugins]]
+repo = 'tyru/DumbBuf.vim'
+[[plugins]]
+repo = 'tyru/dutil.vim'
+[[plugins]]
+repo = 'tyru/emap.vim'
+[[plugins]]
+repo = 'tyru/empty-prompt.vim'
+[[plugins]]
+repo = 'tyru/eskk.vim'
+[[plugins]]
+repo = 'tyru/excel.vim'
+[[plugins]]
+repo = 'tyru/fencview.vim'
+[[plugins]]
+repo = 'tyru/fileutils.vim'
+[[plugins]]
+repo = 'tyru/foldballoon.vim'
+[[plugins]]
+repo = 'tyru/forget-me-not.vim'
+[[plugins]]
+repo = 'tyru/gravit.vim'
+[[plugins]]
+repo = 'tyru/init-loader.vim'
+[[plugins]]
+repo = 'tyru/jobby.vim'
+[[plugins]]
+repo = 'tyru/karakuri.vim'
+[[plugins]]
+repo = 'tyru/make-cmdline-compl.vim'
+[[plugins]]
+repo = 'tyru/markdown-codehl-onthefly.vim'
+[[plugins]]
+repo = 'tyru/merryxmas.vim'
+[[plugins]]
+repo = 'tyru/minimap.vim'
+[[plugins]]
+repo = 'tyru/movabletype-fold.vim'
+[[plugins]]
+repo = 'tyru/multiprocessing.vim'
+[[plugins]]
+repo = 'tyru/nesk.vim'
+[[plugins]]
+repo = 'tyru/nextfile.vim'
+[[plugins]]
+repo = 'tyru/notify-changed.vim'
+[[plugins]]
+repo = 'tyru/ohmygrep.vim'
+[[plugins]]
+repo = 'tyru/open-browser-github.vim'
+[[plugins]]
+repo = 'tyru/open-browser-unicode.vim'
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+[[plugins]]
+repo = 'tyru/operator-camelize.vim'
+[[plugins]]
+repo = 'tyru/operator-html-escape.vim'
+[[plugins]]
+repo = 'tyru/operator-reverse.vim'
+[[plugins]]
+repo = 'tyru/operator-star.vim'
+[[plugins]]
+repo = 'tyru/pacman.vim'
+[[plugins]]
+repo = 'tyru/parse_args.vim'
+[[plugins]]
+repo = 'tyru/pay-for-uganda.vim'
+[[plugins]]
+repo = 'tyru/project-guide.vim'
+[[plugins]]
+repo = 'tyru/prompt.vim'
+[[plugins]]
+repo = 'tyru/pummode.vim'
+[[plugins]]
+repo = 'tyru/qfhist.vim'
+[[plugins]]
+repo = 'tyru/qfpopup.vim'
+[[plugins]]
+repo = 'tyru/quickey.vim'
+[[plugins]]
+repo = 'tyru/regbuf.vim'
+[[plugins]]
+repo = 'tyru/restart.vim'
+[[plugins]]
+repo = 'tyru/savemap.vim'
+[[plugins]]
+repo = 'tyru/scratch-saver.vim'
+[[plugins]]
+repo = 'tyru/searchcountbuf.vim'
+[[plugins]]
+repo = 'tyru/share-cmdline-history.vim'
+[[plugins]]
+repo = 'tyru/sign-diff.vim'
+[[plugins]]
+repo = 'tyru/simpletap.vim'
+[[plugins]]
+repo = 'tyru/skk.vim'
+[[plugins]]
+repo = 'tyru/splitmove.vim'
+[[plugins]]
+repo = 'tyru/starter.vim'
+[[plugins]]
+repo = 'tyru/stickykey.vim'
+[[plugins]]
+repo = 'tyru/stoptypofile.vim'
+[[plugins]]
+repo = 'tyru/sync-term-cwd.vim'
+[[plugins]]
+repo = 'tyru/syslib.vim'
+[[plugins]]
+repo = 'tyru/tabsidebar-boost.vim'
+[[plugins]]
+repo = 'tyru/tapi-reg.vim'
+[[plugins]]
+repo = 'tyru/transbuffer.vim'
+[[plugins]]
+repo = 'tyru/undoclosewin.vim'
+[[plugins]]
+repo = 'tyru/unite-screen.sh'
+[[plugins]]
+repo = 'tyru/unretab.vim'
+[[plugins]]
+repo = 'tyru/urilib.vim'
+[[plugins]]
+repo = 'tyru/vertR.vim'
+[[plugins]]
+repo = 'tyru/vice.vim'
+[[plugins]]
+repo = 'tyru/vimtemplate.vim'
+[[plugins]]
+repo = 'tyru/vim-uglifier.vim'
+[[plugins]]
+repo = 'tyru/vim-volt'
+[[plugins]]
+repo = 'tyru/visualctrlg.vim'
+[[plugins]]
+repo = 'tyru/vital-sunaba'
+[[plugins]]
+repo = 'tyru/vivo.vim'
+[[plugins]]
+repo = 'tyru/wim'
+[[plugins]]
+repo = 'tyru/winmove.vim'
+[[plugins]]
+repo = 'tyru/ws.vim'
+[[plugins]]
+repo = 'unblevable/quick-scope'
+[[plugins]]
+repo = 'Valloric/ListToggle'
+[[plugins]]
+repo = 'Valloric/MatchTagAlways'
+[[plugins]]
+repo = 'Valloric/vim-operator-highlight'
+[[plugins]]
+repo = 'Valloric/vim-valloric-colorscheme'
+[[plugins]]
+repo = 'Valloric/YouCompleteMe'
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+[[plugins]]
+repo = 'vim-jp/autofmt'
+[[plugins]]
+repo = 'vim-jp/vim-go-extra'
+[[plugins]]
+repo = 'vim-jp/vim-sweep_trail'
+[[plugins]]
+repo = 'vim-jp/vim-vimlparser'
+[[plugins]]
+repo = 'vim-jp/vital-complete'
+[[plugins]]
+repo = 'vim-jp/vital.vim'
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+[[plugins]]
+repo = 'w0rp/jasmine-test-runner'
+[[plugins]]
+repo = 'w0rp/python_tools'
+[[plugins]]
+repo = 'w0rp/vim'
+[[plugins]]
+repo = 'w0rp/vim-speech'
+[[plugins]]
+repo = 'Yggdroot/hiPairs'
+[[plugins]]
+repo = 'Yggdroot/LeaderF'
+[[plugins]]
+repo = 'Yggdroot/LeaderF-changes'
+[[plugins]]
+repo = 'Yggdroot/LeaderF-marks'
+[[plugins]]
+repo = 'Yggdroot/twoline'
+[[plugins]]
+repo = 'Yggdroot/vim-mark'
+[[plugins]]
+repo = 'Yggdroot/vim-plug'
