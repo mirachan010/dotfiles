@@ -7,6 +7,6 @@
     Instead0f = https://github.com/
     Instead0f = git@github.com
 [core]
-	editor = nvim -c \"set fenc=utf-8\"
+	editor = vim -c \"set fenc=utf-8\"
 [ghq]
 	root = /home/mira/git
