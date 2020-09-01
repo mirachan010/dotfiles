@@ -207,6 +207,7 @@ marged=0
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+depends = 'fzf'
 
 [[plugins]]
 repo = 'iamcco/markdown-preview.nvim'

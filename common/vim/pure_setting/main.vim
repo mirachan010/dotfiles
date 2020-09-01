@@ -5,7 +5,7 @@ if has("win32")
   let g:python3_host_prog = 'C:\Python38\python.exe'
   set fileencoding=cp932
   set fileencodings=cp932,sjis,utf-8
-  let s:undo_path = expand('C:\Users\mira\.cache\vim\undo')
+  let s:undo_path = expand('~\.cache\vim\undo')
   "Windows限定のプラグイン設定
   let g:deoplete#sources#clang#clang_header = 'C:\Program Files\LLVM\lib\clang\9.0.0\include'
   let g:deoplete#sources#clang#clang_header = 'C:\Program Files\LLVM\lib\clang\'

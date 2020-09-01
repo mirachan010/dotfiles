@@ -1,26 +1,26 @@
 "プラグインのインストール
+"プラグインの保存場所の設定
+"nvim ( win unix )の組み合わせでのそれぞれの設定
 if has('nvim')
   if has("win32")
     let s:dein_dir = expand('~\AppData\Local\nvim\dein\')
-    let g:rc_dir    = expand('~\dotfiles\common\vim\')
   elseif has("unix")
     let s:dein_dir = expand('~/.cache/nvim/dein/')
-    let g:rc_dir    = expand('~/dotfiles/common/vim/')
   endif
 elseif !has('nvim')
   if has("win32")
     let s:dein_dir = expand('~\.cache\vim\dein\')
-    let g:rc_dir    = expand('~\dotfiles\common\vim\')
   elseif has("unix")
     let s:dein_dir = expand('~/.cache/vim/dein/')
-    let g:rc_dir    = expand('~/dotfiles/common/vim/')
   endif
 endif
 
-" dein.vim 本体
+" dein.vimの保存場所、プラグインリストの場所を記載
 if has('win32')
+  let g:rc_dir    = expand('~\dotfiles\common\vim\')
   let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
 elseif has('unix')
+  let g:rc_dir    = expand('~/dotfiles/common/vim/')
   let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 endif
 " dein.vim がなければ github から落としてくる
