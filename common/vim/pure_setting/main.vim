@@ -14,6 +14,10 @@ elseif has("unix")
   let s:undo_path = expand('~/.cache/vim/undo')
   let g:python3_host_prog = '/root/.anyenv/envs/pyenv/shims/python3'
 endif
+if has('nvim')
+else
+  set cursorlineopt=number
+endif
 "Undo保存
 if has('persistent_undo')
   exe 'set undodir=' . s:undo_path
@@ -22,7 +26,6 @@ endif
 
 set number
 set cursorline
-set cursorlineopt=number
 
 if has("path_extra")
   set tags+=tags;
