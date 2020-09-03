@@ -32,6 +32,13 @@ hook_add = '''
     vmap tj <Plug>(VTranslate)
     vmap te <Plug>(VTranslateBang)
 '''
+[[plugins]]
+repo = 'skanehira/code2img.vim'
+if='''! has('nvim')'''
+hook_add = '''
+let g:code2img_theme = 'monokai'
+let g:code2img_line_number = 1
+'''
 # }}}
 
 
@@ -129,12 +136,6 @@ hook_add='''
     nnoremap <Leader><Leader> :<C-u>RefreshTwitter<CR>
 '''
 
-[[plugins]]
-repo = 'skanehira/code2img.vim'
-hook_add = '''
-let g:code2img_theme = 'monokai'
-let g:code2img_line_number = 1
-'''
 
 # Set looks{{{
 
