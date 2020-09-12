@@ -1,3 +1,4 @@
+scriptencoding=utf-8
 " Tab setting for file type
 set expandtab tabstop=4 shiftwidth=4
 augroup MyTabStop
