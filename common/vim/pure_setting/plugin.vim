@@ -40,7 +40,7 @@ if dein#load_state(s:dein_dir)
   let s:lazy_toml = g:rc_dir . '01dein.toml'
   " TOML を読み込み、キャッシュしておく
   if has("unix")
-    call dein#load_toml(s:toml1,      {'lazy': 1})
+    call dein#load_toml(s:toml1,      {'lazy': 0})
   endif
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
   call dein#load_toml(s:toml,      {'lazy': 0})
