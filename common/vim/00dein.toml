@@ -1,4 +1,6 @@
 [[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+[[plugins]]
 repo = 'Shougo/dein.vim'
 hook_add = '''
   let g:dein#install_github_api_token=$GITHUB_OAUTH_TOKEN
