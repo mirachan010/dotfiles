@@ -165,3 +165,6 @@ repo = 'sainnhe/gruvbox-material'
 repo='tomasr/molokai'
 #    }}}
 # }}}
+
+[[plugins]]
+repo='lambdalisue/seethrough.vim'
