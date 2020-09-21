@@ -1,3 +1,6 @@
+[[plguins]]
+repo='mirachan010/vim-denite-plugins'
+
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 [[plugins]]
