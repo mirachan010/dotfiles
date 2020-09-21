@@ -42,8 +42,8 @@ if dein#load_state(s:dein_dir)
   if has("unix")
     call dein#load_toml(s:toml1,      {'lazy': 1})
   endif
-  call dein#load_toml(s:lazy_toml, {'lazy': 1})
   call dein#load_toml(s:toml,      {'lazy': 0})
+  call dein#load_toml(s:lazy_toml, {'lazy': 1})
   " 設定終了
   call dein#end()
   call dein#save_state()
