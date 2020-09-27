@@ -156,6 +156,10 @@ repo = 'mirachan010/vim-denite-plugins'
 depentds = ['denite.nvim']
 on_source = ['denite.nvim']
 
+[[plugins]]
+repo = 'mirachan010/vim-pluginlist'
+depentds = ['denite.nvim']
+on_source = ['vim-denite-plugins']
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
