@@ -107,6 +107,7 @@ nnoremap <silent> [denite]me :<C-u>Denite memo memo:new -direction=topleft <CR>
 nnoremap <silent> [denite]ma :<C-u>Denite mark -direction=topleft <CR>
 nnoremap <silent> [denite]g :<C-u>Denite ghq -direction=topleft <CR>
 nnoremap <silent> [denite]h :<C-u>Denite help -direction=topleft <CR>
+nnoremap <silent> [denite]p :<C-u>Denite PluginsList -direction=topleft <CR>
 '''
 hook_source='''
 if (has('nvim'))
@@ -147,8 +148,14 @@ on_source = ['denite.nvim']
 
 [[plugins]]
 repo = 'delphinus/vim-denite-memo'
-if='''has('unix')'''
+if = '''has('unix')'''
 on_source = ['denite.nvim']
+
+[[plugins]]
+repo = 'mirachan010/vim-denite-plugins'
+depentds = ['denite.nvim']
+on_source = ['denite.nvim']
+
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
