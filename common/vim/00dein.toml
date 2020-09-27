@@ -1,5 +1,8 @@
-[[plguins]]
-repo='mirachan010/vim-denite-plugins'
+[[plugins]]
+repo = 'skanehira/gh.vim'
+hook_add = '''
+  let g:gh_token=$GITHUB_OAUTH_TOKEN
+'''
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
