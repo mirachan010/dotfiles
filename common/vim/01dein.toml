@@ -143,7 +143,7 @@ nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
 
 [[plugins]]
 repo = 'Jagua/vim-denite-ghq'
-depentds = ['denite.nvim']
+depends = ['denite.nvim']
 on_source = ['denite.nvim']
 
 [[plugins]]
@@ -153,12 +153,12 @@ on_source = ['denite.nvim']
 
 [[plugins]]
 repo = 'mirachan010/vim-denite-plugins'
-depentds = ['denite.nvim']
+depends = ['denite.nvim']
 on_source = ['denite.nvim']
 
 [[plugins]]
 repo = 'mirachan010/vim-pluginlist'
-depentds = ['denite.nvim']
+depends = ['denite.nvim']
 on_source = ['vim-denite-plugins']
 
 [[plugins]]
@@ -167,7 +167,7 @@ repo = 'Shougo/context_filetype.vim'
 [[plugins]]
 repo = 'lighttiger2505/deoplete-vim-lsp'
 if='''!has('nvim')'''
-depentds = ['deoplete.nvim']
+depends = ['deoplete.nvim']
 on_source = ['deoplete.nvim']
 
 [[plugins]]
