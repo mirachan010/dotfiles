@@ -15,7 +15,7 @@ eval "$(rbenv init -)"
 
 
 function powerline_precmd() {
-    PS1="$(~/.local/bin/powerline-shell --shell zsh $?)"
+    PS1="$(~/.anyenv/envs/pyenv/versions/3.8.2/bin/powerline-shell --shell zsh $?)"
 }
 
 function install_powerline_precmd() {
