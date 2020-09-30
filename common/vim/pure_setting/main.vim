@@ -3,7 +3,7 @@ scriptencoding=utf-8
 "WinとUbuntuの決定的に分かれるところ
 if has("win32")
   let g:python3_host_prog = 'C:\Python38\python.exe'
-  set fileencoding=cp932
+  " set fileencoding=cp932
   set fileencodings=cp932,sjis,utf-8
   let s:undo_path = expand('~\.cache\vim\undo')
   "Windows限定のプラグイン設定

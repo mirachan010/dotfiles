@@ -212,7 +212,7 @@ nnoremap [Lsp]s :<C-u>LspDocumentFormat<CR>
 
 [[plugins]]
 repo = 'junegunn/fzf'
-build='./install -all'
+build='./install --all'
 on_cmd = ['FZF']
 marged=0
 
