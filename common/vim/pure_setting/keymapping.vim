@@ -11,6 +11,7 @@ nnoremap <C-R> g+
 
 let mapleader = "\\"
 "
+nnoremap  <leader>ve :e ++enc=<CR>
 "if in nomalmode save file
 inoremap <silent> jj <ESC>:<C-u>w<CR>
 
