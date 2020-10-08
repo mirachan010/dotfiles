@@ -1,0 +1,108 @@
+# [[plugins]]
+# repo='Shougo/defx.nvim'
+# on_cmd = ['Defx']
+# hook_sourse = '''
+# let g:defx_icons_enable_syntax_highlight = 1
+# let g:defx_icons_column_length = 2
+# let g:defx_icons_directory_icon = ''
+# let g:defx_icons_mark_icon = '*'
+# let g:defx_icons_copy_icon = ''
+# let g:defx_icons_move_icon = ''
+# let g:defx_icons_parent_icon = ''
+# let g:defx_icons_default_icon = ''
+# let g:defx_icons_directory_symlink_icon = ''
+# " Options below are applicable only when using "tree" feature
+# let g:defx_icons_root_opened_tree_icon = ''
+# let g:defx_icons_nested_opened_tree_icon = ''
+# let g:defx_icons_nested_closed_tree_icon = ''
+# '''
+
+# [[plugins]]
+# repo = 'kristijanhusak/defx-icons'
+# on_source = ['defx.nvim']
+
+#[[plugins]]
+#repo = 'ryanoasis/vim-devicons'
+#on_source = ['defx.nvim']
+
+
+
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_source = ['neosnippet.vim']
+hook_add = '''
+let g:neosnippet#enable_snipmate_compatibility = 1
+'''
+
+
+
+[[plugins]]
+repo = 'Jagua/vim-denite-ghq'
+depends = ['denite.nvim']
+on_source = ['denite.nvim']
+
+[[plugins]]
+repo = 'delphinus/vim-denite-memo'
+if = '''has('unix')'''
+on_source = ['denite.nvim']
+
+[[plugins]]
+repo = 'mirachan010/vim-denite-plugins'
+depends = ['denite.nvim']
+on_source = ['denite.nvim']
+
+[[plugins]]
+repo = 'mirachan010/vim-pluginlist'
+depends = ['denite.nvim']
+on_source = ['vim-denite-plugins']
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+# [[plugins]]
+# repo = 'lighttiger2505/deoplete-vim-lsp'
+# if='''!has('nvim')'''
+# depends = ['deoplete.nvim']
+# on_source = ['deoplete.nvim']
+
+[[plugins]]
+repo ='Shougo/neco-vim'
+on_ft=['vim']
+
+[[plugins]]
+repo = 'iamcco/markdown-preview.nvim'
+on_ft= ['markdown']
+build = '''
+cd app & yarn install
+'''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html','css','java','javascript','php','perl']
+
+
+[[plugins]]
+repo = 'skanehira/preview-markdown.vim'
+if='''has('unix')'''
+
+[[plugins]]
+repo = 'andymass/vim-matchup'
+on_event = 'vimEnter'
+
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+on_cmd = ['Gina']
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+on_cmd = ['Fern', 'FernDo']
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if='''!has('nvim')'''
+on_event = 'InsertEnter'
+hook_add= '''
+  let g:deoplete#enable_at_startup = 1
+'''
