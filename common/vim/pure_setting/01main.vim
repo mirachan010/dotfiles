@@ -46,7 +46,6 @@ set wrap
 
 set list
 set listchars=tab:»-,extends:»,precedes:«,nbsp:%,eol:↲,trail:~
-
 set hidden
 
 set confirm

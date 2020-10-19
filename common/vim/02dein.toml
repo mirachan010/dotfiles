@@ -37,25 +37,6 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 
 
 
-[[plugins]]
-repo = 'Jagua/vim-denite-ghq'
-depends = ['denite.nvim']
-on_source = ['denite.nvim']
-
-[[plugins]]
-repo = 'delphinus/vim-denite-memo'
-if = '''has('unix')'''
-on_source = ['denite.nvim']
-
-[[plugins]]
-repo = 'mirachan010/vim-denite-plugins'
-depends = ['denite.nvim']
-on_source = ['denite.nvim']
-
-[[plugins]]
-repo = 'mirachan010/vim-pluginlist'
-depends = ['denite.nvim']
-on_source = ['vim-denite-plugins']
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
