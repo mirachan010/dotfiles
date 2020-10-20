@@ -12,7 +12,7 @@ if has("win32")
   let g:deoplete#sources#clang#libclang_path = 'C:\Program Files\LLVM\bin\libclang.dll'
 elseif has("unix")
   let s:undo_path = expand('~/.cache/vim/undo')
-  let g:python3_host_prog = '/root/.anyenv/envs/pyenv/shims/python3'
+  let g:python3_host_prog = '~/.anyenv/envs/pyenv/shims/python3'
 endif
 if has('nvim')
 else
