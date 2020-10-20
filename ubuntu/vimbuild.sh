@@ -35,7 +35,7 @@ function config() {
         --enable-rubyinterp \
         --enable-luainterp \
         --with-ruby-command=/home/mira/.anyenv/envs/rbenv/shims/ruby \
-        --with-lua-prefix=/home/mira/.anyenv/envs/luaenv/versions/5.3.5/ \
+        --with-lua-prefix=/home/mira/.anyenv/envs/luaenv/versions/5.4.0/ \
         --enable-cscope \
         --enable-fontset \
         --enable-multibyte \
