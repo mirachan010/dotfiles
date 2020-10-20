@@ -210,5 +210,8 @@ repo = 'sainnhe/gruvbox-material'
 
 [[plugins]]
 repo='tomasr/molokai'
+
+[[plugins]]
+repo = 'ghifarit53/tokyonight-vim'
 #    }}}
 # }}}

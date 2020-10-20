@@ -88,9 +88,9 @@ function! LightlineFugitive()
 return exists('*fugitive#head') ? fugitive#head() : ''
 endfunction
 
-if empty(globpath(&rtp, 'autoload/lightline/colorscheme/monokai_tasty.vim'))
+if empty(globpath(&rtp, 'autoload/lightline/colorscheme/tokyonight.vim'))
   let g:lightline.colorscheme = 'wombat'
   finish
 endif
 
-let g:lightline.colorscheme = 'monokai_tasty'
+let g:lightline.colorscheme = 'tokyonight'

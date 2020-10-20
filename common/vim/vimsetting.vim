@@ -14,19 +14,8 @@ set pythonthreedll=python39.dll
 " Set Colors
 set termguicolors
 set background=dark
-if empty(globpath(&rtp, 'colors/vim-monokai-tasty.vim'))
-    if empty(globpath(&rtp, 'colors/gruvbox-material.vim'))
-        if empty(globpath(&rtp, 'colors/molokai.vim'))
-            colorscheme darkblue
-        else
-            colorscheme molokai
-        endif
-    else
-        colorscheme gruvbox-material
-    endif
-else
-    colorscheme vim-monokai-tasty
-endif
+
+colorscheme tokyonight
 
 filetype plugin indent on
 syntax enable
