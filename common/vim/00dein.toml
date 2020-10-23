@@ -6,7 +6,16 @@ if=''' has('nvim')'''
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
 if='''!has('nvim')'''
-merged = '0'
+merged = 0
+hook_add='''
+let g:lsp_setting = {
+  \ 'efm-langserver':{'disabled': v:false}
+  \ }
+let g:lsp_settings_root_markers = [
+  \ '.git',
+  \ '.git/',
+  \ ]
+'''
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
