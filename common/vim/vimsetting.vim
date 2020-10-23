@@ -9,7 +9,6 @@ set runtimepath+=~/dotfiles/common/vim
 runtime! pure_setting/*.vim
 runtime! plug_setting/*.vim
 
-set pythonthreedll=python39.dll
 
 " Set Colors
 set termguicolors

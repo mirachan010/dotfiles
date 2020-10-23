@@ -4,19 +4,18 @@ repo = 'mhinz/vim-grepper'
 on_cmd = 'Grepper'
 on_map = '<plug>(GrepperOperator)'
 
-[[plugins]]
-repo = 'Shougo/deoppet.nvim'
-if='''has('nvim')'''
-on_event = 'InsertEnter'
-hook_source = '''
-  imap <C-k>  <Plug>(deoppet_expand)
-  imap <C-f>  <Plug>(deoppet_jump_forward)
-  imap <C-b>  <Plug>(deoppet_jump_backward)
-
-  call deoppet#initialize()
-  call deoppet#custom#option('snippets_dirs',
-  \ globpath(&runtimepath, 'neosnippets', 1, 1))
-'''
+# [[plugins]]
+# repo = 'Shougo/deoppet.nvim'
+# if='''has('nvim')'''
+# on_event = 'InsertEnter'
+# hook_source = '''
+#   imap <C-k>  <Plug>(deoppet_expand)
+#   imap <C-f>  <Plug>(deoppet_jump_forward)
+#   imap <C-b>  <Plug>(deoppet_jump_backward)
+#   call deoppet#initialize()
+#   call deoppet#custom#option('snippets_dirs',
+#   \ globpath(&runtimepath, 'neosnippets', 1, 1))
+# '''
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'

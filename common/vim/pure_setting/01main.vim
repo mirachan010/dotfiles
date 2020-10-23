@@ -16,6 +16,7 @@ elseif has("unix")
 endif
 if has('nvim')
 else
+  set pythonthreedll=python39.dll
   set cursorlineopt=number
 endif
 "Undo保存
