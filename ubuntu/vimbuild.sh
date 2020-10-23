@@ -19,7 +19,7 @@ function check() {
         fi
     else
         echo download vim
-        git clone https://github.com/vim/vim /tmp/vim > /dev/null 2>&1
+        git clone git@github.com:vim/vim /tmp/vim > /dev/null 2>&1
         echo downloaded
         cd /tmp/vim
     fi
