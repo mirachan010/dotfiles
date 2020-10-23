@@ -18,4 +18,3 @@ colorscheme tokyonight
 
 filetype plugin indent on
 syntax enable
-
