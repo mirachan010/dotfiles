@@ -4,44 +4,19 @@ repo = 'mhinz/vim-grepper'
 on_cmd = 'Grepper'
 on_map = '<plug>(GrepperOperator)'
 
-# [[plugins]]
-# repo = 'Shougo/deoppet.nvim'
-# if='''has('nvim')'''
-# on_event = 'InsertEnter'
-# hook_source = '''
-#   imap <C-k>  <Plug>(deoppet_expand)
-#   imap <C-f>  <Plug>(deoppet_jump_forward)
-#   imap <C-b>  <Plug>(deoppet_jump_backward)
-#   call deoppet#initialize()
-#   call deoppet#custom#option('snippets_dirs',
-#   \ globpath(&runtimepath, 'neosnippets', 1, 1))
-# '''
-
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-if='''!has('nvim')'''
+repo = 'Shougo/deoppet.nvim'
+if='''has('nvim')'''
 on_event = 'InsertEnter'
-hook_add = '''
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ neosnippet#expandable_or_jumpable() ?
-      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+hook_source = '''
+  imap <C-k>  <Plug>(deoppet_expand)
+  imap <C-f>  <Plug>(deoppet_jump_forward)
+  imap <C-b>  <Plug>(deoppet_jump_backward)
+  call deoppet#initialize()
+  call deoppet#custom#option('snippets_dirs',
+  \ globpath(&runtimepath, 'neosnippets', 1, 1))
 '''
 
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_source= ['neosnippet.vim']
 
 #filetype highligt
 #toml
@@ -71,7 +46,6 @@ nnoremap <silent> [denite]b :<C-u>Denite buffer -direction=topleft<CR>
 nnoremap <silent> [denite]l :<C-u>Denite file/old -direction=topleft<CR>
 nnoremap <silent> [denite]f :<C-u>Denite file -direction=topleft<CR>
 nnoremap <silent> [denite]d :<C-u>Denite dein -direction=topleft<CR>
-"nnoremap <silent> [denite]m :<C-u>Denite memo -direction=topleft <CR>
 nnoremap <silent> [denite]me :<C-u>Denite memo memo:new -direction=topleft <CR>
 nnoremap <silent> [denite]ma :<C-u>Denite mark -direction=topleft <CR>
 nnoremap <silent> [denite]g :<C-u>Denite ghq -direction=topleft <CR>
@@ -192,6 +166,11 @@ on_ft= ['markdown']
 build = '''
 cd app & yarn install
 '''
+
+# use for markdown
+[[plugins]]
+repo = 'godlygeek/tabular'
+on_ft= ['markdown']
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
