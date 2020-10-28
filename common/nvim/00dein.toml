@@ -1,0 +1,100 @@
+[[plugins]]
+repo='neoclide/coc.nvim'
+rev='release'
+if=''' has('nvim')'''
+
+[[plugins]]
+repo = 'skanehira/gh.vim'
+hook_add = '''
+  let g:gh_token=$GITHUB_OAUTH_TOKEN
+'''
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+[[plugins]]
+repo = 'Shougo/dein.vim'
+hook_add = '''
+  let g:dein#install_github_api_token=$GITHUB_OAUTH_TOKEN
+'''
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja.git'
+hook_add = '''
+    set helplang=ja,en
+'''
+
+# Set shortcut commands
+[[plugins]]
+repo = 'c000/rapidfire.vim'
+hook_add = '''
+    let g:rapidfire#persistent_filename="~/dotfiles/common/vim/key_setting.json"
+    nnoremap <F1>    :<C-u>Rapidfire F1<CR>
+    nnoremap <F2>    :<C-u>Rapidfire F2<CR>
+    nnoremap <F3>    :<C-u>Rapidfire F3<CR>
+    nnoremap <Up>    :<C-u>Rapidfire Up<CR>
+    nnoremap <Left>  :<C-u>Rapidfire Left<CR>
+    nnoremap <Right> :<C-u>Rapidfire Right<CR>
+    nnoremap <Down>  :<C-u>Rapidfire Down<CR>
+'''
+
+# Make new Function{{{
+# help for f or F
+[[plugins]]
+repo='unblevable/quick-scope'
+hook_add='''
+    let g:qs_highlight_on_keys = ['f','F']
+'''
+
+#    Easy action motions{{{
+# it can easy to maeke "surround"
+[[plugins]]
+repo = 'tpope/vim-surround'
+# it can easy to make "comment"
+[[plugins]]
+repo = 'tpope/vim-commentary'
+# it can easy to repeate command
+[[plugins]]
+repo = 'tpope/vim-repeat'
+#    }}}
+
+#    Easy action commands{{{
+# easy to change word
+[[plugins]]
+repo = 'lambdalisue/reword.vim'
+
+# It can run and test in vim
+[[plugins]]
+repo='thinca/vim-quickrun'
+
+# use cheatsheet
+[[plugins]]
+repo='reireias/vim-cheatsheet'
+hook_add = '''
+let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\cheatsheet.md'
+nmap <Leader>cc :<c-u>Cheat<CR>
+'''
+#    }}}
+# }}}
+
+# To use git in vim{{{
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+# }}}
+
+# Set looks{{{
+
+# status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# Make indentline
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_cmd = ['IndentLinesToggle']
+hook_add = '''
+    let g:loaded_indentLine = 1
+'''
+
+[[plugins]]
+repo = 'ghifarit53/tokyonight-vim'
+#}}}

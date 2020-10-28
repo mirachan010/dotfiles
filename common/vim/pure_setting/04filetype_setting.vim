@@ -25,3 +25,5 @@ augroup MyGitSpellCheck
     autocmd FileType gitcommit setlocal spell fileencoding=utf-8
   autocmd FileType gina-commit setlocal spell fenc=utf-8
 augroup END
+
+au FileType vim setlocal foldmethod=marker
