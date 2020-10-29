@@ -52,7 +52,6 @@ set hidden
 set confirm
 
 set autoread
-
 set smartindent
 set autoindent
 

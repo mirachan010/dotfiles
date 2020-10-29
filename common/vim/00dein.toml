@@ -1,11 +1,5 @@
 [[plugins]]
-repo='neoclide/coc.nvim'
-rev='release'
-if=''' has('nvim')'''
-
-[[plugins]]
 repo = 'mattn/vim-lsp-settings'
-if='''!has('nvim')'''
 merged = 0
 hook_add='''
 let g:lsp_setting = {
@@ -19,7 +13,6 @@ let g:lsp_settings_root_markers = [
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
-if='''!has('nvim')'''
 hook_source='''
 "---====setup vim-lsp==---
 let g:lsp_signs_enabled = 1
@@ -32,7 +25,7 @@ let g:lsp_signs_information = {'text': 'i'}
 let g:lsp_signs_hint = {'text': '?'}
 
 nmap <Leader>l [Lsp]
-" 定義ジャンプ(デフォルトのctagsによるジャンプを上書きしているのでこのあたりは好みが別れます)
+" 定義ジャンプ
 nnoremap [Lsp]<C-]> :<C-u>LspDefinition<CR>
 " 定義情報のホバー表示
 nnoremap [Lsp]K :<C-u>LspHover<CR>
@@ -70,16 +63,13 @@ hook_add = '''
 #    use for remote plugins{{{
 [[plugins]]
 repo = 'roxma/nvim-yarp'
-if='''! has('nvim')'''
 
 [[plugins]]
 repo = 'roxma/vim-hug-neovim-rpc'
-if='''! has('nvim')'''
 #    }}}
 # Set easy translate
 [[plugins]]
 repo = 'skanehira/translate.vim'
-if='''!has('nvim')'''
 rev = 'v0.0.3'
 hook_add = '''
     let g:translate_source = "en"
@@ -90,7 +80,6 @@ hook_add = '''
 '''
 [[plugins]]
 repo = 'skanehira/code2img.vim'
-if='''! has('nvim')'''
 hook_add = '''
 let g:code2img_theme = 'monokai'
 let g:code2img_line_number = 1
