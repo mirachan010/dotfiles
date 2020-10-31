@@ -1,18 +1,24 @@
 [[plugins]]
-repo = 'mattn/vim-lsp-settings'
-merged = 0
-hook_add='''
-let g:lsp_setting = {
-  \ 'efm-langserver':{'disabled': v:false}
-  \ }
-let g:lsp_settings_root_markers = [
-  \ '.git',
-  \ '.git/',
-  \ ]
+repo = 'Shougo/dein.vim'
+hook_add = '''
+  let g:dein#install_github_api_token=$GITHUB_OAUTH_TOKEN
 '''
 
 [[plugins]]
+repo = 'vim-jp/vimdoc-ja.git'
+hook_add = '''
+    set helplang=ja,en
+'''
+# Set if use neovim
+[[plugins]]
+repo='neoclide/coc.nvim'
+rev='release'
+if=''' has('nvim')'''
+
+# For vim-lsp
+[[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+if=''' !has('nvim')'''
 hook_source='''
 "---====setup vim-lsp==---
 let g:lsp_signs_enabled = 1
@@ -40,23 +46,17 @@ nnoremap [Lsp]s :<C-u>LspDocumentFormat<CR>
 '''
 
 [[plugins]]
-repo = 'skanehira/gh.vim'
-hook_add = '''
-  let g:gh_token=$GITHUB_OAUTH_TOKEN
-'''
-
-[[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
-[[plugins]]
-repo = 'Shougo/dein.vim'
-hook_add = '''
-  let g:dein#install_github_api_token=$GITHUB_OAUTH_TOKEN
-'''
-
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja.git'
-hook_add = '''
-    set helplang=ja,en
+repo = 'mattn/vim-lsp-settings'
+if=''' !has('nvim')'''
+merged = 0
+hook_add='''
+let g:lsp_setting = {
+  \ 'efm-langserver':{'disabled': v:false}
+  \ }
+let g:lsp_settings_root_markers = [
+  \ '.git',
+  \ '.git/',
+  \ ]
 '''
 
 # Set if use Vim{{{
@@ -78,6 +78,7 @@ hook_add = '''
     vmap tj <Plug>(VTranslate)
     vmap te <Plug>(VTranslateBang)
 '''
+#make imgfiles
 [[plugins]]
 repo = 'skanehira/code2img.vim'
 hook_add = '''
@@ -86,7 +87,41 @@ let g:code2img_line_number = 1
 '''
 # }}}
 
-
+# Make new Function{{{
+# help for f or F
+[[plugins]]
+repo='unblevable/quick-scope'
+hook_add='''
+    let g:qs_highlight_on_keys = ['f','F']
+'''
+#    Easy action motions{{{
+# it can easy to maeke "surround"
+[[plugins]]
+repo = 'tpope/vim-surround'
+# it can easy to make "comment"
+[[plugins]]
+repo = 'tpope/vim-commentary'
+# it can easy to repeate command
+[[plugins]]
+repo = 'tpope/vim-repeat'
+#    }}}
+#    Easy action commands{{{
+# easy to change word
+[[plugins]]
+repo = 'lambdalisue/reword.vim'
+# use for markdown
+[[plugins]]
+repo = 'godlygeek/tabular'
+# It can run and test in vim
+[[plugins]]
+repo='thinca/vim-quickrun'
+# use cheatsheet
+[[plugins]]
+repo='reireias/vim-cheatsheet'
+hook_add = '''
+let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\cheatsheet.md'
+nmap <Leader>cc :<c-u>Cheat<CR>
+'''
 # Set shortcut commands
 [[plugins]]
 repo = 'c000/rapidfire.vim'
@@ -100,46 +135,11 @@ hook_add = '''
     nnoremap <Right> :<C-u>Rapidfire Right<CR>
     nnoremap <Down>  :<C-u>Rapidfire Down<CR>
 '''
-
-# Make new Function{{{
-# help for f or F
+# To see github.com
 [[plugins]]
-repo='unblevable/quick-scope'
-hook_add='''
-    let g:qs_highlight_on_keys = ['f','F']
-'''
-
-#    Easy action motions{{{
-# it can easy to maeke "surround"
-[[plugins]]
-repo = 'tpope/vim-surround'
-# it can easy to make "comment"
-[[plugins]]
-repo = 'tpope/vim-commentary'
-# it can easy to repeate command
-[[plugins]]
-repo = 'tpope/vim-repeat'
-#    }}}
-
-#    Easy action commands{{{
-# easy to change word
-[[plugins]]
-repo = 'lambdalisue/reword.vim'
-
-# use for markdown
-[[plugins]]
-repo = 'godlygeek/tabular'
-
-# It can run and test in vim
-[[plugins]]
-repo='thinca/vim-quickrun'
-
-# use cheatsheet
-[[plugins]]
-repo='reireias/vim-cheatsheet'
+repo = 'skanehira/gh.vim'
 hook_add = '''
-let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\cheatsheet.md'
-nmap <Leader>cc :<c-u>Cheat<CR>
+  let g:gh_token=$GITHUB_OAUTH_TOKEN
 '''
 #    }}}
 # }}}
@@ -147,47 +147,26 @@ nmap <Leader>cc :<c-u>Cheat<CR>
 # To use git in vim{{{
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-
 # Check git diff in numberline
-# [[plugins]]
-# repo = 'airblade/vim-gitgutter'
-# hook_add='''
-#     set signcolumn=yes
-#     let g:gitgutter_map_keys = 0
-#     nnoremap [Git] <Nop>
-#     nmap <Leader>g [Git]
-#     nmap [Git]p <Plug>(GitGutterPrevHunk)
-#     nmap [Git]n <Plug>(GitGutterNextHunk)
-#     nmap [Git]a <Plug>(GitGutterStageHunk)
-#     nmap [Git]u <Plug>(GitGutterRevertHunk)
-#     nmap [Git]v <Plug>(GitGutterPreviewHunk)
-# '''
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add='''
+   set signcolumn=yes
+   let g:gitgutter_map_keys = 0
+   nnoremap [Git] <Nop>
+   nmap <Leader>g [Git]
+   nmap [Git]p <Plug>(GitGutterPrevHunk)
+   nmap [Git]n <Plug>(GitGutterNextHunk)
+   nmap [Git]a <Plug>(GitGutterStageHunk)
+   nmap [Git]u <Plug>(GitGutterRevertHunk)
+   nmap [Git]v <Plug>(GitGutterPreviewHunk)
+'''
 # }}}
 
-[[plugins]]
-repo='twitvim/twitvim'
-if='''0'''
-hook_add='''
-    source ~\dotfiles\twitkeys.vim
-    map <Leader>t [Twit]
-    noremap [Twit]t :<C-u>PosttoTwitter<CR>
-    noremap [Twit]f :<C-u>FriendsTwitter<CR>
-    noremap [Twit]u :<C-u>UserTwitter<CR>
-    noremap [Twit]r :<C-u>MentionsTwitter<CR>
-    noremap [Twit]d :<C-u>DMTwitter<CR>
-    noremap [Twit]s :<C-u>DMSentTwitter<CR>
-    noremap [Twit]n :<C-u>NextTwitter<CR>
-    nnoremap [Twit]p :<C-u>PreviousTwitter<CR>
-    nnoremap <Leader><Leader> :<C-u>RefreshTwitter<CR>
-'''
-
-
 # Set looks{{{
-
 # status line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-
 # Make indentline
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -195,20 +174,7 @@ on_cmd = ['IndentLinesToggle']
 hook_add = '''
     let g:loaded_indentLine = 1
 '''
-
 #    Colorschemes{{{
-[[plugins]]
-repo = 'patstockwell/vim-monokai-tasty'
-hook_add = '''
-let g:vim_monokai_tasty_italic = 1
-'''
-
-[[plugins]]
-repo = 'sainnhe/gruvbox-material'
-
-[[plugins]]
-repo='tomasr/molokai'
-
 [[plugins]]
 repo = 'ghifarit53/tokyonight-vim'
 #    }}}

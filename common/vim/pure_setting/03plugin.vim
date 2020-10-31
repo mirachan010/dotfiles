@@ -4,23 +4,22 @@
 if has('nvim')
   if has("win32")
     let s:dein_dir = expand('~\AppData\Local\nvim\dein\')
-    let g:rc_dir    = expand('~\dotfiles\common\nvim\')
-    let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
   elseif has("unix")
     let s:dein_dir = expand('~/.cache/nvim/dein/')
-    let g:rc_dir    = expand('~/dotfiles/common/nvim/')
-    let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
   endif
 elseif !has('nvim')
   if has("win32")
     let s:dein_dir = expand('~\.cache\vim\dein\')
-    let g:rc_dir    = expand('~\dotfiles\common\vim\')
-    let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
   elseif has("unix")
     let s:dein_dir = expand('~/.cache/vim/dein/')
+  endif
+endif
+if has("win32")
+    let g:rc_dir    = expand('~\dotfiles\common\vim\')
+    let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
+elseif has("unix")
     let g:rc_dir    = expand('~/dotfiles/common/vim/')
     let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-  endif
 endif"}}}
 "pluginのインストール{{{
 " dein.vim がなければ github から落としてくる

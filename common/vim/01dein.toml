@@ -134,6 +134,12 @@ hook_add= '''
   let g:deoplete#enable_at_startup = 1
 '''
 [[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+if='''!has('nvim')'''
+depends = ['deoplete.nvim']
+on_source = ['deoplete.nvim']
+
+[[plugins]]
 repo='Shougo/defx.nvim'
 on_cmd = ['Defx']
 hook_sourse = '''
@@ -175,12 +181,6 @@ on_source = ['defx.nvim']
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-if='''!has('nvim')'''
-depends = ['deoplete.nvim']
-on_source = ['deoplete.nvim']
 
 [[plugins]]
 repo ='Shougo/neco-vim'
