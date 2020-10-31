@@ -16,6 +16,6 @@
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
     "python.linting.enabled":"true",
-    "python.jediPath":"c:\\Python38\\lib\\site-packages",
+    "python.jediPath":"c:\\Python39\\lib\\site-packages",
     "snippets.ultisnips.enable": true
 }
