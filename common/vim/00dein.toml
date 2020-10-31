@@ -62,14 +62,17 @@ let g:lsp_settings_root_markers = [
 # Set if use Vim{{{
 #    use for remote plugins{{{
 [[plugins]]
+if=''' !has('nvim')'''
 repo = 'roxma/nvim-yarp'
 
 [[plugins]]
+if=''' !has('nvim')'''
 repo = 'roxma/vim-hug-neovim-rpc'
 #    }}}
 # Set easy translate
 [[plugins]]
 repo = 'skanehira/translate.vim'
+if=''' !has('nvim')'''
 rev = 'v0.0.3'
 hook_add = '''
     let g:translate_source = "en"
@@ -81,6 +84,7 @@ hook_add = '''
 #make imgfiles
 [[plugins]]
 repo = 'skanehira/code2img.vim'
+if=''' !has('nvim')'''
 hook_add = '''
 let g:code2img_theme = 'monokai'
 let g:code2img_line_number = 1
