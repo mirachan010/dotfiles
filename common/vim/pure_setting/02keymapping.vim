@@ -1,5 +1,5 @@
-"é•·ã„ä¸€è¡ŒãŒå›ã£ã¦ããŸã¨ãã§ã‚‚ãƒãƒ¼ãƒãƒ«ãƒ¢ãƒ¼ãƒ‰ã§hjklã§å¿«é©ã«éã”ã™ãŸã‚
-"ã‚ã¨ã¡ã‚‡ã£ã¨ã®ã¤ã„ã§
+"’·‚¢ˆês‚ª‰ñ‚Á‚Ä‚«‚½‚Æ‚«‚Å‚àƒm[ƒ}ƒ‹ƒ‚[ƒh‚Åhjkl‚Å‰õ“K‚É‰ß‚²‚·‚½‚ß
+"‚ ‚Æ‚¿‚å‚Á‚Æ‚Ì‚Â‚¢‚Å
 noremap k gk
 noremap j gj
 noremap H <NOP>
@@ -15,10 +15,9 @@ nnoremap  <leader>ve :e ++enc=<CR>
 "if in nomalmode save file
 inoremap <silent> jj <ESC>:<C-u>w<CR>
 
-"dotfilesã®ç·¨é›†ã•ã‚ŒãŸã®ã‚’èª­ã¿è¾¼ã¿ç›´ã™
+"dotfiles‚Ì•ÒW‚³‚ê‚½‚Ì‚ğ“Ç‚İ‚İ’¼‚·
 nmap <Leader>.. :<C-u>source $MYVIMRC<CR>
-
-nmap <Leader>.. :<C-u>source $MYVIMRC<CR>" å…¥åŠ›ã‚­ãƒ¼ã®è¾æ›¸
+" “ü—ÍƒL[‚Ì«‘
 let s:compl_key_dict = {
       \ char2nr("\<C-l>"): "\<C-x>\<C-l>",
       \ char2nr("\<C-n>"): "\<C-x>\<C-n>",
@@ -35,7 +34,7 @@ let s:compl_key_dict = {
       \ char2nr('s'): "\<C-x>s",
       \ char2nr("\<C-s>"): "\<C-x>s"
       \}
-" è¡¨ç¤ºãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+" •\¦ƒƒbƒZ[ƒW
 let s:hint_i_ctrl_x_msg = join([
       \ '<C-l>: While lines',
       \ '<C-n>: keywords in the current file',
