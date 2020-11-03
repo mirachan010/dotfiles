@@ -214,3 +214,13 @@ on_cmd = ['Gina']
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern', 'FernDo']
+
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
+on_cmd = ['Template']
+hook_add = '''
+let g:sonictemplate_vim_template_dir = [
+\ '~\dotfiles\common\template',
+\ '/path/to/another/template/directory'
+\]
+'''
