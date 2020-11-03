@@ -1,7 +1,7 @@
 #!/bin/bash
 function check() {
-    if [ -e /tmp/vim ]; then
-        cd /tmp/vim;
+    if [ -e /media/disk1/backups/vim ]; then
+        cd /media/disk1/backups/vim;
         echo checking vim version now.
         GitHubVer=$(git ls-remote origin |grep -E v8.2.|tail -1|awk '{print $2}'|sed 's/refs\/tags\///')
         MyVer=$(git tag|tail -1)
@@ -19,7 +19,7 @@ function check() {
         fi
     else
         echo download vim
-        git clone git@github.com:vim/vim /tmp/vim > /dev/null 2>&1
+        git clone git@github.com:vim/vim /media/disk1/backups/vim > /dev/null 2>&1
         echo downloaded
         cd /tmp/vim
     fi
