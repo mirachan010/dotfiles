@@ -211,10 +211,6 @@ on_ft = ['html','css','java','javascript','php','perl']
 repo = 'skanehira/preview-markdown.vim'
 if='''has('unix')'''
 
-[[plugins]]
-repo = 'andymass/vim-matchup'
-on_event = 'vimEnter'
-
 
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
