@@ -43,6 +43,15 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 repo = 'Shougo/neosnippet-snippets'
 on_source= ['neosnippet.vim']
 
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_event = 'VimEnter'
+if=''' !has('nvim')'''
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+on_event = 'VimEnter'
+if=''' !has('nvim')'''
 #filetype highligt
 #toml
 [[plugins]]
@@ -201,10 +210,6 @@ on_ft = ['html','css','java','javascript','php','perl']
 [[plugins]]
 repo = 'skanehira/preview-markdown.vim'
 if='''has('unix')'''
-
-[[plugins]]
-repo = 'andymass/vim-matchup'
-on_event = 'vimEnter'
 
 
 [[plugins]]

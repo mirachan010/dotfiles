@@ -61,12 +61,6 @@ let g:lsp_settings_root_markers = [
 [[plugins]]
 repo = 'mattn/vim-lsp-icons'
 if=''' !has('nvim')'''
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip'
-if=''' !has('nvim')'''
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip-integ'
-if=''' !has('nvim')'''
 
 # Set if use Vim{{{
 #    use for remote plugins{{{
