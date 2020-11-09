@@ -2,7 +2,9 @@ scriptencoding=utf-8
 "外部プログラムの場所の確認
 "WinとUbuntuの決定的に分かれるところ
 if has("win32")
-  let g:python3_host_prog = 'C:\Python39\python.exe'
+  if !has("nvim")
+    let g:python3_host_prog = 'C:\Python39\python.exe'
+  endif
   set fileencoding=cp932
   set fileencodings=cp932,sjis,utf-8
   let s:undo_path = expand('~\.cache\vim\undo')
