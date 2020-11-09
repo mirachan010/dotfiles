@@ -6,10 +6,6 @@ if has("win32")
   set fileencoding=cp932
   set fileencodings=cp932,sjis,utf-8
   let s:undo_path = expand('~\.cache\vim\undo')
-  "Windows限定のプラグイン設定
-  let g:deoplete#sources#clang#clang_header = 'C:\Program Files\LLVM\lib\clang\9.0.0\include'
-  let g:deoplete#sources#clang#clang_header = 'C:\Program Files\LLVM\lib\clang\'
-  let g:deoplete#sources#clang#libclang_path = 'C:\Program Files\LLVM\bin\libclang.dll'
 elseif has("unix")
   let s:undo_path = expand('~/.cache/vim/undo')
   let g:python3_host_prog = '~/.anyenv/envs/pyenv/shims/python3'
