@@ -133,7 +133,7 @@ nmap <Leader>cc :<c-u>Cheat<CR>
 [[plugins]]
 repo = 'c000/rapidfire.vim'
 hook_add = '''
-    let g:rapidfire#persistent_filename="~/dotfiles/common/vim/key_setting.json"
+    let g:rapidfire#persistent_filename="~/dotfiles/common/vim/plug_setting/key_setting.json"
     nnoremap <F1>    :<C-u>Rapidfire F1<CR>
     nnoremap <F2>    :<C-u>Rapidfire F2<CR>
     nnoremap <F3>    :<C-u>Rapidfire F3<CR>
