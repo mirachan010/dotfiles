@@ -15,10 +15,10 @@ elseif !has('nvim')
   endif
 endif
 if has("win32")
-    let g:rc_dir    = expand('~\dotfiles\common\vim\')
+    let g:rc_dir    = expand('~\dotfiles\common\vim\plug_setting\')
     let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
 elseif has("unix")
-    let g:rc_dir    = expand('~/dotfiles/common/vim/')
+    let g:rc_dir    = expand('~/dotfiles/common/vim/plug_setting/')
     let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 endif"}}}
 "pluginのインストール{{{

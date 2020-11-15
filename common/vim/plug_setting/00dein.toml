@@ -126,7 +126,7 @@ repo='thinca/vim-quickrun'
 [[plugins]]
 repo='reireias/vim-cheatsheet'
 hook_add = '''
-let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\cheatsheet.md'
+let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\plug_setting\cheatsheet.md'
 nmap <Leader>cc :<c-u>Cheat<CR>
 '''
 # Set shortcut commands
