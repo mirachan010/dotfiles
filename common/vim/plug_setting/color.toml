@@ -1,0 +1,666 @@
+[[plugins]]
+repo = 'aaronbieber/vim-quicktask'
+[[plugins]]
+repo = 'adelarsq/neoline.vim'
+[[plugins]]
+repo = 'adelarsq/neovcs.vim'
+[[plugins]]
+repo = 'adelarsq/vim-emoji-icon-theme'
+[[plugins]]
+repo = 'aereal/vim-color-japanesque'
+[[plugins]]
+repo = 'aereal/vim-colors-japanesque'
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'ajh17/Spacegray.vim'
+[[plugins]]
+repo = 'akinsho/nvim-bufferline.lua'
+[[plugins]]
+repo = 'albertorestifo/github.vim'
+[[plugins]]
+repo = 'AlessandroYorba/Alduin'
+[[plugins]]
+repo = 'AlessandroYorba/Arcadia'
+[[plugins]]
+repo = 'AlessandroYorba/Breve'
+[[plugins]]
+repo = 'AlessandroYorba/Despacio'
+[[plugins]]
+repo = 'AlessandroYorba/Sierra'
+[[plugins]]
+repo = 'alpaca-tc/alpaca'
+[[plugins]]
+repo = 'alpaca-tc/no_vim_no_life'
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+[[plugins]]
+repo = 'AndrewRadev/discotheque.vim'
+[[plugins]]
+repo = 'AndrewRadev/ember_tools.vim'
+[[plugins]]
+repo = 'AndrewRadev/gnugo.vim'
+[[plugins]]
+repo = 'AndrewRadev/sideways.vim'
+[[plugins]]
+repo = 'AndrewRadev/Vimfiles'
+[[plugins]]
+repo = 'andymass/vim-matchup'
+[[plugins]]
+repo = 'antoinemadec/coc-fzf'
+[[plugins]]
+repo = 'antoinemadec/vim-highlight-groups'
+[[plugins]]
+repo = 'aperezdc/vim-elrond'
+[[plugins]]
+repo = 'aperezdc/vim-lining'
+[[plugins]]
+repo = 'ap/vim-buftabline'
+[[plugins]]
+repo = 'ap/vim-css-color'
+[[plugins]]
+repo = 'APZelos/blamer.nvim'
+[[plugins]]
+repo = 'arcticicestudio/nord-vim'
+[[plugins]]
+repo = 'ataraxer/sapphire256.vim'
+[[plugins]]
+repo = 'ataraxer/vim-nightlight'
+[[plugins]]
+repo = 'ataraxer/vim-oceanic'
+[[plugins]]
+repo = 'atelierbram/Base2Tone-vim'
+[[plugins]]
+repo = 'atelierbram/Base4Tone-vim'
+[[plugins]]
+repo = 'atelierbram/vim-colors_atelier-schemes'
+[[plugins]]
+repo = 'b4b4r07/zplug'
+[[plugins]]
+repo = 'b4b4r07/zplug_test'
+[[plugins]]
+repo = 'Bakudankun/qline.vim'
+[[plugins]]
+repo = 'basyura/neco-member-dict'
+[[plugins]]
+repo = 'bfredl/nvim-incnormal'
+[[plugins]]
+repo = 'bigfish/vim-js-context-coloring'
+[[plugins]]
+repo = 'bling/dotvim'
+[[plugins]]
+repo = 'bling/vim-airline'
+[[plugins]]
+repo = 'blueyed/vim-diminactive'
+[[plugins]]
+repo = 'bronson/vim-runtest'
+[[plugins]]
+repo = 'c9s/colorselector.vim'
+[[plugins]]
+repo = 'c9s/phpironman.vim'
+[[plugins]]
+repo = 'cabin/cabin-colorscheme'
+[[plugins]]
+repo = 'chase/focuspoint-vim'
+[[plugins]]
+repo = 'chemzqm/unite-git-log'
+[[plugins]]
+repo = 'chemzqm/vim-colors-solarized'
+[[plugins]]
+repo = 'chmllr/elrodeo-vim-colorscheme'
+[[plugins]]
+repo = 'chrisbra/Colorizer'
+[[plugins]]
+repo = 'chrisbra/csv.vim'
+[[plugins]]
+repo = 'chrisbra/vim-airline'
+[[plugins]]
+repo = 'chriskempson/base16-vim'
+[[plugins]]
+repo = 'christoomey/larryville'
+[[plugins]]
+repo = 'christoomey/vim-colors-ctoomey'
+[[plugins]]
+repo = 'cocopon/colorswatch.vim'
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+[[plugins]]
+repo = 'cocopon/inspecthi.vim'
+[[plugins]]
+repo = 'cocopon/lightline-hybrid.vim'
+[[plugins]]
+repo = 'cocopon/pgmnt.vim'
+[[plugins]]
+repo = 'cocopon/shadeline.vim'
+[[plugins]]
+repo = 'cocopon/svss.vim'
+[[plugins]]
+repo = 'ConradIrwin/go-for-rubyists'
+[[plugins]]
+repo = 'ConradIrwin/repl-driven-development'
+[[plugins]]
+repo = 'cormacrelf/vim-colors-github'
+[[plugins]]
+repo = 'crusoexia/vim-dracula'
+[[plugins]]
+repo = 'crusoexia/vim-dream'
+[[plugins]]
+repo = 'crusoexia/vim-monokai'
+[[plugins]]
+repo = 'cseelus/vim-colors-clearance'
+[[plugins]]
+repo = 'cseelus/vim-colors-icicle'
+[[plugins]]
+repo = 'cseelus/vim-colors-lanai'
+[[plugins]]
+repo = 'cseelus/vim-colors-lucid'
+[[plugins]]
+repo = 'cseelus/vim-colors-tone'
+[[plugins]]
+repo = 'ctjhoa/miro8'
+[[plugins]]
+repo = 'ctjhoa/spacevim'
+[[plugins]]
+repo = 'dense-analysis/ale'
+[[plugins]]
+repo = 'erictleung/simplewriter'
+[[plugins]]
+repo = 'euclio/vim-nocturne'
+[[plugins]]
+repo = 'ghifarit53/daycula-vim'
+[[plugins]]
+repo = 'ghifarit53/tokyonight-vim'
+[[plugins]]
+repo = 'hail2u/h2u_colorscheme'
+[[plugins]]
+repo = 'higashi000/vim-acqua'
+[[plugins]]
+repo = 'high-moctane/gaming.vim'
+[[plugins]]
+repo = 'hrsh7th/vim-lamp'
+[[plugins]]
+repo = 'hrsh7th/vim-lsp'
+[[plugins]]
+repo = 'iamcco/clock.nvim'
+[[plugins]]
+repo = 'iamcco/markdown-preview.nvim'
+[[plugins]]
+repo = 'iamcco/statusline.vim'
+[[plugins]]
+repo = 'itchyny/landscape.vim'
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+[[plugins]]
+repo = 'joshdick/onedark.vim'
+[[plugins]]
+repo = 'junegunn/fzf'
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+[[plugins]]
+repo = 'junegunn/goyo.vim'
+[[plugins]]
+repo = 'junegunn/limelight.vim'
+[[plugins]]
+repo = 'junegunn/seoul256.vim'
+[[plugins]]
+repo = 'junegunn/vim-oblique'
+[[plugins]]
+repo = 'KabbAmine/vCoolor.vim'
+[[plugins]]
+repo = 'KabbAmine/vFinder.vim'
+[[plugins]]
+repo = 'KabbAmine/vsl.vim'
+[[plugins]]
+repo = 'KabbAmine/yowish.vim'
+[[plugins]]
+repo = 'kato-k/vim-colorscheme-settings'
+[[plugins]]
+repo = 'koron/vim-monochromenote'
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+[[plugins]]
+repo = 'kristijanhusak/vim-dirvish-git'
+[[plugins]]
+repo = 'kristijanhusak/vim-hybrid-material'
+[[plugins]]
+repo = 'kristijanhusak/vim-project-lint'
+[[plugins]]
+repo = 'kurkale6ka/vim'
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
+[[plugins]]
+repo = 'lambdalisue/seethrough.vim'
+[[plugins]]
+repo = 'lambdalisue/vital-Whisky'
+[[plugins]]
+repo = 'LeafCage/unite-gvimrgb'
+[[plugins]]
+repo = 'lfv89/vim-interestingwords'
+[[plugins]]
+repo = 'lifepillar/vim8-colorschemes'
+[[plugins]]
+repo = 'liquidz/vim-colors-uochan'
+[[plugins]]
+repo = 'liuchengxu/space-vim-dark'
+[[plugins]]
+repo = 'liuchengxu/space-vim-theme'
+[[plugins]]
+repo = 'liuchengxu/vim-clap'
+[[plugins]]
+repo = 'liuchengxu/vista.vim'
+[[plugins]]
+repo = 'l-tchen/auto-dark-mode.vim'
+[[plugins]]
+repo = 'l-tchen/vim-dark-mode-switcher'
+[[plugins]]
+repo = 'luochen1990/rainbow'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-imas'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-kemonofriends'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-reki'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-snowtrek'
+[[plugins]]
+repo = 'machakann/vim-colorscheme-tatami'
+[[plugins]]
+repo = 'machakann/vim-highlightedyank'
+[[plugins]]
+repo = 'maralla/validator.vim'
+[[plugins]]
+repo = 'MattesGroeger/vim-bookmarks'
+[[plugins]]
+repo = 'mattn/vim-prompter'
+[[plugins]]
+repo = 'mcchrish/extend-highlight.vim'
+[[plugins]]
+repo = 'mcchrish/info-window.nvim'
+[[plugins]]
+repo = 'mcchrish/nnn.vim'
+[[plugins]]
+repo = 'mg979/vim-studio-dark'
+[[plugins]]
+repo = 'mg979/vim-xtabline'
+[[plugins]]
+repo = 'mhinz/vim-crates'
+[[plugins]]
+repo = 'mhinz/vim-halo'
+[[plugins]]
+repo = 'mhinz/vim-janah'
+[[plugins]]
+repo = 'mhinz/vim-rfc'
+[[plugins]]
+repo = 'mopp/mopkai.vim'
+[[plugins]]
+repo = 'mopp/sky-color-clock.vim'
+[[plugins]]
+repo = 'morhetz/gruvbox'
+[[plugins]]
+repo = 'morhetz/vim-termitr'
+[[plugins]]
+repo = 'ms-jpq/chadtree'
+[[plugins]]
+repo = 'neoclide/SpaceVim'
+[[plugins]]
+repo = 'neoclide/vim-node-rpc'
+[[plugins]]
+repo = 'neomake/neomake'
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+[[plugins]]
+repo = 'nightsense/carbonized'
+[[plugins]]
+repo = 'nightsense/cosmic_latte'
+[[plugins]]
+repo = 'nightsense/forgotten'
+[[plugins]]
+repo = 'nightsense/nemo'
+[[plugins]]
+repo = 'nightsense/night-and-day'
+[[plugins]]
+repo = 'nightsense/office'
+[[plugins]]
+repo = 'nightsense/plumber'
+[[plugins]]
+repo = 'nightsense/rusticated'
+[[plugins]]
+repo = 'nightsense/seabird'
+[[plugins]]
+repo = 'nightsense/seagrey'
+[[plugins]]
+repo = 'nightsense/shoji'
+[[plugins]]
+repo = 'nightsense/simplifysimplify'
+[[plugins]]
+repo = 'nightsense/snow'
+[[plugins]]
+repo = 'nightsense/stellarized'
+[[plugins]]
+repo = 'nightsense/strawberry'
+[[plugins]]
+repo = 'nightsense/vim-crunchbang'
+[[plugins]]
+repo = 'nightsense/vimspectr'
+[[plugins]]
+repo = 'nightsense/vrunchbang'
+[[plugins]]
+repo = 'nightsense/wonka'
+[[plugins]]
+repo = 'NikolayFrantsev/jshint2.vim'
+[[plugins]]
+repo = 'NLKNguyen/papercolor-blue'
+[[plugins]]
+repo = 'NLKNguyen/papercolor-theme'
+[[plugins]]
+repo = 'npxbr/galaxyline.nvim'
+[[plugins]]
+repo = 'ntpeters/vim-airline-colornum'
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'
+[[plugins]]
+repo = 'nvim-treesitter/highlight.lua'
+[[plugins]]
+repo = 'osyo-manga/vim-stripe'
+[[plugins]]
+repo = 'patstockwell/vim-monokai-tasty'
+[[plugins]]
+repo = 'pearofducks/vim-quack-lightline'
+[[plugins]]
+repo = 'pocke/slide-bokuno-kangaeta-saitsuyono-tool'
+[[plugins]]
+repo = 'prabirshrestha/quickpick-colorschemes.vim'
+[[plugins]]
+repo = 'prabirshrestha/quickpick.vim'
+[[plugins]]
+repo = 'prabirshrestha/vim-fz-extras'
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+[[plugins]]
+repo = 'rbtnn/vim-coloredit'
+[[plugins]]
+repo = 'rbtnn/vim-darkcrystal'
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+[[plugins]]
+repo = 'rhysd/git-messenger.vim'
+[[plugins]]
+repo = 'rhysd/nyaovim-tree-view'
+[[plugins]]
+repo = 'rhysd/reply.vim'
+[[plugins]]
+repo = 'rhysd/tempclone.vim'
+[[plugins]]
+repo = 'rhysd/try-colorscheme.vim'
+[[plugins]]
+repo = 'rhysd/vim-color-shiny-white'
+[[plugins]]
+repo = 'rhysd/vim-color-splatoon'
+[[plugins]]
+repo = 'rhysd/vim-color-spring-night'
+[[plugins]]
+repo = 'rhysd/vim-crystal'
+[[plugins]]
+repo = 'rhysd/vim-gfm-syntax'
+[[plugins]]
+repo = 'rhysd/vim-notes-cli'
+[[plugins]]
+repo = 'rhysd/vital-color-echo'
+[[plugins]]
+repo = 'Rigellute/rigel'
+[[plugins]]
+repo = 'Rigellute/shades-of-purple.vim'
+[[plugins]]
+repo = 'romainl/Apprentice'
+[[plugins]]
+repo = 'romainl/Disciple'
+[[plugins]]
+repo = 'romainl/flattened'
+[[plugins]]
+repo = 'romainl/vim-colors'
+[[plugins]]
+repo = 'romainl/vim-dichromatic'
+[[plugins]]
+repo = 'romainl/vim-sweet16'
+[[plugins]]
+repo = 'roman/vimconfig'
+[[plugins]]
+repo = 'romgrk/barbar.nvim'
+[[plugins]]
+repo = 'romgrk/doom-one.vim'
+[[plugins]]
+repo = 'romgrk/github-light.vim'
+[[plugins]]
+repo = 'romgrk/todoist.nvim'
+[[plugins]]
+repo = 'romgrk/vim-clap'
+[[plugins]]
+repo = 'RRethy/vim-hexokinase'
+[[plugins]]
+repo = 'ryuta69/elly.vim'
+[[plugins]]
+repo = 'sainnhe/edge'
+[[plugins]]
+repo = 'sainnhe/forest-night'
+[[plugins]]
+repo = 'sainnhe/gruvbox-material'
+[[plugins]]
+repo = 'sainnhe/lightline_foobar.vim'
+[[plugins]]
+repo = 'sainnhe/sonokai'
+[[plugins]]
+repo = 'segeljakt/vim-silicon'
+[[plugins]]
+repo = 'sheerun/vimrc'
+[[plugins]]
+repo = 'sheerun/vim-wombat-scheme'
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+[[plugins]]
+repo = 'skanehira/code2img.vim'
+[[plugins]]
+repo = 'skywind3000/asynctasks.vim'
+[[plugins]]
+repo = 'skywind3000/quickmenu.vim'
+[[plugins]]
+repo = 'skywind3000/vim-keysound'
+[[plugins]]
+repo = 'skywind3000/vim-quickui'
+[[plugins]]
+repo = 'SpaceVim/clever-f.vim'
+[[plugins]]
+repo = 'SpaceVim/denite.nvim'
+[[plugins]]
+repo = 'SpaceVim/FlatColor'
+[[plugins]]
+repo = 'SpaceVim/vim-material'
+[[plugins]]
+repo = 'statox/colorscheme-changer.vim'
+[[plugins]]
+repo = 't9md/vim-ezbar'
+[[plugins]]
+repo = 't9md/vim-smalls'
+[[plugins]]
+repo = 't9md/vim-unite-ack'
+[[plugins]]
+repo = 't9md/vim-unite-lines'
+[[plugins]]
+repo = 'taohexxx/lightline-solarized'
+[[plugins]]
+repo = 'taohexxx/vim-colors-solarized'
+[[plugins]]
+repo = 'thiagoalessio/rainbow_levels.vim'
+[[plugins]]
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'tsuyoshicho/StatuslineUpdateTimer.vim'
+[[plugins]]
+repo = 'unblevable/quick-scope'
+[[plugins]]
+repo = 'Valloric/MatchTagAlways'
+[[plugins]]
+repo = 'Valloric/vim-operator-highlight'
+[[plugins]]
+repo = 'Valloric/vim-valloric-colorscheme'
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+[[plugins]]
+repo = 'vim/colorschemes'
+[[plugins]]
+repo = 'vim-crystal/vim-crystal'
+[[plugins]]
+repo = 'vim-jp/vital.vim'
+[[plugins]]
+repo = 'vim/killersheep'
+[[plugins]]
+repo = 'vim-scripts/airline-colornum'
+[[plugins]]
+repo = 'vim-scripts/apprentice.vim'
+[[plugins]]
+repo = 'vim-scripts/autoSolarize'
+[[plugins]]
+repo = 'vim-scripts/better-whitespace'
+[[plugins]]
+repo = 'vim-scripts/Citation.vim'
+[[plugins]]
+repo = 'vim-scripts/clever-f.vim'
+[[plugins]]
+repo = 'vim-scripts/Clighter'
+[[plugins]]
+repo = 'vim-scripts/codeforces.vim'
+[[plugins]]
+repo = 'vim-scripts/ColorSchemePicker'
+[[plugins]]
+repo = 'vim-scripts/conflictslides'
+[[plugins]]
+repo = 'vim-scripts/desertink.vim'
+[[plugins]]
+repo = 'vim-scripts/desert-warm-256'
+[[plugins]]
+repo = 'vim-scripts/Distinguished'
+[[plugins]]
+repo = 'vim-scripts/easytags.vim'
+[[plugins]]
+repo = 'vim-scripts/Eddie.vim'
+[[plugins]]
+repo = 'vim-scripts/filestyle'
+[[plugins]]
+repo = 'vim-scripts/Flog'
+[[plugins]]
+repo = 'vim-scripts/gruvbox'
+[[plugins]]
+repo = 'vim-scripts/hemisu.vim'
+[[plugins]]
+repo = 'vim-scripts/Iceberg'
+[[plugins]]
+repo = 'vim-scripts/JavaScript-Context-Coloring'
+[[plugins]]
+repo = 'vim-scripts/jshint2.vim'
+[[plugins]]
+repo = 'vim-scripts/lightline'
+[[plugins]]
+repo = 'vim-scripts/lite-dfm'
+[[plugins]]
+repo = 'vim-scripts/lithochromatic'
+[[plugins]]
+repo = 'vim-scripts/luainspect.vim'
+[[plugins]]
+repo = 'vim-scripts/mathematic.vim'
+[[plugins]]
+repo = 'vim-scripts/MochaLatte'
+[[plugins]]
+repo = 'vim-scripts/Nefertiti'
+[[plugins]]
+repo = 'vim-scripts/nextCS'
+[[plugins]]
+repo = 'vim-scripts/noctu.vim'
+[[plugins]]
+repo = 'vim-scripts/notes.vim'
+[[plugins]]
+repo = 'vim-scripts/PaperColor.vim'
+[[plugins]]
+repo = 'vim-scripts/quick-scope'
+[[plugins]]
+repo = 'vim-scripts/reload.vim'
+[[plugins]]
+repo = 'vim-scripts/searchmatch'
+[[plugins]]
+repo = 'vim-scripts/session.vim--Odding'
+[[plugins]]
+repo = 'vim-scripts/ShowSpaces'
+[[plugins]]
+repo = 'vim-scripts/SmartColumnColor'
+[[plugins]]
+repo = 'vim-scripts/Solarized'
+[[plugins]]
+repo = 'vim-scripts/Spacegray.vim'
+[[plugins]]
+repo = 'vim-scripts/strange'
+[[plugins]]
+repo = 'vim-scripts/surfer.vim'
+[[plugins]]
+repo = 'vim-scripts/tabpagecolorscheme'
+[[plugins]]
+repo = 'vim-scripts/toner.vim'
+[[plugins]]
+repo = 'vim-scripts/unite-gitlog'
+[[plugins]]
+repo = 'vim-scripts/vim-airline'
+[[plugins]]
+repo = 'vim-scripts/vim-colorscheme-switcher'
+[[plugins]]
+repo = 'vim-scripts/vim-gitgutter'
+[[plugins]]
+repo = 'vim-scripts/vim-git-log'
+[[plugins]]
+repo = 'vim-scripts/vim-misc'
+[[plugins]]
+repo = 'vim-scripts/vim-nose'
+[[plugins]]
+repo = 'vim-scripts/vimside'
+[[plugins]]
+repo = 'vim-scripts/vim-stardict'
+[[plugins]]
+repo = 'vim-scripts/vim-svngutter'
+[[plugins]]
+repo = 'vim-scripts/vim-tlv-mode'
+[[plugins]]
+repo = 'vim-scripts/Vim-Ultimate-Colorscheme-Utility'
+[[plugins]]
+repo = 'vim-scripts/wabisabi'
+[[plugins]]
+repo = 'vim-scripts/WholeLineColor'
+[[plugins]]
+repo = 'vim-scripts/yowish'
+[[plugins]]
+repo = 'voldikss/vim-floaterm'
+[[plugins]]
+repo = 'wellle/context.vim'
+[[plugins]]
+repo = 'wfxr/minimap.vim'
+[[plugins]]
+repo = 'wting/dotvim'
+[[plugins]]
+repo = 'ycm-core/neomake'
+[[plugins]]
+repo = 'yegappan/borland'
+[[plugins]]
+repo = 'Yggdroot/duoduo'
+[[plugins]]
+repo = 'Yggdroot/hiPairs'
+[[plugins]]
+repo = 'Yggdroot/LeaderF'
+[[plugins]]
+repo = 'yuki-ycino/fzf-preview.vim'
+[[plugins]]
+repo = 'yuttie/hydrangea-emacs'
+[[plugins]]
+repo = 'yuttie/hydrangea-vim'
+[[plugins]]
+repo = 'yuttie/inkstained-vim'
+[[plugins]]
+repo = 'yuttie/snowy-vim'
