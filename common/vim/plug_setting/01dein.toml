@@ -78,14 +78,10 @@ nnoremap [denite] <Nop>
 nmap <Leader>d [denite]
 nnoremap <silent> [denite]b :<C-u>Denite buffer -direction=topleft<CR>
 nnoremap <silent> [denite]l :<C-u>Denite file/old -direction=topleft<CR>
-nnoremap <silent> [denite]f :<C-u>Denite file -direction=topleft<CR>
+nnoremap <silent> [denite]f :<C-u>Denite file file:new -direction=topleft<CR>
 nnoremap <silent> [denite]d :<C-u>Denite dein -direction=topleft<CR>
-"nnoremap <silent> [denite]m :<C-u>Denite memo -direction=topleft <CR>
-nnoremap <silent> [denite]me :<C-u>Denite memo memo:new -direction=topleft <CR>
 nnoremap <silent> [denite]ma :<C-u>Denite mark -direction=topleft <CR>
-nnoremap <silent> [denite]g :<C-u>Denite ghq -direction=topleft <CR>
 nnoremap <silent> [denite]h :<C-u>Denite help -direction=topleft <CR>
-nnoremap <silent> [denite]p :<C-u>Denite PluginsList -direction=topleft <CR>
 '''
 hook_source='''
 if (has('nvim'))
@@ -119,16 +115,25 @@ nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
 repo = 'Jagua/vim-denite-ghq'
 depends = ['denite.nvim']
 on_source = ['denite.nvim']
+hook_add = '''
+nnoremap <silent> [denite]g :<C-u>Denite ghq -direction=topleft <CR>
+'''
 
 [[plugins]]
 repo = 'delphinus/vim-denite-memo'
 if = '''has('unix')'''
 on_source = ['denite.nvim']
+hook_add = '''
+nnoremap <silent> [denite]me :<C-u>Denite memo memo:new -direction=topleft <CR>
+'''
 
 [[plugins]]
 repo = 'mirachan010/vim-denite-plugins'
 depends = ['denite.nvim']
 on_source = ['denite.nvim']
+hook_add='''
+nnoremap <silent> [denite]p :<C-u>Denite PluginsList -direction=topleft <CR>
+'''
 
 [[plugins]]
 repo = 'mirachan010/vim-pluginlist'
@@ -175,18 +180,12 @@ on_source = ['defx.nvim']
 repo = 'ryanoasis/vim-devicons'
 on_source = ['defx.nvim']
 
-
-
-
-# [[plugins]]
-# repo = 'honza/vim-snippets'
-# on_source = ['neosnippet.vim']
-# hook_add = '''
-# let g:neosnippet#enable_snipmate_compatibility = 1
-# '''
-
-
-
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_source = ['neosnippet.vim']
+hook_add = '''
+let g:neosnippet#enable_snipmate_compatibility = 1
+'''
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
@@ -201,16 +200,65 @@ on_ft= ['markdown']
 build = '''
 cd app & yarn install
 '''
-
-[[plugins]]
-repo = 'mattn/emmet-vim'
-on_ft = ['html','css','java','javascript','php','perl']
-
-
 [[plugins]]
 repo = 'skanehira/preview-markdown.vim'
 if='''has('unix')'''
 
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html','css','java','javascript','php']
+hook_add = '''
+let g:user_emmet_leader_key = '<C-y>'
+let g:user_emmet_settings = {
+\    'variables' : {
+\        'lang' : 'ja',
+\    },
+\    'html' : {
+\        'filters' : 'html',
+\        'indentation' : ' ',
+\        'expandos' : {
+\            'ol': 'ol>li',
+\            'list': 'ul>li*3',
+\        },
+\        'default_attributes': {
+\            'a': {'href': ''},
+\            'link': [{'rel': 'stylesheet'}, {'href': ''}],
+\        },
+\        'aliases': {
+\            'bq': 'blockquote',
+\            'obj': 'object',
+\            'src': 'source',
+\        },
+\        'empty_elements': 'area,base,basefont,...,isindex,link,meta,...',
+\        'block_elements': 'address,applet,blockquote,...,li,link,map,...',
+\        'inline_elements': 'a,abbr,acronym,...',
+\        'empty_element_suffix': ' />',
+\    },
+\    'php' : {
+\        'extends' : 'html',
+\        'filters' : 'html,c',
+\    },
+\    'css' : {
+\        'filters' : 'fc',
+\    },
+\    'javascript' : {
+\        'snippets' : {
+\            'jq' : "\\$(function() {\n\t${cursor}${child}\n});",
+\            'jq:each' : "\\$.each(arr, function(index, item)\n\t${child}\n});",
+\            'fn' : "(function() {\n\t${cursor}\n})();",
+\            'tm' : "setTimeout(function() {\n\t${cursor}\n}, 100);",
+\        },
+\    },
+\    'java' : {
+\        'indentation' : '    ',
+\        'snippets' : {
+\            'main': "public static void main(String[] args) {\n\t|\n}",
+\            'println': "System.out.println(\"|\");",
+\            'class': "public class | {\n}\n",
+\        },
+\    },
+\}
+'''
 
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
@@ -225,7 +273,8 @@ repo = 'mattn/sonictemplate-vim'
 on_cmd = ['Template']
 hook_add = '''
 let g:sonictemplate_vim_template_dir = [
-\ '~\dotfiles\common\template',
-\ '/path/to/another/template/directory'
+\ '~\dotfiles\common\template'
 \]
 '''
+
+
