@@ -308,6 +308,7 @@ hook_add='''
 # status line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+depend = 'tokyonight-vim'
 hook_add = '''
 if !has('nvim')
   let g:lightline={
