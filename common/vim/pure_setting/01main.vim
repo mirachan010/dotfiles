@@ -12,8 +12,7 @@ elseif has("unix")
   let s:undo_path = expand('~/.cache/vim/undo')
   let g:python3_host_prog = '~/.anyenv/envs/pyenv/shims/python3'
 endif
-if has('nvim')
-else
+if !has('nvim')
   set pythonthreedll=python39.dll
   set cursorlineopt=number
 endif
