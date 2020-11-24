@@ -1,6 +1,5 @@
 "GUI Setting
 "GUI Looks{{{
-
 "set font size
 set guifont=Cica:h15:qDRAFT
 "Set Gui 
@@ -12,11 +11,7 @@ set guioptions=grLt
 set ch=2
 "auto maxsize
 au GUIEnter * simalt ~x
-
 "}}}
-
-
-
 "Mouse setting{{{
 
 " Hide the mouse when typing text
