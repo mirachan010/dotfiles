@@ -7,6 +7,9 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
             [ \( -f $i -o -h $i \) -a -r $i ] && . $i
     done
 fi
+if [ -e ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
 
 alias tmux="tmux -u2"
 
