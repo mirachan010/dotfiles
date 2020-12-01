@@ -260,14 +260,22 @@ repo='thinca/vim-quickrun'
 [[plugins]]
 repo='reireias/vim-cheatsheet'
 hook_add = '''
-let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\plug_setting\cheatsheet.md'
+if has('unix')
+  let g:cheatsheet#cheat_file = '~/dotfiles/common/vim/plug_setting/cheatsheet.md'
+else
+  let g:cheatsheet#cheat_file = '~\dotfiles\common\vim\plug_setting\cheatsheet.md'
+endif
 nmap <Leader>C :<c-u>Cheat<CR>
 '''
 # Set shortcut commands
 [[plugins]]
 repo = 'c000/rapidfire.vim'
 hook_add = '''
+  if has('unix')
     let g:rapidfire#persistent_filename="~/dotfiles/common/vim/plug_setting/key_setting.json"
+  else
+    let g:rapidfire#persistent_filename="~\dotfiles\common\vim\plug_setting\key_setting.json
+  endif
     nnoremap <F1>    :<C-u>Rapidfire F1<CR>
     nnoremap <F2>    :<C-u>Rapidfire F2<CR>
     nnoremap <F3>    :<C-u>Rapidfire F3<CR>
