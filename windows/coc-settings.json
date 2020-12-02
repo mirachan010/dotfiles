@@ -17,5 +17,11 @@
   "python.linting.flake8Enabled": false,
     "python.linting.enabled":true,
     "python.jediPath":"c:\\Python39\\lib\\site-packages",
-    "snippets.ultisnips.enable": true
+    "snippets.ultisnips.enable": true,
+    "java.configuration.runtimes":[
+        {
+            "name": "JavaSE-11",
+            "path": "c:\\usr\\jdk-11.0.8+10"
+        }
+    ]
 }
