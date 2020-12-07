@@ -9,7 +9,9 @@ noremap L $
 nnoremap u g-
 nnoremap <C-R> g+
 nnoremap Y y$
-nnoremap <silent> O :<C-u>call append('.', '')<CR>
+nnoremap x "_x
+
+cnoremap <C-p> <UP>
 
 let mapleader = "\\"
 "
