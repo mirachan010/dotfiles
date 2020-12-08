@@ -335,3 +335,6 @@ hook_add = '''
 repo = 'ghifarit53/tokyonight-vim'
 #    }}}
 # }}}
+[[plugins]]
+repo = 'tyru/eskk.vim'
+
