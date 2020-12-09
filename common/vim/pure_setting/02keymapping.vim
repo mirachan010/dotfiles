@@ -15,7 +15,11 @@ cnoremap <C-p> <UP>
 
 let mapleader = "\\"
 "
-nnoremap  <leader>ve :e ++enc=<CR>
+noremap [vim] <Nop>
+nnoremap <leader>v [vim]
+nnoremap  [vim]e :e ++enc=<CR>
+nnoremap  [vim]t :%retab!<CR>
+
 "if in nomalmode save file
 inoremap <silent> jj <ESC>:<C-u>w<CR>
 
