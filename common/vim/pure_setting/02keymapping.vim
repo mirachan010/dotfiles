@@ -10,6 +10,8 @@ nnoremap u g-
 nnoremap <C-R> g+
 nnoremap Y y$
 nnoremap x "_x
+nnoremap n nzz
+nnoremap N Nzz
 
 cnoremap <C-p> <UP>
 
