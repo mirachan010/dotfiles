@@ -52,7 +52,11 @@ set autoread
 set smartindent
 set autoindent
 
-set scrolloff=10
+augroup VCenterCursor
+  au!
+  au BufEnter,WinEnter,WinNew,VimResized *,*.*
+        \ let &scrolloff=winheight(win_getid())/2
+augroup END
 
 set splitbelow
 set splitright
