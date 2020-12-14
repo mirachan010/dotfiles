@@ -15,6 +15,7 @@ repo='neoclide/coc.nvim'
 rev='release'
 if=''' has('nvim')'''
 hook_add = '''
+nnoremap [coc] <Nop>
 nmap <Leader>c [coc]
 " Using CocList
 " Show all diagnostics
@@ -153,7 +154,7 @@ autocmd FileType markdown let b:coc_pairs=[["$","$"]]
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 if=''' !has('nvim')'''
-hook_source='''
+hook_add='''
 "---====setup vim-lsp==---
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_enabled = 1
@@ -164,19 +165,20 @@ let g:lsp_signs_warning = {'text': '‼'}
 let g:lsp_signs_information = {'text': 'i'}
 let g:lsp_signs_hint = {'text': '?'}
 
+nnoremap [Lsp] <Nop>
 nmap <Leader>l [Lsp]
 " 定義ジャンプ
 nnoremap [Lsp]<C-]> :<C-u>LspDefinition<CR>
 " 定義情報のホバー表示
-nnoremap [Lsp]K :<C-u>LspHover<CR>
+nnoremap [Lsp]k :<C-u>LspHover<CR>
 " 名前変更
-nnoremap [Lsp]R :<C-u>LspRename<CR>
+nnoremap [Lsp]r :<C-u>LspRename<CR>
 " 参照検索
 nnoremap [Lsp]n :<C-u>LspReferences<CR>
 " Lint結果をQuickFixで表示
-nnoremap [Lsp]f :<C-u>LspDocumentDiagnostics<CR>
+nnoremap [Lsp]d :<C-u>LspDocumentDiagnostics<CR>
 " テキスト整形
-nnoremap [Lsp]s :<C-u>LspDocumentFormat<CR>
+nnoremap [Lsp]f :<C-u>LspDocumentFormat<CR>
 '''
 
 [[plugins]]
