@@ -27,6 +27,8 @@ inoremap <silent> jj <ESC>:<C-u>w<CR>
 
 "dotfilesの編集されたのを読み込み直す
 nmap <Leader>.. :<C-u>source $MYVIMRC<CR>
+
+"インサートでxしたときに一旦メニューが出てくる
 " 入力キーの辞書
 let s:compl_key_dict = {
       \ char2nr("\<C-l>"): "\<C-x>\<C-l>",
