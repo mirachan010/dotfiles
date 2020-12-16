@@ -340,3 +340,6 @@ repo = 'ghifarit53/tokyonight-vim'
 [[plugins]]
 repo = 'tyru/eskk.vim'
 
+[[plugins]]
+repo = 'y0za/vim-reading-vimrc'
+
