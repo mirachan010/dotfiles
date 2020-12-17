@@ -255,6 +255,12 @@ repo = 'tpope/vim-commentary'
 repo = 'tpope/vim-repeat'
 #    }}}
 #    Easy action commands{{{
+# reading-vimrc
+[[plugins]]
+repo = 'y0za/vim-reading-vimrc'
+# eskk.vim
+[[plugins]]
+repo = 'tyru/eskk.vim'
 # easy to change word
 [[plugins]]
 repo = 'lambdalisue/reword.vim'
@@ -337,9 +343,4 @@ hook_add = '''
 repo = 'ghifarit53/tokyonight-vim'
 #    }}}
 # }}}
-[[plugins]]
-repo = 'tyru/eskk.vim'
-
-[[plugins]]
-repo = 'y0za/vim-reading-vimrc'
 
