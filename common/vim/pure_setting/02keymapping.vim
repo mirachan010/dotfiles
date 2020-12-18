@@ -68,3 +68,24 @@ function! s:hint_i_ctrl_x() abort
 endfunction
  
 inoremap <expr> <C-x>  <SID>hint_i_ctrl_x()
+" tags jump
+nnoremap <C-]> g<C-]>
+
+" goto
+nnoremap gf gF
+nnoremap <C-w>f <C-w>F
+nnoremap <C-w>gf <C-w>F
+nnoremap <C-w><C-f> <C-w>F
+nnoremap <C-w>g<C-f> <C-w>F
+
+" split goto
+nnoremap -gf        :<C-u>split<Esc>gF
+nnoremap <Bar>gf    :<C-u>vsplit<Esc>gF
+nnoremap -<C-]>     :<C-u>split<Esc>g<C-]>
+nnoremap <Bar><C-]> :<C-u>vsplit<Esc>g<C-]>
+
+"split
+nnoremap -     :<C-u>split<CR>
+nnoremap <Bar> :<C-u>vsplit<CR>
+nnoremap --     :<C-u>split<CR>
+nnoremap <Bar><Bar> :<C-u>vsplit<CR>
