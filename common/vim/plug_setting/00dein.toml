@@ -198,6 +198,9 @@ let g:lsp_settings_root_markers = [
   \ ]
 '''
 [[plugins]]
+repo = 'mattn/vim-findroot'
+
+[[plugins]]
 repo = 'mattn/vim-lsp-icons'
 if=''' !has('nvim')'''
 
@@ -343,4 +346,3 @@ hook_add = '''
 repo = 'ghifarit53/tokyonight-vim'
 #    }}}
 # }}}
-
