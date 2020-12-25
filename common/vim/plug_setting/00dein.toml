@@ -123,6 +123,7 @@ imap <C-l> <Plug>(coc-snippets-expand)
         \'coc-python',
         \'coc-tsserver',
         \'coc-snippets'
+        \'coc-marketplace'
     \]
 
 function! CocCurrentFunction()
