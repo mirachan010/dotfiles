@@ -9,7 +9,7 @@ repo = 'vim-jp/vimdoc-ja.git'
 hook_add = '''
     set helplang=ja,en
 '''
-# Set if use neovim
+# Set if use neovim{{{
 [[plugins]]
 repo='neoclide/coc.nvim'
 rev='release'
@@ -148,9 +148,9 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "for pairs
 autocmd FileType vim let b:coc_pairs_disabled=['"']
 autocmd FileType markdown let b:coc_pairs=[["$","$"]]
-'''
+'''# }}}
 
-# For vim-lsp
+# For vim-lsp{{{
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 if=''' !has('nvim')'''
@@ -202,7 +202,7 @@ repo = 'mattn/vim-findroot'
 
 [[plugins]]
 repo = 'mattn/vim-lsp-icons'
-if=''' !has('nvim')'''
+if=''' !has('nvim')'''# }}}
 
 # Set if use Vim{{{
 #    use for remote plugins{{{

@@ -27,3 +27,4 @@ augroup MyGitSpellCheck
 augroup END
 
 au FileType vim setlocal foldmethod=marker
+au FileType toml setlocal foldmethod=marker
