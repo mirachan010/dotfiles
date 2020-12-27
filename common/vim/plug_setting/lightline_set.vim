@@ -36,11 +36,11 @@ else
     \ },
     \ }
 endif
-  let g:lightline.tab_component_function = {
-    \'filename':'LightlineTabFilename',
-    \ 'modified': 'lightline#tab#modified',
-    \ 'readonly': 'lightline#tab#readonly',
-    \ 'tabnum': 'lightline#tab#tabnum'}
+let g:lightline.tab_component_function = {
+  \'filename':'LightlineTabFilename',
+  \ 'modified': 'lightline#tab#modified',
+  \ 'readonly': 'lightline#tab#readonly',
+  \ 'tabnum': 'lightline#tab#tabnum'}
 let g:lightline.tab = {
   \ 'active': [ 'tabnum', 'filename', 'modified' ],
   \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
