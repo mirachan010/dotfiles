@@ -328,6 +328,8 @@ hook_add='''
    nmap [Git]u <Plug>(GitGutterRevertHunk)
    nmap [Git]v <Plug>(GitGutterPreviewHunk)
 '''
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
 # }}}
 
 # Set looks{{{

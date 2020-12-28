@@ -326,10 +326,6 @@ let g:user_emmet_settings = {
 '''
 
 [[plugins]]
-repo = 'lambdalisue/gina.vim'
-on_cmd = ['Gina']
-
-[[plugins]]
 repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern', 'FernDo']
 
