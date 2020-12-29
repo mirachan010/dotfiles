@@ -8,7 +8,6 @@ scriptencoding=utf-8
 set runtimepath+=~/dotfiles/common/vim
 runtime! pure_setting/*.vim
 call dein#remote_plugins()
-runtime! plug_setting/*.vim
 
 " Set Colors
 set termguicolors
