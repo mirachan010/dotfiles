@@ -320,6 +320,7 @@ repo = 'airblade/vim-gitgutter'
 hook_add='''
    set signcolumn=yes
    let g:gitgutter_map_keys = 0
+   let g:gitgutter_sign_removed="-"
    nnoremap [Git] <Nop>
    nmap <Leader>g [Git]
    nmap [Git]p <Plug>(GitGutterPrevHunk)
