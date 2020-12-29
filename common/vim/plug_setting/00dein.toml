@@ -122,7 +122,7 @@ imap <C-l> <Plug>(coc-snippets-expand)
         \'coc-json',
         \'coc-python',
         \'coc-tsserver',
-        \'coc-snippets'
+        \'coc-snippets',
         \'coc-marketplace'
     \]
 
