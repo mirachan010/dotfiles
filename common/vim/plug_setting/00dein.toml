@@ -425,29 +425,6 @@ function! LightlineTabFilename(n) abort
   return _ !=# '' ? _ : '[No Name]'
 endfunction
 
-function! LightlineModified()
-  if &filetype == 'help'
-    return ''
-  elseif &modified
-    return '+'
-  elseif &modifiable
-    return ''
-  else
-    return '-'
-  endif
-endfunction
-
-function! LightlineReadonly()
-  if &filetype == 'help'
-    return ''
-  elseif &readonly
-    return 'x'
-  else
-    return ''
-  endif
-endfunction
-
-
 if empty(globpath(&rtp, 'autoload/lightline/colorscheme/tokyonight.vim'))
   let g:lightline.colorscheme = 'wombat'
   finish
