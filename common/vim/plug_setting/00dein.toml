@@ -9,7 +9,12 @@ repo = 'vim-jp/vimdoc-ja.git'
 hook_add = '''
     set helplang=ja,en
 '''
+
+[[plugins]]
+repo = 'mattn/vim-findroot'
+
 # Set if use neovim{{{
+# coc-nvim{{{
 [[plugins]]
 repo='neoclide/coc.nvim'
 rev='release'
@@ -150,7 +155,35 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 autocmd FileType vim let b:coc_pairs_disabled=['"']
 autocmd FileType markdown let b:coc_pairs=[["$","$"]]
 '''# }}}
+# nvim-treesitter{{{
+#あんまり利点がわからなかった一旦停止
+# [[plugins]]
+# repo = 'nvim-treesitter/nvim-treesitter'
+# merged = 0
+# if=''' has('nvim')'''
+# hook_source= '''
+# lua <<EOF
+#   require'nvim-treesitter.configs'.setup {
+#     highlight = {
+#       enable = true,
+#       disable = {
+#         'lua',
+#         'ruby',
+#         'c_sharp',
+#         'vue',
+#       }
+#     },
+#     ensure_installed = 'all'
+#   }
+# EOF
+#'''
+# [[plugins]]
+# if = '''has('nvim')'''
+# repo = 'glepnir/zephyr-nvim'}}}
+# }}}
 
+
+# Set if use Vim{{{
 # For vim-lsp{{{
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
@@ -198,14 +231,12 @@ let g:lsp_settings_root_markers = [
   \ '.git/',
   \ ]
 '''
-[[plugins]]
-repo = 'mattn/vim-findroot'
 
 [[plugins]]
 repo = 'mattn/vim-lsp-icons'
-if=''' !has('nvim')'''# }}}
+if=''' !has('nvim')'''
 
-# Set if use Vim{{{
+# }}}
 #    use for remote plugins{{{
 [[plugins]]
 if=''' !has('nvim')'''
@@ -215,7 +246,7 @@ repo = 'roxma/nvim-yarp'
 if=''' !has('nvim')'''
 repo = 'roxma/vim-hug-neovim-rpc'
 #    }}}
-# Set easy translate
+# Set easy translate{{{
 [[plugins]]
 repo = 'skanehira/translate.vim'
 if=''' !has('nvim')'''
@@ -227,7 +258,8 @@ hook_add = '''
     vmap tj <Plug>(VTranslate)
     vmap te <Plug>(VTranslateBang)
 '''
-#make imgfiles
+#}}}
+#make imgfiles{{{
 [[plugins]]
 repo = 'skanehira/code2img.vim'
 if=''' !has('nvim')'''
@@ -235,6 +267,7 @@ hook_add = '''
 let g:code2img_theme = 'monokai'
 let g:code2img_line_number = 1
 '''
+#}}}
 # }}}
 
 # Make new Function{{{

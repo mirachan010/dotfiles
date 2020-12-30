@@ -21,7 +21,7 @@ function check() {
         echo download vim
         git clone git@github.com:vim/vim /media/disk1/backups/vim > /dev/null 2>&1
         echo downloaded
-        cd /tmp/vim
+        cd /media/disk1/backups/vim
     fi
 }
 
