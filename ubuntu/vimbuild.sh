@@ -3,7 +3,7 @@ function check() {
     if [ -e /media/disk1/backups/vim ]; then
         cd /media/disk1/backups/vim;
         echo checking vim version now.
-        GitHubVer=$(git ls-remote origin |grep -E v8.2.|tail -1|awk '{print $2}'|sed 's/refs\/tags\///')
+        GitHubVer=$(git ls-remote origin |tail -1|awk '{print $2}'|sed 's/refs\/tags\///')
         MyVer=$(git tag|tail -1)
         #GitHubVer=$(git ls-remote origin HEAD| awk '{print $1}')
         #MyVer=$(git rev-parse HEAD)
