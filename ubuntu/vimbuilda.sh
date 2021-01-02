@@ -4,7 +4,8 @@
 if [ -e ~/.localvimpath ]; then
     source ~/.localvimpath
 else
-    source ~/dotfiles/ubuntu/defultpath.sh
+    THIS_DIR=$(cd $(dirname $0); pwd)
+    source "$THIS_DIR"/defultpath.sh
 fi
 if [ $1 -eq "-y" ]; then
     YN=1
