@@ -1,14 +1,21 @@
 #!/bin/bash
 
 # Setting some PATH
+THIS_DIR=$(cd $(dirname $0); pwd)
+source "$THIS_DIR"/defaultpath.sh
 if [ -e ~/.localvimpath ]; then
     source ~/.localvimpath
-else
-    THIS_DIR=$(cd $(dirname $0); pwd)
-    source "$THIS_DIR"/defultpath.sh
 fi
-if [ $1 -eq "-y" ]; then
-    YN=1
+if [ $# == 1 ]; then
+    case "$1" in
+        -y|yes)
+            YN=1
+            ;;
+        -f|force-install)
+            rm -rf $VIMPATH
+            YN=1
+            ;;
+    esac
 fi
 
 
@@ -18,7 +25,7 @@ if [ -e $VIMPATH ]; then
     GitHubVer=$(git ls-remote origin |tail -1|awk '{print $2}'|sed 's/refs\/tags\///')
     MyVer=$(git tag|tail -1)
     if [ "$GitHubVer" != "$MyVer" ]; then
-        if [ "$YN" == 0 ]
+        if [ "$YN" == 0 ]; then
             read -p "Update vim?\n(y/n)>>" YN
             if [[ "$YN" != [yY] ]]; then
                 exit 1
@@ -34,7 +41,7 @@ if [ -e $VIMPATH ]; then
         exit 0
     fi
 else
-    if [ "$YN" == 0 ]
+    if [ "$YN" == 0 ]; then
         read -p "Download vim?\n(y/n)>>" YN
         if [[ "$YN" != [yY] ]]; then
             exit 1
@@ -60,11 +67,11 @@ echo configing now
     --enable-fontset \
     --enable-multibyte \
     vi_cv_path_python3="$PYTHONPATH"
-echo configed\nmaking now
-make > /dev/null 2>&1
-echo maked
-sudo make install > /dev/null 2>&1
-echo finish to install vim.$GitHubVer
-echo python_path=$PYTHONPATH
-echo ruby_path=$RUBYPATH
-echo lua_path=$LUAPATH
+    echo configed\nmaking now
+    make # > /dev/null 2>&1
+    echo maked
+    sudo make install # > /dev/null 2>&1
+    echo finish to install vim.$GitHubVer
+    echo python_path=$PYTHONPATH
+    echo ruby_path=$RUBYPATH
+    echo lua_path=$LUAPATH
