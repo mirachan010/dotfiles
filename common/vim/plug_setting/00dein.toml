@@ -365,7 +365,7 @@ if !has('nvim')
         \'right':[
         \[ 'lsp_errors', 'lsp_warnings', 'lsp_ok' ],
         \[ 'percent' ],
-        \[ 'fileformat', 'fileencoding', 'filetype' ],
+        \[ 'fileformat', 'fileencoding', 'filetype', 'time' ],
         \],
         \},
         \'component_function': {
@@ -376,6 +376,7 @@ if !has('nvim')
         \  'lsp_errors':   'LightlineLSPErrors',
         \  'lsp_ok':       'LightlineLSPOk',
         \  'lsp_status':'lightline_lsp_progress#progress',
+        \  'time':'NowTime',
         \ },
         \ 'component_type': {
         \   'lsp_warnings': 'warning',
@@ -396,6 +397,10 @@ else
         \ },
         \ }
 endif
+
+function! NowTime() abort
+  return strftime("%H:%M")
+endfunction
 
 function! LightlineLSPWarnings() abort
   let l:counts = lsp#get_buffer_diagnostics_counts()
