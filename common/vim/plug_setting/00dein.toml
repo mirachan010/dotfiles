@@ -418,17 +418,18 @@ augroup LightLineOnLSP
   autocmd User lsp_diagnostics_updated call lightline#update()
 augroup END
 
-function! MyGitStatus() abort
-  let staged = gina#component#status#staged()
-  let unstaged = gina#component#status#unstaged()
-  let conflicted = gina#component#status#conflicted()
-  return printf(
-        \ 's: %s, u: %s, c: %s',
-        \ staged,
-        \ unstaged,
-        \ conflicted,
-        \)
-endfunction
+"めがっさおもくなったからさよなら
+"function! MyGitStatus() abort
+"  let staged = gina#component#status#staged()
+"  let unstaged = gina#component#status#unstaged()
+"  let conflicted = gina#component#status#conflicted()
+"  return printf(
+"        \ 's: %s, u: %s, c: %s',
+"        \ staged,
+"        \ unstaged,
+"        \ conflicted,
+"        \)
+"endfunction
 
 function! MyGitGutter()
   if ! exists('*GitGutterGetHunkSummary')
