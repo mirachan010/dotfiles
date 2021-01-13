@@ -480,12 +480,7 @@ function! LightlineTabFilename(n) abort
   return _ !=# '' ? _ : '[No Name]'
 endfunction
 
-if empty(globpath(&rtp, 'autoload/lightline/colorscheme/tokyonight.vim'))
-  let g:lightline.colorscheme = 'wombat'
-  finish
-endif
-
-let g:lightline.colorscheme = 'tokyonight'
+let g:lightline.colorscheme = 'wombat'
 '''
 
 # Make indentline
@@ -498,5 +493,8 @@ hook_add = '''
 #    Colorschemes{{{
 [[plugins]]
 repo = 'ghifarit53/tokyonight-vim'
+hook_add = '''
+  let g:lightline.colorscheme = 'tokyonight'
+'''
 #    }}}
 # }}}
