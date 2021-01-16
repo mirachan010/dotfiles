@@ -10,3 +10,5 @@
 	editor = vim -c \"set fenc=utf-8\"
 [ghq]
 	root = /home/mira/git
+[init]
+	defaultBranch = master
