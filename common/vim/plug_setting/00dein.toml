@@ -360,7 +360,8 @@ if !has('nvim')
   let g:lightline={
         \'active': {
         \'left': [ [ 'mode', 'paste' ],
-        \[ 'gitbranch', 'gitstatus', 'readonly', 'filename', 'lsp_status']
+        \[ 'gitbranch', 'gitstatus', 'readonly'],
+        \[ 'filename', 'lsp_status']
         \],
         \'right':[
         \[ 'lsp_errors', 'lsp_warnings', 'lsp_ok' ],
@@ -493,17 +494,25 @@ hook_add = '''
 #    Colorschemes{{{
 [[plugins]]
 repo = 'ghifarit53/tokyonight-vim'
-hook_add = '''
-  let g:lightline.colorscheme = 'tokyonight'
-'''
 
 [[plugins]]
 repo = 'cormacrelf/vim-colors-github'
 hook_add = '''
-  let g:lightline.colorscheme = 'github'
   let g:github_colors_soft = 1
   let g:github_colors_block_diffmark = 0
 '''
 
 #    }}}
 # }}}
+[[plugins]]
+repo = 'twitvim/twitvim'
+hook_add = '''
+" アクセストークンは別で用意するのである
+source ~/dotfiles/twitkeys.vim
+let twitvim_enable_python = 1 
+let twitvim_browser_cmd = 'google-chrome' 
+let twitvim_force_ssl = 1 
+let twitvim_count = 40
+'''
+
+
