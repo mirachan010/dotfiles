@@ -11,7 +11,7 @@ call dein#remote_plugins()
 
 " Set Colors
 set termguicolors
-set background=dark
+set background=light
 
 colorscheme github
 

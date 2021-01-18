@@ -480,7 +480,7 @@ function! LightlineTabFilename(n) abort
   return _ !=# '' ? _ : '[No Name]'
 endfunction
 
-let g:lightline.colorscheme = 'wombat'
+let g:lightline.colorscheme = 'github'
 '''
 
 # Make indentline
