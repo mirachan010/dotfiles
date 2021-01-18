@@ -330,6 +330,7 @@ repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern', 'FernDo']
 [[plugins]]
 repo = 'lambdalisue/fern-git-status.vim'
+depends = ['fern.vim']
 on_source= ['fern.vim']
 hook_add = '''
 let g:fern_git_status#disable_ignored = 1
