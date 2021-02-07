@@ -23,5 +23,6 @@
             "name": "JavaSE-11",
             "path": "c:\\usr\\jdk-11.0.8+10"
         }
-    ]
+    ],
+    "java.format.settings.url": "C:\\Users\\mira\\AppData\\Local\\coc\\extensions\\node_modules\\redhat.java\\eclipse-formatter.xml"
 }

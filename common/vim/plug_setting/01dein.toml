@@ -326,17 +326,6 @@ let g:user_emmet_settings = {
 '''
 
 [[plugins]]
-repo = 'lambdalisue/fern.vim'
-on_cmd = ['Fern', 'FernDo']
-[[plugins]]
-repo = 'lambdalisue/fern-git-status.vim'
-depends = ['fern.vim']
-on_source= ['fern.vim']
-hook_add = '''
-let g:fern_git_status#disable_ignored = 1
-'''
-
-[[plugins]]
 repo = 'mattn/sonictemplate-vim'
 on_cmd = ['Template']
 hook_add = '''

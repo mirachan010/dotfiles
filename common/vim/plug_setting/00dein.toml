@@ -250,7 +250,6 @@ repo = 'roxma/vim-hug-neovim-rpc'
 [[plugins]]
 repo = 'skanehira/translate.vim'
 if=''' !has('nvim')'''
-rev = 'v0.0.3'
 hook_add = '''
     let g:translate_source = "en"
     let g:translate_target = "ja"
@@ -365,8 +364,8 @@ if !has('nvim')
         \],
         \'right':[
         \[ 'lsp_errors', 'lsp_warnings', 'lsp_ok' ],
-        \[ 'percent' ],
-        \[ 'fileformat', 'fileencoding', 'filetype', 'time' ],
+        \[ 'percent', 'time' ],
+        \[ 'fileformat', 'fileencoding', 'filetype' ],
         \],
         \},
         \'component_function': {
@@ -516,3 +515,16 @@ let twitvim_count = 40
 '''
 
 
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+hook_add = '''
+let g:fern_git_status#disable_ignored = 1
+'''
+[[plugins]]
+repo = 'ka-tsu-mo/at-vim-coder'
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'mattn/vim-mastodon'
