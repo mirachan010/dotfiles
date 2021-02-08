@@ -27,7 +27,8 @@ done
 # ここからはファイル個別移動系設定
 rm -rf ~/.config/nvim
 mkdir ~/.config/nvim
-ln -snfv "$THIS_DIR"/../ubuntu/init.vim ~/.config/nvim/
+ln -snfv "$THIS_DIR"/../common/neovim/init.lua ~/.config/nvim/init.lua
+ln -snfv "$THIS_DIR"/../common/neovim/lua ~/.config/nvim/lua
 rm -rf ~/.gitconfig
 ln -snfv "$THIS_DIR"/../common/.gitconfig ~/.gitconfig
 ln -snfv "$THIS_DIR"/../common/vim/vimsetting.vim ~/.vimrc
