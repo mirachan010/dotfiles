@@ -7,5 +7,4 @@ if vim.fn.has('persistent_undo') == 1 then
 end 
 
 vim.cmd('colorscheme moonfly')
-vim.api.nvim_set_var('lightline', { colorscheme = 'moonfly' })
 vim.api.nvim_set_var('moonflyCursorColor', 1)
