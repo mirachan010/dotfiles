@@ -1,9 +1,16 @@
+-- Auto install packer.nvim if not exists
+local install_path = vim.fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+end
+
+vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
+
 vim.cmd[[command! PackerInstall packadd packer.nvim | lua require'plugins'.install()]]
 vim.cmd[[command! PackerUpdate packadd packer.nvim | lua require'plugins'.update()]]
 vim.cmd[[command! PackerSync packadd packer.nvim | lua require'plugins'.sync()]]
 vim.cmd[[command! PackerClean packadd packer.nvim | lua require'plugins'.clean()]]
 vim.cmd[[command! PackerCompile packadd packer.nvim | lua require'plugins'.compile()]]
-
 
 local packer = nil
 local function init()
