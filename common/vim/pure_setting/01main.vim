@@ -13,7 +13,7 @@ elseif has("unix")
   let g:python3_host_prog = '~/.anyenv/envs/pyenv/shims/python3'
 endif
 if !has('nvim')
-  set pythonthreedll=python39.dll
+  " set pythonthreedll=python39.dll
   set cursorlineopt=number
 endif
 "Undo保存
