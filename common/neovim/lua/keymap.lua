@@ -1,4 +1,4 @@
-vim.g.mapleader = "\\"
+vim.api.nvim_set_var('mapleader','\\')
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true})
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true })
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true })
