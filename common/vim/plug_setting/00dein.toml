@@ -358,6 +358,20 @@ hook_add='''
 '''
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
+hook_add='''
+  nnoremap , <Nop>
+  nnoremap ,. <Cmd>Gina cd<CR>
+  nnoremap ,b <Cmd>Gina branch -av<CR>
+  nnoremap ,c <Cmd>Gina compare<CR>
+  nnoremap ,d <Cmd>Gina diff<CR>
+  nnoremap ,l <Cmd>Gina log --graph --all<CR>
+  nnoremap ,s <Cmd>Gina status<CR>
+  nnoremap ,y <Cmd>Gina browse --exact --yank :<CR>
+  command! Amend  Gina commit --amend
+  command! Blame  Gina blame
+  command! Commit Gina commit
+  command! -nargs=* Stash Gina stash <args>
+  '''
 # }}}
 
 # Set looks{{{
