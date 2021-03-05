@@ -550,7 +550,3 @@ let g:fern_git_status#disable_ignored = 1
 '''
 [[plugins]]
 repo = 'ka-tsu-mo/at-vim-coder'
-[[plugins]]
-repo = 'mattn/webapi-vim'
-[[plugins]]
-repo = 'mattn/vim-mastodon'

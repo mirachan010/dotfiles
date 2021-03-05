@@ -333,3 +333,9 @@ let g:sonictemplate_vim_template_dir = [
 \ '~\dotfiles\common\template'
 \]
 '''
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'mattn/vim-mastodon'
+on_cmd = ['Mastodon']
