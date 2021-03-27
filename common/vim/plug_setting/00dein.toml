@@ -13,181 +13,10 @@ hook_add = '''
 [[plugins]]
 repo = 'mattn/vim-findroot'
 
-# Set if use neovim{{{
-# coc-nvim{{{
-[[plugins]]
-repo='neoclide/coc.nvim'
-rev='release'
-if=''' has('nvim')'''
-hook_add = '''
-nnoremap [coc] <Nop>
-nmap <Leader>c [coc]
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> [coc]d  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> [coc]e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> [coc]c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> [coc]o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> [coc]s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> [coc]j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> [coc]k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> [coc]p  :<C-u>CocListResume<CR>
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <c-k> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
-endfunction
-
-" Highlight symbol under cursor on CursorHold
-"autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
-
-" Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
-    autocmd!
-    " Setup formatexpr specified filetype(s).
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    " Update signature help on jump placeholder
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Create mappings for function text object, requires document symbols feature of languageserver.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> [coc]<C-d> <Plug>(coc-range-select)
-xmap <silent> [coc]<C-d> <Plug>(coc-range-select)
-imap <C-l> <Plug>(coc-snippets-expand)
-
-"nnoremap <silent> <Leader>A :<C-u>SrcExplToggle<CR>:NERDTreeToggle<CR>:TagbarToggle<CR>
-
-    let g:coc_global_extensions=[
-        \'coc-json',
-        \'coc-python',
-        \'coc-tsserver',
-        \'coc-snippets',
-        \'coc-marketplace'
-    \]
-
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
-"set quickrun
-let g:quickrun_config={"*":{'hook/time/enable':'1'},}
-
-
-
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-"for pairs
-autocmd FileType vim let b:coc_pairs_disabled=['"']
-autocmd FileType markdown let b:coc_pairs=[["$","$"]]
-'''# }}}
-# nvim-treesitter{{{
-#あんまり利点がわからなかった一旦停止
-# [[plugins]]
-# repo = 'nvim-treesitter/nvim-treesitter'
-# merged = 0
-# if=''' has('nvim')'''
-# hook_source= '''
-# lua <<EOF
-#   require'nvim-treesitter.configs'.setup {
-#     highlight = {
-#       enable = true,
-#       disable = {
-#         'lua',
-#         'ruby',
-#         'c_sharp',
-#         'vue',
-#       }
-#     },
-#     ensure_installed = 'all'
-#   }
-# EOF
-#'''
-# [[plugins]]
-# if = '''has('nvim')'''
-# repo = 'glepnir/zephyr-nvim'}}}
-# }}}
-
-
-# Set if use Vim{{{
+#zaj Set if use Vim{{{
 # For vim-lsp{{{
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
-if=''' !has('nvim')'''
 hook_add='''
 "---====setup vim-lsp==---
 let g:lsp_signs_enabled = 1
@@ -234,22 +63,11 @@ let g:lsp_settings_root_markers = [
 
 [[plugins]]
 repo = 'mattn/vim-lsp-icons'
-if=''' !has('nvim')'''
 
 # }}}
-#    use for remote plugins{{{
-[[plugins]]
-if=''' !has('nvim')'''
-repo = 'roxma/nvim-yarp'
-
-[[plugins]]
-if=''' !has('nvim')'''
-repo = 'roxma/vim-hug-neovim-rpc'
-#    }}}
 # Set easy translate{{{
 [[plugins]]
 repo = 'skanehira/translate.vim'
-if=''' !has('nvim')'''
 hook_add = '''
     let g:translate_source = "en"
     let g:translate_target = "ja"
@@ -389,98 +207,35 @@ if !has('nvim')
         \[ 'filename', 'lsp_status']
         \],
         \'right':[
-        \[ 'lsp_errors', 'lsp_warnings', 'lsp_ok' ],
         \[ 'percent', 'time' ],
         \[ 'fileformat', 'fileencoding', 'filetype' ],
         \],
         \},
         \'component_function': {
         \  'gitbranch': 'gina#component#repo#branch',
-        \  'gitstatus': 'MyGitGutter',
+        \  'gitstatus': 'MyGitStatus',
         \  'filename': 'LightlineFilename',
-        \  'lsp_warnings': 'LightlineLSPWarnings',
-        \  'lsp_errors':   'LightlineLSPErrors',
-        \  'lsp_ok':       'LightlineLSPOk',
-        \  'lsp_status':'lightline_lsp_progress#progress',
         \  'time':'NowTime',
         \ },
         \ 'component_type': {
-        \   'lsp_warnings': 'warning',
-        \   'lsp_errors':   'error',
-        \   'lsp_ok':       'middle',
         \ },
         \}
-else
-  let g:lightline = {
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'filename': 'LightlineFilename',
-        \   'cocstatus': 'coc#status',
-        \   'currentfunction': 'CocCurrentFunction'
-        \ },
-        \ }
-endif
 
 function! NowTime() abort
   return strftime("%H:%M")
 endfunction
 
-function! LightlineLSPWarnings() abort
-  let l:counts = lsp#get_buffer_diagnostics_counts()
-  return l:counts.warning == 0 ? '' : printf('W:%d', l:counts.warning)
-endfunction
 
-function! LightlineLSPErrors() abort
-  let l:counts = lsp#get_buffer_diagnostics_counts()
-  return l:counts.error == 0 ? '' : printf('E:%d', l:counts.error)
-endfunction
-
-function! LightlineLSPOk() abort
-  let l:counts =  lsp#get_buffer_diagnostics_counts()
-  let l:total = l:counts.error + l:counts.warning
-  return l:total == 0 ? 'OK' : ''
-endfunction
-
-augroup LightLineOnLSP
-  autocmd!
-  autocmd User lsp_diagnostics_updated call lightline#update()
-augroup END
-
-"めがっさおもくなったからさよなら
-"function! MyGitStatus() abort
-"  let staged = gina#component#status#staged()
-"  let unstaged = gina#component#status#unstaged()
-"  let conflicted = gina#component#status#conflicted()
-"  return printf(
-"        \ 's: %s, u: %s, c: %s',
-"        \ staged,
-"        \ unstaged,
-"        \ conflicted,
-"        \)
-"endfunction
-
-function! MyGitGutter()
-  if ! exists('*GitGutterGetHunkSummary')
-        \ || ! get(g:, 'gitgutter_enabled', 0)
-        \ || winwidth('.') <= 90
-    return ''
-  endif
-  let symbols = [
-        \ g:gitgutter_sign_added . ' ',
-        \ g:gitgutter_sign_modified . ' ',
-        \ g:gitgutter_sign_removed . ' '
-        \ ]
-  let hunks = GitGutterGetHunkSummary()
-  let ret = []
-  for i in [0, 1, 2]
-    if hunks[i] > 0
-      call add(ret, symbols[i] . hunks[i])
-    endif
-  endfor
-  return join(ret, ' ')
+function! MyGitStatus() abort
+  let staged = gina#component#status#staged()
+  let unstaged = gina#component#status#unstaged()
+  let conflicted = gina#component#status#conflicted()
+  return printf(
+        \ 's: %s, u: %s, c: %s',
+        \ staged,
+        \ unstaged,
+        \ conflicted,
+        \)
 endfunction
 
 let g:lightline.tab_component_function = {
