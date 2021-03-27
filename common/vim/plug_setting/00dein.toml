@@ -46,15 +46,8 @@ nnoremap [Lsp]f :<C-u>LspDocumentFormat<CR>
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
-if=''' !has('nvim')'''
 merged = 0
 hook_add='''
-let g:lsp_settings = {
-  \   'efm-langserver':{
-  \     'disabled': v:false,
-  \     'allowlist':['markdown'],
-  \   }
-  \ }
 let g:lsp_settings_root_markers = [
   \ '.git',
   \ '.git/',
@@ -74,15 +67,6 @@ hook_add = '''
     let g:translate_winsize = 10
     vmap tj <Plug>(VTranslate)
     vmap te <Plug>(VTranslateBang)
-'''
-#}}}
-#make imgfiles{{{
-[[plugins]]
-repo = 'skanehira/code2img.vim'
-if=''' !has('nvim')'''
-hook_add = '''
-let g:code2img_theme = 'monokai'
-let g:code2img_line_number = 1
 '''
 #}}}
 # }}}
@@ -109,9 +93,6 @@ repo = 'tpope/vim-commentary'
 repo = 'tpope/vim-repeat'
 #    }}}
 #    Easy action commands{{{
-# reading-vimrc
-[[plugins]]
-repo = 'y0za/vim-reading-vimrc'
 # eskk.vim
 [[plugins]]
 repo = 'tyru/eskk.vim'
@@ -123,7 +104,7 @@ let g:eskk#enable_completion=1
 let g:eskk#server = {
   \ 'host': 'localhost',
   \ 'port': '55100',
-  \ 'type': 'notfound',
+\'type': 'notfound',
   \}
 set imdisable
 '''
@@ -145,7 +126,7 @@ if has('unix')
 else
   let g:cheatsheet#cheat_file = '~\\dotfiles\\common\\vim\\plug_setting\\cheatsheet.md'
 endif
-nmap <Leader>C :<c-u>Cheat<CR>
+nmap <Leader>C <cmd>Cheat<CR>
 '''
 # To see github.com
 [[plugins]]
@@ -156,35 +137,18 @@ hook_add = '''
 #    }}}
 # }}}
 
-# To use git in vim{{{
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-# Check git diff in numberline
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-hook_add='''
-   set signcolumn=yes
-   let g:gitgutter_map_keys = 0
-   let g:gitgutter_sign_removed="-"
-   nnoremap [Git] <Nop>
-   nmap <Leader>g [Git]
-   nmap [Git]p <Plug>(GitGutterPrevHunk)
-   nmap [Git]n <Plug>(GitGutterNextHunk)
-   nmap [Git]a <Plug>(GitGutterStageHunk)
-   nmap [Git]u <Plug>(GitGutterRevertHunk)
-   nmap [Git]v <Plug>(GitGutterPreviewHunk)
-'''
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
 hook_add='''
-  nnoremap , <Nop>
-  nnoremap ,. <Cmd>Gina cd<CR>
-  nnoremap ,b <Cmd>Gina branch -av<CR>
-  nnoremap ,c <Cmd>Gina compare<CR>
-  nnoremap ,d <Cmd>Gina diff<CR>
-  nnoremap ,l <Cmd>Gina log --graph --all<CR>
-  nnoremap ,s <Cmd>Gina status<CR>
-  nnoremap ,y <Cmd>Gina browse --exact --yank :<CR>
+  nnoremap [Git] <Nop>
+  nmap <Leader>g [Git]
+  nnoremap [Git]. <Cmd>Gina cd<CR>
+  nnoremap [Git]b <Cmd>Gina branch -av<CR>
+  nnoremap [Git]c <Cmd>Gina compare<CR>
+  nnoremap [Git]d <Cmd>Gina diff<CR>
+  nnoremap [Git]l <Cmd>Gina log --graph --all<CR>
+  nnoremap [Git]s <Cmd>Gina status<CR>
+  nnoremap [Git]y <Cmd>Gina browse --exact --yank :<CR>
   command! Amend  Gina commit --amend
   command! Blame  Gina blame
   command! Commit Gina commit
@@ -193,13 +157,12 @@ hook_add='''
 # }}}
 
 # Set looks{{{
-[[plugins]]
-  repo = 'micchy326/lightline-lsp-progress'
+#[[plugins]]
+#  repo = 'micchy326/lightline-lsp-progress'
 # status line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
-if !has('nvim')
   let g:lightline={
         \'active': {
         \'left': [ [ 'mode', 'paste' ],
@@ -261,26 +224,18 @@ function! LightlineTabFilename(n) abort
   return _ !=# '' ? _ : '[No Name]'
 endfunction
 
-let g:lightline.colorscheme = 'github'
+let g:lightline.colorscheme = 'tokyonight'
 '''
 
-# Make indentline
+#dark Make indentline
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-on_cmd = ['IndentLinesToggle']
 hook_add = '''
     let g:loaded_indentLine = 1
 '''
 #    Colorschemes{{{
 [[plugins]]
 repo = 'ghifarit53/tokyonight-vim'
-
-[[plugins]]
-repo = 'cormacrelf/vim-colors-github'
-hook_add = '''
-  let g:github_colors_soft = 1
-  let g:github_colors_block_diffmark = 0
-'''
 
 #    }}}
 # }}}
@@ -294,14 +249,3 @@ let twitvim_browser_cmd = 'google-chrome'
 let twitvim_force_ssl = 1 
 let twitvim_count = 40
 '''
-
-
-[[plugins]]
-repo = 'lambdalisue/fern.vim'
-[[plugins]]
-repo = 'lambdalisue/fern-git-status.vim'
-hook_add = '''
-let g:fern_git_status#disable_ignored = 1
-'''
-[[plugins]]
-repo = 'ka-tsu-mo/at-vim-coder'

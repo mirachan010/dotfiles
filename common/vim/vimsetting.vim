@@ -11,9 +11,9 @@ call dein#remote_plugins()
 
 " Set Colors
 set termguicolors
-set background=light
+set background=dark
 
-colorscheme github
+colorscheme tokyonight
 
 filetype plugin indent on
 syntax enable

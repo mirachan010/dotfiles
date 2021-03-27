@@ -2,19 +2,11 @@ scriptencoding=utf-8
 "外部プログラムの場所の確認
 "WinとUbuntuの決定的に分かれるところ
 if has("win32")
-  if !has("nvim")
+  let s:undo_path = expand('C:\users\mira\.vim\undo\')
     let g:python3_host_prog = 'C:\Python39\python.exe'
-  endif
-  set fileencoding=cp932
-  set fileencodings=cp932,sjis,utf-8
-  let s:undo_path = expand('~\.cache\vim\undo')
 elseif has("unix")
   let s:undo_path = expand('~/.cache/vim/undo')
   let g:python3_host_prog = '~/.anyenv/envs/pyenv/shims/python3'
-endif
-if !has('nvim')
-  " set pythonthreedll=python39.dll
-  set cursorlineopt=number
 endif
 "Undo保存
 if has('persistent_undo')
@@ -24,6 +16,7 @@ endif
 
 set number
 set cursorline
+set cursorlineopt=number
 
 if has("path_extra")
   set tags+=tags;
@@ -38,6 +31,7 @@ set wildmenu
 set ttimeout        " time out for key codes
 set ttimeoutlen=10    " wait up to 100ms after Esc for special key
 set backspace=2
+set ambiwidth=double
 
 set wrap
 "set whichwarp="b,s,h,l,<,>,[,]"
