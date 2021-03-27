@@ -14,6 +14,7 @@ nnoremap n nzz
 nnoremap N Nzz
 
 cnoremap <C-p> <UP>
+cnoremap <C-u> <DOWN>
 
 let mapleader = "\\"
 "
