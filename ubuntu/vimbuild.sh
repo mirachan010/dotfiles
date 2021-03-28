@@ -1,11 +1,8 @@
 #!/bin/bash
-
 # Setting some PATH
 THIS_DIR=$(cd $(dirname $0); pwd)
 source "$THIS_DIR"/defaultpath.sh
-if [ -e ~/.localvimpath ]; then
-    source ~/.localvimpath
-fi
+
 if [ $# == 1 ]; then
     case "$1" in
         -y|yes)
@@ -66,12 +63,14 @@ echo configing now
     --enable-cscope \
     --enable-fontset \
     --enable-multibyte \
-    vi_cv_path_python3="$PYTHONPATH"
-    echo configed\nmaking now
-    make # > /dev/null 2>&1
+    vi_cv_path_python3="$PYTHONPATH" > /dev/null 2>&1
+    echo configed
+    echo making now
+    make  > /dev/null 2>&1
     echo maked
-    sudo make install # > /dev/null 2>&1
+    sudo make install > /dev/null 2>&1
     echo finish to install vim.$GitHubVer
     echo python_path=$PYTHONPATH
     echo ruby_path=$RUBYPATH
     echo lua_path=$LUAPATH
+    vim --version
