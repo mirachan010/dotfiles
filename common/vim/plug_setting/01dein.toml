@@ -364,5 +364,26 @@ on_cmd = ['ReadingVimrcLoad', 'ReadingVimrcList', 'ReadingVimNext']
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern', 'Ferndo']
+hook_source = '''
+function! s:init_fern() abort
+  "Use 'select' instead of 'edit' for default 'open' action
+  nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+  nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
+  nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+'''
 [[plugins]]
 repo = 'lambdalisue/fern-git-status.vim'
+on_source= ['fern.vim']
+[[plugins]]
+repo='yuki-yano/fern-preview.vim'
+on_source= ['fern.vim']
