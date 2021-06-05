@@ -13,7 +13,8 @@ call dein#remote_plugins()
 set termguicolors
 set background=dark
 
-colorscheme tokyonight
+colorscheme iceberg
+
 
 filetype plugin indent on
 syntax enable

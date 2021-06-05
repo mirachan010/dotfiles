@@ -13,7 +13,7 @@ hook_add = '''
 [[plugins]]
 repo = 'mattn/vim-findroot'
 
-#zaj Set if use Vim{{{
+# Set if use Vim{{{
 # For vim-lsp{{{
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
@@ -162,6 +162,7 @@ hook_add='''
 # status line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+on_Event = ['VimEnter']
 hook_add = '''
   let g:lightline={
         \'active': {
@@ -224,7 +225,7 @@ function! LightlineTabFilename(n) abort
   return _ !=# '' ? _ : '[No Name]'
 endfunction
 
-let g:lightline.colorscheme = 'tokyonight'
+let g:lightline.colorscheme = 'iceberg'
 '''
 
 #dark Make indentline
@@ -235,7 +236,24 @@ hook_add = '''
 '''
 #    Colorschemes{{{
 [[plugins]]
+repo = 'shinshin86/twc.vim'
+[[plugins]]
 repo = 'ghifarit53/tokyonight-vim'
+[[plugins]]
+repo='ku-s-h/summerfruit256.vim'
+[[plugins]]
+repo='habamax/vim-gruvbit'
+[[plugins]]
+repo='cocopon/iceberg.vim'
+[[plugins]]
+repo='arcticicestudio/nord-vim'
+[[plugins]]
+repo='altercation/vim-colors-solarized'
+[[plugins]]
+repo='fcpg/vim-orbital'
+[[plugins]]
+repo='morhetz/gruvbox'
+
 
 #    }}}
 # }}}
