@@ -3,6 +3,10 @@
 	name = mirachan010
 [color]
     ui = true
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = cyan
 [url "github:"]
     Instead0f = https://github.com/
     Instead0f = git@github.com

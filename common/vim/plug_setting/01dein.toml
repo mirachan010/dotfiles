@@ -1,27 +1,22 @@
+#use for remote plugins{{{
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+on_event = 'VimEnter'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+on_event = 'VimEnter'
+#    }}}
 #To use grep in vim
 [[plugins]]
 repo = 'mhinz/vim-grepper'
 on_cmd = 'Grepper'
 on_map = '<plug>(GrepperOperator)'
 
-# [[plugins]]
-# repo = 'Shougo/deoppet.nvim'
-# if='''has('nvim')'''
-# on_event = 'InsertEnter'
-# hook_source = '''
-#   imap <C-k>  <Plug>(deoppet_expand)
-#   imap <C-f>  <Plug>(deoppet_jump_forward)
-#   imap <C-b>  <Plug>(deoppet_jump_backward)
-#   call deoppet#initialize()
-#   call deoppet#custom#option('snippets_dirs',
-#   \ globpath(&runtimepath, 'neosnippets', 1, 1))
-# '''
-
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
-if='''!has('nvim')'''
 on_event = 'InsertEnter'
-hook_add = '''
+hook_source = '''
 " Plugin key-mappings.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -47,11 +42,10 @@ on_source= ['neosnippet.vim']
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
 on_event = 'VimEnter'
-if=''' !has('nvim')'''
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip-integ'
 on_event = 'VimEnter'
-if=''' !has('nvim')'''
+
 #filetype highligt
 #toml
 [[plugins]]
@@ -83,25 +77,6 @@ nnoremap <silent> [denite]d :<C-u>Denite dein -direction=topleft<CR>
 nnoremap <silent> [denite]ma :<C-u>Denite mark -direction=topleft <CR>
 nnoremap <silent> [denite]h :<C-u>Denite help -direction=topleft <CR>
 '''
-hook_source='''
-if (has('nvim'))
-    let s:denite_win_width_percent = 0.85
-    let s:denite_win_height_percent = 0.7
-    call denite#custom#option('default', {
-        \ 'split': 'floating',
-        \ 'winwidth': float2nr(&columns * s:denite_win_width_percent),
-        \ 'wincol': float2nr((&columns - (&columns * s:denite_win_width_percent)) / 2),
-        \ 'winheight': float2nr(&lines * s:denite_win_height_percent),
-        \ 'winrow': float2nr((&lines - (&lines * s:denite_win_height_percent)) / 2),
-        \ })
-  set pumblend=45
-  augroup transparent-windows
-      autocmd!
-      autocmd FileType denite set winblend=30
-      autocmd FileType denite-filter set winblend=30
-  augroup END
-endif 
-'''
 [plugins.ftplugin]
 denite = '''
 nnoremap <silent><buffer><expr> q denite#do_map('quit')
@@ -111,6 +86,7 @@ nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
 nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
 nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
 '''
+
 [[plugins]]
 repo = 'Jagua/vim-denite-ghq'
 depends = ['denite.nvim']
@@ -142,21 +118,23 @@ on_source = ['vim-denite-plugins']
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-if='''!has('nvim')'''
 on_event = 'InsertEnter'
 hook_add= '''
   let g:deoplete#enable_at_startup = 1
 '''
+
 [[plugins]]
 repo = 'lighttiger2505/deoplete-vim-lsp'
-if='''!has('nvim')'''
 depends = ['deoplete.nvim']
 on_source = ['deoplete.nvim']
 
 [[plugins]]
+repo = 'kristijanhusak/defx-git'
+
+[[plugins]]
 repo='Shougo/defx.nvim'
 on_cmd = ['Defx']
-hook_add= '''
+hook_source= '''
 let g:defx_icons_enable_syntax_highlight = 1
 let g:defx_icons_column_length = 2
 let g:defx_icons_directory_icon = ''
@@ -170,11 +148,33 @@ let g:defx_icons_directory_symlink_icon = ''
 let g:defx_icons_root_opened_tree_icon = ''
 let g:defx_icons_nested_opened_tree_icon = ''
 let g:defx_icons_nested_closed_tree_icon = ''
+call defx#custom#option('_', {
+  \ 'winwidth': 40,
+  \ 'split': 'vertical',
+  \ 'direction': 'topleft',
+  \ 'show_ignored_files': 1,
+  \ 'buffer_name': 'exproler',
+  \ 'toggle': 1,
+  \ 'resume': 1,
+  \ 'columns': 'indent:icons:filename:git:mark',
+  \ })
+call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : '✹',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Ignored'   : '☒',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
+'''
+hook_add = '''
 autocmd FileType defx call s:defx_my_settings()
+
 function! s:defx_my_settings() abort
-  " Define mappings
   nnoremap <silent><buffer><expr> <CR>
-  \ defx#do_action('open')
+   \ defx#do_action('drop')
   nnoremap <silent><buffer><expr> c
   \ defx#do_action('copy')
   nnoremap <silent><buffer><expr> m
@@ -182,13 +182,15 @@ function! s:defx_my_settings() abort
   nnoremap <silent><buffer><expr> p
   \ defx#do_action('paste')
   nnoremap <silent><buffer><expr> l
-  \ defx#do_action('open')
+  \ defx#do_action('drop')
+  nnoremap <silent><buffer><expr> t
+  \ defx#do_action('open','tabnew')
   nnoremap <silent><buffer><expr> E
-  \ defx#do_action('open', 'vsplit')
+  \ defx#do_action('drop', 'vsplit')
   nnoremap <silent><buffer><expr> P
-  \ defx#do_action('preview')
+  \ defx#do_action('drop', 'pedit')
   nnoremap <silent><buffer><expr> o
-  \ defx#do_action('open_tree', 'toggle')
+  \ defx#do_action('open_or_close_tree')
   nnoremap <silent><buffer><expr> K
   \ defx#do_action('new_directory')
   nnoremap <silent><buffer><expr> N
@@ -197,7 +199,7 @@ function! s:defx_my_settings() abort
   \ defx#do_action('new_multiple_files')
   nnoremap <silent><buffer><expr> C
   \ defx#do_action('toggle_columns',
-      \                'mark:indent:icon:filename:type:size:time')
+  \                'mark:indent:icon:filename:type:size:time')
   nnoremap <silent><buffer><expr> S
   \ defx#do_action('toggle_sort', 'time')
   nnoremap <silent><buffer><expr> d
@@ -260,19 +262,9 @@ repo ='Shougo/neco-vim'
 on_ft=['vim']
 
 [[plugins]]
-repo = 'iamcco/markdown-preview.nvim'
-on_ft= ['markdown']
-build = '''
-cd app & yarn install
-'''
-[[plugins]]
-repo = 'skanehira/preview-markdown.vim'
-if='''has('unix')'''
-
-[[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html','css','java','javascript','php']
-hook_add = '''
+hook_source = '''
 let g:user_emmet_leader_key = '<C-y>'
 let g:user_emmet_settings = {
 \    'variables' : {
@@ -333,3 +325,65 @@ let g:sonictemplate_vim_template_dir = [
 \ '~\dotfiles\common\template'
 \]
 '''
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'mattn/vim-mastodon'
+on_cmd = ['Mastodon']
+depends = ['webapi-vim']
+
+[[plugins]]
+repo = 'ka-tsu-mo/at-vim-coder'
+on_cmd = ['AtVimCoder']
+
+[[plugins]]
+repo = 'previm/previm'
+on_cmd = ['PrevimOpen']
+depends = ['open-browser.vim']
+hook_source = '''
+let g:previm_enable_realtime = 1
+'''
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+#make imgfiles{{{
+[[plugins]]
+repo = 'skanehira/code2img.vim'
+on_cmd = ['Code2img']
+hook_souce = '''
+let g:code2img_theme = 'monokai'
+let g:code2img_line_number = 1
+'''
+#}}}
+# reading-vimrc
+[[plugins]]
+repo = 'y0za/vim-reading-vimrc'
+on_cmd = ['ReadingVimrcLoad', 'ReadingVimrcList', 'ReadingVimNext']
+
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+on_cmd = ['Fern', 'Ferndo']
+hook_source = '''
+function! s:init_fern() abort
+  "Use 'select' instead of 'edit' for default 'open' action
+  nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+  nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
+  nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+'''
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+on_source= ['fern.vim']
+[[plugins]]
+repo='yuki-yano/fern-preview.vim'
+on_source= ['fern.vim']
