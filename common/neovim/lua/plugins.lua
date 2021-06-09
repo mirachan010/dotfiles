@@ -176,9 +176,10 @@ local function init()
             {'ElPiloto/sidekick.nvim', opt = true},
         }
     }
-    use{'nvim-lua/popup.nvim'}
-    use{'nvim-lua/plenary.nvim'}
-    use{'nvim-telescope/telescope.nvim'}
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    }
     use 'neovim/nvim-lspconfig'
     use {'hrsh7th/nvim-compe',
         config=function()
