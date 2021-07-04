@@ -9,8 +9,14 @@ noremap L $
 nnoremap u g-
 nnoremap <C-R> g+
 nnoremap Y y$
+
+"保持しない
 nnoremap x "_x
-nnoremap n nzz
+vnoremap x "_x
+nnoremap X "_X
+vnoremap X "_X
+
+noremap n nzz
 nnoremap N Nzz
 
 cnoremap <C-p> <UP>
