@@ -7,46 +7,58 @@ on_event = 'VimEnter'
 repo = 'roxma/vim-hug-neovim-rpc'
 on_event = 'VimEnter'
 #    }}}
-#To use grep in vim
+#auto complete{{{
 [[plugins]]
-repo = 'mhinz/vim-grepper'
-on_cmd = 'Grepper'
-on_map = '<plug>(GrepperOperator)'
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertEnter'
+hook_add = '''
+let g:deoplete#enable_at_startup = 1
+'''
 
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+depends = ['deoplete.nvim']
+on_source = ['deoplete.nvim']
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+[[plugins]]
+repo ='Shougo/neco-vim'
+depends = ['deoplete.nvim']
+on_source = ['deoplete.nvim']
+on_ft = ['vim']
+#}}}
+#snippets{{{
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 on_event = 'InsertEnter'
 hook_source = '''
-" Plugin key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
 imap <expr><TAB>
       \ pumvisible() ? "\<C-n>" :
       \ neosnippet#expandable_or_jumpable() ?
       \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 '''
-
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
-on_source= ['neosnippet.vim']
-
-
+on_source = ['neosnippet.vim']
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
 on_event = 'VimEnter'
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip-integ'
 on_event = 'VimEnter'
-
-#filetype highligt
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_source = ['neosnippet.vim']
+hook_add = '''
+let g:neosnippet#enable_snipmate_compatibility = 1
+'''
+#}}}
+#filetype highligt{{{
 #toml
 [[plugins]]
 repo = 'cespare/vim-toml'
@@ -63,7 +75,8 @@ on_ft = ['html']
 [[plugins]]
 repo = 'PProvost/vim-ps1'
 on_ft = ['ps1']
-
+#}}}
+#denite.nvim{{{
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
@@ -115,26 +128,15 @@ nnoremap <silent> [denite]p :<C-u>Denite PluginsList -direction=topleft <CR>
 repo = 'mirachan010/vim-pluginlist'
 depends = ['denite.nvim']
 on_source = ['vim-denite-plugins']
-
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertEnter'
-hook_add= '''
-  let g:deoplete#enable_at_startup = 1
-'''
-
-[[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-depends = ['deoplete.nvim']
-on_source = ['deoplete.nvim']
-
+#}}}
+#Defx.vim{{{
 [[plugins]]
 repo = 'kristijanhusak/defx-git'
 
 [[plugins]]
 repo='Shougo/defx.nvim'
 on_cmd = ['Defx']
-hook_source= '''
+hook_source = '''
 let g:defx_icons_enable_syntax_highlight = 1
 let g:defx_icons_column_length = 2
 let g:defx_icons_directory_icon = ''
@@ -246,21 +248,8 @@ on_source = ['defx.nvim']
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 on_source = ['defx.nvim']
-
-[[plugins]]
-repo = 'honza/vim-snippets'
-on_source = ['neosnippet.vim']
-hook_add = '''
-let g:neosnippet#enable_snipmate_compatibility = 1
-'''
-
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
-
-[[plugins]]
-repo ='Shougo/neco-vim'
-on_ft=['vim']
-
+#}}}
+#emmet あんまりつかってない{{{
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html','css','java','javascript','php']
@@ -316,7 +305,7 @@ let g:user_emmet_settings = {
 \    },
 \}
 '''
-
+#}}}
 [[plugins]]
 repo = 'mattn/sonictemplate-vim'
 on_cmd = ['Template']
@@ -325,18 +314,15 @@ let g:sonictemplate_vim_template_dir = [
 \ '~\dotfiles\common\template'
 \]
 '''
-
 [[plugins]]
 repo = 'mattn/webapi-vim'
 [[plugins]]
 repo = 'mattn/vim-mastodon'
 on_cmd = ['Mastodon']
 depends = ['webapi-vim']
-
 [[plugins]]
 repo = 'ka-tsu-mo/at-vim-coder'
 on_cmd = ['AtVimCoder']
-
 [[plugins]]
 repo = 'previm/previm'
 on_cmd = ['PrevimOpen']
@@ -346,8 +332,12 @@ let g:previm_enable_realtime = 1
 '''
 [[plugins]]
 repo = 'tyru/open-browser.vim'
-
-#make imgfiles{{{
+#To use grep in vim
+[[plugins]]
+repo = 'mhinz/vim-grepper'
+on_cmd = 'Grepper'
+on_map = '<plug>(GrepperOperator)'
+#make imgfiles
 [[plugins]]
 repo = 'skanehira/code2img.vim'
 on_cmd = ['Code2img']
