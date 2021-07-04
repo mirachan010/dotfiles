@@ -116,17 +116,10 @@ repo = 'lambdalisue/reword.vim'
 repo = 'godlygeek/tabular'
 # It can run and test in vim
 [[plugins]]
-repo='thinca/vim-quickrun'
-# use cheatsheet
-[[plugins]]
-repo='reireias/vim-cheatsheet'
+repo = 'thinca/vim-quickrun'
 hook_add = '''
-if has('unix')
-  let g:cheatsheet#cheat_file = '~/dotfiles/common/vim/plug_setting/cheatsheet.md'
-else
-  let g:cheatsheet#cheat_file = '~\\dotfiles\\common\\vim\\plug_setting\\cheatsheet.md'
-endif
-nmap <Leader>C <cmd>Cheat<CR>
+nmap <Leader>r <Plug>(quickrun)
+vmap <Leader>r <Plug>(quickrun-op)
 '''
 # To see github.com
 [[plugins]]
@@ -259,6 +252,7 @@ repo='morhetz/gruvbox'
 # }}}
 [[plugins]]
 repo = 'twitvim/twitvim'
+if = 0
 hook_add = '''
 " アクセストークンは別で用意するのである
 source ~/dotfiles/twitkeys.vim
