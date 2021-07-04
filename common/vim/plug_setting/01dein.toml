@@ -355,16 +355,24 @@ hook_souce = '''
 let g:code2img_theme = 'monokai'
 let g:code2img_line_number = 1
 '''
-#}}}
-# reading-vimrc
+# use cheatsheet
 [[plugins]]
-repo = 'y0za/vim-reading-vimrc'
-on_cmd = ['ReadingVimrcLoad', 'ReadingVimrcList', 'ReadingVimNext']
-
+repo='reireias/vim-cheatsheet'
+on_cmd = ['Cheat']
+hook_souce = '''
+if has('unix')
+  let g:cheatsheet#cheat_file = '~/dotfiles/common/vim/plug_setting/cheatsheet.md'
+else
+  let g:cheatsheet#cheat_file = '~\\dotfiles\\common\\vim\\plug_setting\\cheatsheet.md'
+endif
+nmap <Leader>C <cmd>Cheat<CR>
+'''
+#Fern{{{
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern', 'Ferndo']
 hook_source = '''
+noremap <silent><Leader>ff <Cmd>Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
 function! s:init_fern() abort
   "Use 'select' instead of 'edit' for default 'open' action
   nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
@@ -383,7 +391,32 @@ augroup END
 '''
 [[plugins]]
 repo = 'lambdalisue/fern-git-status.vim'
-on_source= ['fern.vim']
+on_source = ['fern.vim']
 [[plugins]]
-repo='yuki-yano/fern-preview.vim'
-on_source= ['fern.vim']
+repo = 'yuki-yano/fern-preview.vim'
+on_source = ['fern.vim']
+#}}}
+#for Gina{{{
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+on_cmd = ['Gina']
+hook_add='''
+nnoremap [Git] <Nop>
+nmap <Leader>g [Git]
+nnoremap [Git]. <Cmd>Gina cd<CR>
+nnoremap [Git]b <Cmd>Gina branch -av<CR>
+nnoremap [Git]c <Cmd>Gina compare<CR>
+nnoremap [Git]d <Cmd>Gina diff<CR>
+nnoremap [Git]l <Cmd>Gina log --graph --all<CR>
+nnoremap [Git]s <Cmd>Gina status<CR>
+nnoremap [Git]y <Cmd>Gina browse --exact --yank :<CR>
+command! Amend  Gina commit --amend
+command! Blame  Gina blame
+command! Commit Gina commit
+command! -nargs=* Stash Gina stash <args>
+'''
+#}}}
+# reading-vimrc
+[[plugins]]
+repo = 'y0za/vim-reading-vimrc'
+on_cmd = ['ReadingVimrcLoad', 'ReadingVimrcList', 'ReadingVimNext']

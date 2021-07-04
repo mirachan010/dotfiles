@@ -129,70 +129,34 @@ hook_add = '''
 '''
 #    }}}
 # }}}
-
-[[plugins]]
-repo = 'lambdalisue/gina.vim'
-hook_add='''
-  nnoremap [Git] <Nop>
-  nmap <Leader>g [Git]
-  nnoremap [Git]. <Cmd>Gina cd<CR>
-  nnoremap [Git]b <Cmd>Gina branch -av<CR>
-  nnoremap [Git]c <Cmd>Gina compare<CR>
-  nnoremap [Git]d <Cmd>Gina diff<CR>
-  nnoremap [Git]l <Cmd>Gina log --graph --all<CR>
-  nnoremap [Git]s <Cmd>Gina status<CR>
-  nnoremap [Git]y <Cmd>Gina browse --exact --yank :<CR>
-  command! Amend  Gina commit --amend
-  command! Blame  Gina blame
-  command! Commit Gina commit
-  command! -nargs=* Stash Gina stash <args>
-  '''
-# }}}
-
 # Set looks{{{
+# status line{{{
 #[[plugins]]
 #  repo = 'micchy326/lightline-lsp-progress'
-# status line
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-on_Event = ['VimEnter']
 hook_add = '''
-  let g:lightline={
-        \'active': {
-        \'left': [ [ 'mode', 'paste' ],
-        \[ 'gitbranch', 'gitstatus', 'readonly'],
-        \[ 'filename', 'lsp_status']
-        \],
-        \'right':[
-        \[ 'percent', 'time' ],
-        \[ 'fileformat', 'fileencoding', 'filetype' ],
-        \],
-        \},
-        \'component_function': {
-        \  'gitbranch': 'gina#component#repo#branch',
-        \  'gitstatus': 'MyGitStatus',
-        \  'filename': 'LightlineFilename',
-        \  'time':'NowTime',
-        \ },
-        \ 'component_type': {
-        \ },
-        \}
+let g:lightline={
+      \'active': {
+      \'left': [ ['mode', 'paste'],
+      \['readonly'],
+      \['filename', 'lsp_status']
+      \],
+      \'right':[
+      \['percent', 'time'],
+      \['fileformat', 'fileencoding', 'filetype'],
+      \],
+      \},
+      \'component_function': {
+      \  'filename': 'LightlineFilename',
+      \  'time':'NowTime',
+      \ },
+      \ 'component_type': {
+      \ },
+      \}
 
 function! NowTime() abort
   return strftime("%H:%M")
-endfunction
-
-
-function! MyGitStatus() abort
-  let staged = gina#component#status#staged()
-  let unstaged = gina#component#status#unstaged()
-  let conflicted = gina#component#status#conflicted()
-  return printf(
-        \ 's: %s, u: %s, c: %s',
-        \ staged,
-        \ unstaged,
-        \ conflicted,
-        \)
 endfunction
 
 let g:lightline.tab_component_function = {
@@ -200,9 +164,10 @@ let g:lightline.tab_component_function = {
       \ 'modified': 'lightline#tab#modified',
       \ 'readonly': 'lightline#tab#readonly',
       \ 'tabnum': 'lightline#tab#tabnum'}
+
 let g:lightline.tab = {
-      \ 'active': [ 'tabnum', 'filename', 'modified' ],
-      \ 'inactive': [ 'tabnum', 'filename', 'modified' ]
+      \ 'active': ['tabnum', 'filename', 'modified'],
+      \ 'inactive': ['tabnum', 'filename', 'modified']
       \ }
 
 function! LightlineFilename()
@@ -217,16 +182,15 @@ function! LightlineTabFilename(n) abort
   let _ = pathshorten(expand('#'.buflist[winnr - 1].':f'))
   return _ !=# '' ? _ : '[No Name]'
 endfunction
-
+"set colorscheme for lightline
 let g:lightline.colorscheme = 'iceberg'
 '''
-
-#dark Make indentline
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 hook_add = '''
     let g:loaded_indentLine = 1
 '''
+# }}}
 #    Colorschemes{{{
 [[plugins]]
 repo = 'shinshin86/twc.vim'
