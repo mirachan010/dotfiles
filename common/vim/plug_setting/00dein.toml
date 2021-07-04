@@ -3,16 +3,13 @@ repo = 'Shougo/dein.vim'
 hook_add = '''
   let g:dein#install_github_api_token=$GITHUB_OAUTH_TOKEN
 '''
-
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja.git'
 hook_add = '''
     set helplang=ja,en
 '''
-
 [[plugins]]
 repo = 'mattn/vim-findroot'
-
 # Set if use Vim{{{
 # For vim-lsp{{{
 [[plugins]]
@@ -70,7 +67,6 @@ hook_add = '''
 '''
 #}}}
 # }}}
-
 # Make new Function{{{
 # help for f or F
 [[plugins]]
@@ -225,10 +221,8 @@ let twitvim_browser_cmd = 'google-chrome'
 let twitvim_force_ssl = 1 
 let twitvim_count = 40
 '''
-
 [[plugins]]
 repo = 'inside/vim-search-pulse'
-  
 [[plugins]]
 repo = 'machakann/vim-highlightedyank'
  
