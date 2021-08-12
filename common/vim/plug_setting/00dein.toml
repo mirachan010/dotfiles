@@ -219,7 +219,6 @@ let twitvim_count = 40
 repo = 'inside/vim-search-pulse'
 [[plugins]]
 repo = 'machakann/vim-highlightedyank'
+
 [[plugins]]
 repo = 'vim-denops/denops.vim'  
-[[plugins]]
-repo = 'takkii/dps-himekuri'
