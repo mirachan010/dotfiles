@@ -2,7 +2,7 @@ scriptencoding=utf-8
 "外部プログラムの場所の確認
 "WinとUbuntuの決定的に分かれるところ
 if has("win32")
-  let s:undo_path = expand('C:\users\mira\.vim\undo\')
+  let s:undo_path = expand('C:\users\mira\.cache\vim\undo\')
     let g:python3_host_prog = 'C:\Python39\python.exe'
 elseif has("unix")
   let s:undo_path = expand('~/.cache/vim/undo')
