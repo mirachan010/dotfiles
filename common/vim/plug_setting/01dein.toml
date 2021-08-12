@@ -9,23 +9,89 @@ on_event = 'VimEnter'
 #    }}}
 #auto complete{{{
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertEnter'
-hook_add = '''
-let g:deoplete#enable_at_startup = 1
+repo = 'Shougo/ddc.vim'
+on_event = 'VimEnter'
+hook_source = '''
+" Customize global settings
+" Use around source.
+call ddc#custom#patch_global('sources', ['around', 'eskk', 'ddc-vim-lsp'])
+
+" Use matcher_head and sorter_rank.
+" https://github.com/Shougo/ddc-matcher_head
+" https://github.com/Shougo/ddc-sorter_rank
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank']
+      \ },
+      \ 'around': {'mark': 'A'},
+      \ 'eskk': {
+      \   'mark':'E',
+      \   'matchers': [],
+      \   'sorters': []
+      \ },
+      \ }
+      \)
+
+" Change source options
+call ddc#custom#patch_global('sourceParams', {
+      \ 'around': {'maxSize': 500},
+      \ })
+
+"" Customize settings on a filetype
+"call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
+"call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
+"      \ 'clangd': {'mark': 'C'},
+"      \ })
+"call ddc#custom#patch_filetype('markdown', 'sourceParams', {
+"      \ 'around': {'maxSize': 100},
+"      \ })
+"
+"  call ddc#custom#patch_filetype(
+"      \ ['vim', 'toml'], 'sources', ['necovim', 'around'])
+"  call ddc#custom#patch_filetype(
+"      \ ['autohotkey', 'cfg', 'git', 'javascript', 'markdown', 'plantuml', 'rst', 'snippet', 'vb', 'xsl'], 'sources', ['around'])
+"  call ddc#custom#patch_filetype(
+"      \ ['go', 'python'], 'sources', ['ddc-vim-lsp', 'around'])
+"" Use ddc.
+call ddc#enable()
 '''
 
 [[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-depends = ['deoplete.nvim']
-on_source = ['deoplete.nvim']
+repo = 'Shougo/ddc-around'
+on_source = ['ddc.vim']
 [[plugins]]
-repo = 'Shougo/context_filetype.vim'
+repo = 'Shougo/ddc-matcher_head'
+on_source = ['ddc.vim']
 [[plugins]]
-repo ='Shougo/neco-vim'
-depends = ['deoplete.nvim']
-on_source = ['deoplete.nvim']
-on_ft = ['vim']
+repo = 'Shougo/ddc-sorter_rank'
+on_source = ['ddc.vim']
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = ['vim', 'toml']
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'matsui54/ddc-buffer'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'shun/ddc-vim-lsp'
+on_source = 'ddc.vim'
+
+# eskk.vim
+[[plugins]]
+repo = 'tyru/eskk.vim'
+on_source = ['ddc.vim']
+hook_source = '''
+let g:eskk#directory = "~/.eskk"
+let g:eskk#dictionary = { 'path':"~/.skk-jisyo", 'sorted': 0, 'encoding':'utf-8',}
+let g:eskk#large_dictionary = { 'path':"~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding':'euc-jp',}
+let g:eskk#enable_completion=1
+let g:eskk#egg_like_newline = 1
+set imdisable
+'''
 #}}}
 #snippets{{{
 [[plugins]]

@@ -83,21 +83,6 @@ repo = 'tpope/vim-commentary'
 repo = 'tpope/vim-repeat'
 #    }}}
 #    Easy action commands{{{
-# eskk.vim
-[[plugins]]
-repo = 'tyru/eskk.vim'
-hook_add = '''
-let g:eskk#directory = "~/.eskk"
-let g:eskk#dictionary = { 'path':"~/.skk-jisyo", 'sorted': 0, 'encoding':'utf-8',}
-let g:eskk#large_dictionary = { 'path':"~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding':'euc-jp',}
-let g:eskk#enable_completion=1
-let g:eskk#server = {
-  \ 'host': 'localhost',
-  \ 'port': '55100',
-\'type': 'notfound',
-  \}
-set imdisable
-'''
 # easy to change word
 [[plugins]]
 repo = 'lambdalisue/reword.vim'
