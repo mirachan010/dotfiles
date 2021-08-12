@@ -320,6 +320,7 @@ repo = 'mattn/webapi-vim'
 repo = 'mattn/vim-mastodon'
 on_cmd = ['Mastodon']
 depends = ['webapi-vim']
+
 [[plugins]]
 repo = 'ka-tsu-mo/at-vim-coder'
 on_cmd = ['AtVimCoder']
@@ -341,7 +342,7 @@ on_map = '<plug>(GrepperOperator)'
 [[plugins]]
 repo = 'skanehira/code2img.vim'
 on_cmd = ['Code2img']
-hook_souce = '''
+hook_source = '''
 let g:code2img_theme = 'monokai'
 let g:code2img_line_number = 1
 '''
@@ -349,7 +350,7 @@ let g:code2img_line_number = 1
 [[plugins]]
 repo='reireias/vim-cheatsheet'
 on_cmd = ['Cheat']
-hook_souce = '''
+hook_source = '''
 if has('unix')
   let g:cheatsheet#cheat_file = '~/dotfiles/common/vim/plug_setting/cheatsheet.md'
 else
