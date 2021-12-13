@@ -55,17 +55,6 @@ let g:lsp_settings_root_markers = [
 repo = 'mattn/vim-lsp-icons'
 
 # }}}
-# Set easy translate{{{
-[[plugins]]
-repo = 'skanehira/translate.vim'
-hook_add = '''
-    let g:translate_source = "en"
-    let g:translate_target = "ja"
-    let g:translate_winsize = 10
-    vmap tj <Plug>(VTranslate)
-    vmap te <Plug>(VTranslateBang)
-'''
-#}}}
 # }}}
 # Make new Function{{{
 # undotree
@@ -207,3 +196,16 @@ repo = 'machakann/vim-highlightedyank'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'  
+
+[[plugins]]
+repo = 'skanehira/denops-translate.vim'
+hook_add = '''
+xmap \tj :Translate<CR>
+xmap \te :Translate!<CR>
+'''
+
+[[plugins]]
+repo = 'skanehira/denops-germanium.vim'
+
+[[plugins]]
+repo='github/copilot.vim'

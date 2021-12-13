@@ -7,18 +7,67 @@ on_event = 'VimEnter'
 repo = 'roxma/vim-hug-neovim-rpc'
 on_event = 'VimEnter'
 #    }}}
+#popup{{{
+[[plugins]]
+repo = 'Shougo/pum.vim'
+hook_source = '''
+inoremap <silent><expr> <TAB>
+      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#manual_complete()
+inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+call ddc#custom#patch_global('autoCompleteEvents', [
+    \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
+    \ 'CmdlineEnter', 'CmdlineChanged',
+    \ ])
+
+nnoremap :       <Cmd>call CommandlinePre()<CR>:
+
+function! CommandlinePre() abort
+  " Note: It disables default command line completion!
+  cnoremap <expr> <Tab>
+  \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+  \ ddc#manual_complete()
+  cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+  cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+  " Overwrite sources
+  let s:prev_buffer_config = ddc#custom#get_buffer()
+  call ddc#custom#patch_buffer('sources',
+          \ ['cmdline', 'cmdline-history', 'around'])
+
+  autocmd User DDCCmdlineLeave ++once call CommandlinePost()
+
+  " Enable command line completion
+  call ddc#enable_cmdline_completion()
+  call ddc#enable()
+endfunction
+function! CommandlinePost() abort
+  " Restore sources
+  call ddc#custom#set_buffer(s:prev_buffer_config)
+  cunmap <Tab>
+endfunction
+'''
+#}}}
 #auto complete{{{
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-on_event = 'VimEnter'
+on_event = ['CmdlineEnter','InsertEnter']
 hook_source = '''
 " Customize global settings
+call ddc#custom#patch_global('completionMenu', 'pum.vim')
 " Use around source.
-call ddc#custom#patch_global('sources', ['around', 'eskk', 'ddc-vim-lsp'])
-
-" Use matcher_head and sorter_rank.
-" https://github.com/Shougo/ddc-matcher_head
-" https://github.com/Shougo/ddc-sorter_rank
+call ddc#custom#patch_global('sources', [
+      \'vim-lsp',
+      \'skkeleton',
+      \'neosnippet',
+      \'around',
+      \])
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
@@ -30,29 +79,24 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'matchers': [],
       \   'sorters': []
       \ },
+      \ 'neosnippet': {'mark':'N','dup': v:true},
+      \ 'cmdline': {'mark': 'cmdline'},
+      \ 'vim-lsp':{'mark':'LSP', 'dup':v:true},
+        \   'skkeleton': {
+        \     'mark': 'skkeleton',
+        \     'matchers': ['skkeleton'],
+        \     'sorters': [],
+        \     'minAutoCompleteLength': 2,
+        \   },
       \ }
       \)
+
 
 " Change source options
 call ddc#custom#patch_global('sourceParams', {
       \ 'around': {'maxSize': 500},
       \ })
 
-"" Customize settings on a filetype
-"call ddc#custom#patch_filetype(['c', 'cpp'], 'sources', ['around', 'clangd'])
-"call ddc#custom#patch_filetype(['c', 'cpp'], 'sourceOptions', {
-"      \ 'clangd': {'mark': 'C'},
-"      \ })
-"call ddc#custom#patch_filetype('markdown', 'sourceParams', {
-"      \ 'around': {'maxSize': 100},
-"      \ })
-"
-"  call ddc#custom#patch_filetype(
-"      \ ['vim', 'toml'], 'sources', ['necovim', 'around'])
-"  call ddc#custom#patch_filetype(
-"      \ ['autohotkey', 'cfg', 'git', 'javascript', 'markdown', 'plantuml', 'rst', 'snippet', 'vb', 'xsl'], 'sources', ['around'])
-"  call ddc#custom#patch_filetype(
-"      \ ['go', 'python'], 'sources', ['ddc-vim-lsp', 'around'])
 "" Use ddc.
 call ddc#enable()
 '''
@@ -83,6 +127,7 @@ on_source = 'ddc.vim'
 # eskk.vim
 [[plugins]]
 repo = 'tyru/eskk.vim'
+if=0
 on_source = ['ddc.vim']
 hook_source = '''
 let g:eskk#directory = "~/.eskk"
@@ -92,11 +137,42 @@ let g:eskk#enable_completion=1
 let g:eskk#egg_like_newline = 1
 set imdisable
 '''
+
+[[plugins]]
+repo = 'vim-skk/skkeleton'
+on_source = ['ddc.vim']
+hook_add = '''
+function! s:skkeleton_init() abort
+     call skkeleton#config({
+      \ 'eggLikeNewline': v:true,
+      \ 'globalJisyo':"~/.eskk/SKK-JISYO.L",
+      \ })
+     call skkeleton#register_kanatable('rom', {
+       \ "z\<Space>": ["\u3000", ''],
+       \ 'hh': ['お', 'h'],
+       \ 'jj': 'escape',
+       \ 'z,': ['―', ''],
+       \ "z\<Space>": ["\u3000", ''],
+       \ })
+endfunction
+autocmd User skkeleton-initialize-pre call s:skkeleton_init()
+imap <C-j> <Plug>(skkeleton-toggle)
+cmap <C-j> <Plug>(skkeleton-toggle)
+'''
+[[plugins]]
+repo = 'Shougo/ddc-cmdline'
+on_source = ['ddc.vim']
+[[plugins]]
+repo = 'Shougo/ddc-cmdline-history'
+on_source = ['ddc.vim']
 #}}}
 #snippets{{{
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
 on_event = 'InsertEnter'
+hook_add = '''
+let g:neosnippet#snippets_directory = "~/.cache/vim/snippet"
+'''
 hook_source = '''
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -428,8 +504,10 @@ nmap <Leader>C <cmd>Cheat<CR>
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern', 'Ferndo']
-hook_source = '''
+hook_add = '''
 noremap <silent><Leader>ff <Cmd>Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
+'''
+hook_source = '''
 function! s:init_fern() abort
   "Use 'select' instead of 'edit' for default 'open' action
   nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
@@ -477,3 +555,37 @@ command! -nargs=* Stash Gina stash <args>
 [[plugins]]
 repo = 'y0za/vim-reading-vimrc'
 on_cmd = ['ReadingVimrcLoad', 'ReadingVimrcList', 'ReadingVimNext']
+
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+on_source = 'ddc.vim'
+depends='denops.vim'
+hook_source='''
+call popup_preview#enable()
+'''
+
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+hook_add = '''
+'''
+hook_source = '''
+" Set default sources
+call ddu#custom#patch_global({
+    \ 'sources': [{'name': 'file', 'params': {}}],
+    \ })
+
+" Call default sources
+call ddu#start({})
+
+" Set buffer-name specific configuration
+call ddu#custom#patch_buffer('files', {
+    \ 'sources': [
+    \   {'name': 'file', 'params': {}},
+    \   {'name': 'file_old', 'params': {}},
+    \ ],
+    \ })
+
+" Specify buffer name
+call ddu#start({'buffer_name': 'files'})
+'''
+  

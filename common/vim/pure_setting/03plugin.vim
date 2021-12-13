@@ -53,3 +53,5 @@ if len(s:removed_plugins) > 0
   call map(s:removed_plugins, "delete(v:val, 'rf')")
   call dein#recache_runtimepath()
 endif"}}}
+
+command! PlugUpdate call dein#check_update()

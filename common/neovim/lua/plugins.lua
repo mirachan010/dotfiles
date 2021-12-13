@@ -255,7 +255,6 @@ local function init()
     }
     use {
         'neovim/nvim-lspconfig',
->>>>>>> e3ce47afcbbfc5ef493e0a8b19cd51ebe460f74c
         config=function()
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
