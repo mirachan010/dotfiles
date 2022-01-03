@@ -57,37 +57,32 @@ endfunction
 #auto complete{{{
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-on_event = ['CmdlineEnter','InsertEnter']
+on_event = ['InsertEnter']
 hook_source = '''
 " Customize global settings
 call ddc#custom#patch_global('completionMenu', 'pum.vim')
-" Use around source.
+
 call ddc#custom#patch_global('sources', [
       \'vim-lsp',
-      \'skkeleton',
       \'neosnippet',
       \'around',
       \])
 call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank']
-      \ },
-      \ 'around': {'mark': 'A'},
-      \ 'eskk': {
-      \   'mark':'E',
-      \   'matchers': [],
-      \   'sorters': []
-      \ },
-      \ 'neosnippet': {'mark':'N','dup': v:true},
-      \ 'cmdline': {'mark': 'cmdline'},
-      \ 'vim-lsp':{'mark':'LSP', 'dup':v:true},
-        \   'skkeleton': {
-        \     'mark': 'skkeleton',
-        \     'matchers': ['skkeleton'],
-        \     'sorters': [],
-        \     'minAutoCompleteLength': 2,
-        \   },
+      \  '_': {
+      \    'matchers': ['matcher_head'],
+      \    'sorters': ['sorter_rank']
+      \  },
+      \  'around': {'mark': 'A'},
+      \  'neosnippet': {'mark':'N','dup': v:true},
+      \  'cmdline': {'mark': 'cmdline'},
+      \  'cmdline-history': {'mark': 'history'},
+      \  'vim-lsp':{'mark':'LSP', 'dup':v:true},
+      \  'skkeleton': {
+      \    'mark': 'skkeleton',
+      \    'matchers': ['skkeleton'],
+      \    'sorters': [],
+      \    'minAutoCompleteLength': 2,
+      \  },
       \ }
       \)
 
@@ -113,8 +108,15 @@ on_source = ['ddc.vim']
 
 [[plugins]]
 repo = 'Shougo/neco-vim'
-on_ft = ['vim', 'toml']
-on_source = 'ddc.vim'
+on_ft = ['vim', 'toml', 'markdown']
+depends = 'ddc.vim'
+hook_source = '''
+  call ddc#custom#patch_filetype(
+          \ ['vim'], 'sources', has('nvim') ?
+          \ ['necovim', 'around', 'deoppet', 'file'] :
+          \ ['necovim', 'around', 'file']
+          \ )
+'''
 
 [[plugins]]
 repo = 'matsui54/ddc-buffer'
@@ -124,25 +126,15 @@ on_source = 'ddc.vim'
 repo = 'shun/ddc-vim-lsp'
 on_source = 'ddc.vim'
 
-# eskk.vim
-[[plugins]]
-repo = 'tyru/eskk.vim'
-if=0
-on_source = ['ddc.vim']
-hook_source = '''
-let g:eskk#directory = "~/.eskk"
-let g:eskk#dictionary = { 'path':"~/.skk-jisyo", 'sorted': 0, 'encoding':'utf-8',}
-let g:eskk#large_dictionary = { 'path':"~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding':'euc-jp',}
-let g:eskk#enable_completion=1
-let g:eskk#egg_like_newline = 1
-set imdisable
-'''
-
 [[plugins]]
 repo = 'vim-skk/skkeleton'
-on_source = ['ddc.vim']
+on_map = {ic = '<Plug>(skkeleton-toggle)'}
+depends = ['ddc.vim']
 hook_add = '''
-function! s:skkeleton_init() abort
+imap <C-j> <Plug>(skkeleton-toggle)
+cmap <C-j> <Plug>(skkeleton-toggle)
+'''
+hook_source='''
      call skkeleton#config({
       \ 'eggLikeNewline': v:true,
       \ 'globalJisyo':"~/.eskk/SKK-JISYO.L",
@@ -152,12 +144,22 @@ function! s:skkeleton_init() abort
        \ 'hh': ['お', 'h'],
        \ 'jj': 'escape',
        \ 'z,': ['―', ''],
-       \ "z\<Space>": ["\u3000", ''],
        \ })
-endfunction
-autocmd User skkeleton-initialize-pre call s:skkeleton_init()
-imap <C-j> <Plug>(skkeleton-toggle)
-cmap <C-j> <Plug>(skkeleton-toggle)
+
+"Q: I want to enable "skkeleton" source when "skkeleton" is enabled only.
+
+"A: >
+  autocmd User skkeleton-enable-pre call s:skkeleton_pre()
+  function! s:skkeleton_pre() abort
+    " Overwrite sources
+    let s:prev_buffer_config = ddc#custom#get_buffer()
+    call ddc#custom#patch_buffer('sources', ['skkeleton'])
+  endfunction
+  autocmd User skkeleton-disable-pre call s:skkeleton_post()
+  function! s:skkeleton_post() abort
+    " Restore sources
+    call ddc#custom#set_buffer(s:prev_buffer_config)
+  endfunction
 '''
 [[plugins]]
 repo = 'Shougo/ddc-cmdline'
@@ -189,10 +191,10 @@ repo = 'Shougo/neosnippet-snippets'
 on_source = ['neosnippet.vim']
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
-on_event = 'VimEnter'
+on_event = 'InsertEnter'
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip-integ'
-on_event = 'VimEnter'
+on_event = 'InsertEnter'
 [[plugins]]
 repo = 'honza/vim-snippets'
 on_source = ['neosnippet.vim']
