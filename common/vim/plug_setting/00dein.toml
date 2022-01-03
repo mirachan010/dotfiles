@@ -8,92 +8,6 @@ repo = 'vim-jp/vimdoc-ja.git'
 hook_add = '''
     set helplang=ja,en
 '''
-[[plugins]]
-repo = 'mattn/vim-findroot'
-# Set if use Vim{{{
-# For vim-lsp{{{
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-hook_add='''
-"---====setup vim-lsp==---
-let g:lsp_signs_enabled = 1
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_virtual_text_enabled = 1
-let g:lsp_signs_error = {'text': '✗'}
-let g:lsp_signs_warning = {'text': '‼'}
-let g:lsp_signs_information = {'text': 'i'}
-let g:lsp_signs_hint = {'text': '?'}
-
-nnoremap [Lsp] <Nop>
-nmap <Leader>l [Lsp]
-" 定義ジャンプ
-nnoremap [Lsp]<C-]> :<C-u>LspDefinition<CR>
-" 定義情報のホバー表示
-nnoremap [Lsp]k :<C-u>LspHover<CR>
-" 名前変更
-nnoremap [Lsp]r :<C-u>LspRename<CR>
-" 参照検索
-nnoremap [Lsp]n :<C-u>LspReferences<CR>
-" Lint結果をQuickFixで表示
-nnoremap [Lsp]d :<C-u>LspDocumentDiagnostics<CR>
-" テキスト整形
-nnoremap [Lsp]f :<C-u>LspDocumentFormat<CR>
-'''
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-merged = 0
-hook_add='''
-let g:lsp_settings_root_markers = [
-  \ '.git',
-  \ '.git/',
-  \ ]
-'''
-
-[[plugins]]
-repo = 'mattn/vim-lsp-icons'
-
-# }}}
-# }}}
-# Make new Function{{{
-# undotree
-[[plugins]]
-repo = 'simnalamburt/vim-mundo'
-#    Easy action motions{{{
-# it can easy to maeke "surround"
-[[plugins]]
-repo = 'tpope/vim-surround'
-# it can easy to make "comment"
-[[plugins]]
-repo = 'tpope/vim-commentary'
-# it can easy to repeate command
-[[plugins]]
-repo = 'tpope/vim-repeat'
-#    }}}
-#    Easy action commands{{{
-# easy to change word
-[[plugins]]
-repo = 'lambdalisue/reword.vim'
-# use for markdown
-[[plugins]]
-repo = 'godlygeek/tabular'
-# It can run and test in vim
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-hook_add = '''
-nmap <Leader>r <Plug>(quickrun)
-vmap <Leader>r <Plug>(quickrun-op)
-'''
-# To see github.com
-[[plugins]]
-repo = 'skanehira/gh.vim'
-hook_add = '''
-  let g:gh_token=$GITHUB_OAUTH_TOKEN
-'''
-#    }}}
-# }}}
-# Set looks{{{
 # status line{{{
 #[[plugins]]
 #  repo = 'micchy326/lightline-lsp-progress'
@@ -149,63 +63,12 @@ endfunction
 "set colorscheme for lightline
 let g:lightline.colorscheme = 'iceberg'
 '''
-[[plugins]]
-repo = 'Yggdroot/indentLine'
-hook_add = '''
-    let g:loaded_indentLine = 1
-'''
 # }}}
-#    Colorschemes{{{
-[[plugins]]
-repo = 'shinshin86/twc.vim'
-[[plugins]]
-repo = 'ghifarit53/tokyonight-vim'
-[[plugins]]
-repo='ku-s-h/summerfruit256.vim'
-[[plugins]]
-repo='habamax/vim-gruvbit'
 [[plugins]]
 repo='cocopon/iceberg.vim'
-[[plugins]]
-repo='arcticicestudio/nord-vim'
-[[plugins]]
-repo='altercation/vim-colors-solarized'
-[[plugins]]
-repo='fcpg/vim-orbital'
-[[plugins]]
-repo='morhetz/gruvbox'
-
-
-#    }}}
-# }}}
-[[plugins]]
-repo = 'twitvim/twitvim'
-if = 0
-hook_add = '''
-" アクセストークンは別で用意するのである
-source ~/dotfiles/twitkeys.vim
-let twitvim_enable_python = 1 
-let twitvim_browser_cmd = 'google-chrome' 
-let twitvim_force_ssl = 1 
-let twitvim_count = 40
-'''
-[[plugins]]
-repo = 'inside/vim-search-pulse'
-[[plugins]]
-repo = 'machakann/vim-highlightedyank'
 
 [[plugins]]
 repo = 'vim-denops/denops.vim'  
-
-[[plugins]]
-repo = 'skanehira/denops-translate.vim'
-hook_add = '''
-xmap \tj :Translate<CR>
-xmap \te :Translate!<CR>
-'''
-
-[[plugins]]
-repo = 'skanehira/denops-germanium.vim'
 
 [[plugins]]
 repo='github/copilot.vim'
