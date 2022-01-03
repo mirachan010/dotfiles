@@ -27,14 +27,6 @@ local function init()
         'wbthomason/packer.nvim',
         opt = true
     }
-    use'skanehira/translate.vim'
-    --    use {
-    --        'voldikss/vim-translator',
-    --        config = function()
-    --            vim.api.nvim_set_keymap('v', '<Leader>t', '<Plug>TranslateWV', {expr = false, noremap = false})
-    --            vim.api.nvim_set_var('translator_target_lang','ja')
-    --        end
-    --    }
     use{
         'thinca/vim-quickrun'
     }
@@ -87,7 +79,7 @@ local function init()
             capabilities.textDocument.completion.completionItem.snippetSupport = true
         end
     }
-    use 'vim-jp/vimdoc-ja.git'
+    use 'vim-jp/vimdoc-ja'
     use{
         'lambdalisue/gina.vim', opt = true,
         cmd = {'Gina'},
