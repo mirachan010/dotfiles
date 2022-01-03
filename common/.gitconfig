@@ -16,3 +16,8 @@
 	root = /home/mira/git
 [init]
 	defaultBranch = master
+[gui]
+	recentrepo = C:/Users/mira/dotfiles
+	fontui = -family Cica -size 16 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family Cica -size 16 -weight normal -slant roman -underline 0 -overstrike 0
+	encoding = utf-8
