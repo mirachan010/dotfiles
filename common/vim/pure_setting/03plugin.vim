@@ -36,9 +36,11 @@ if dein#load_state(s:dein_dir)
   " ~/.vim/rc/dein.toml,deinlazy.tomlを用意する
   let s:toml      = g:rc_dir . '00dein.toml'
   let s:lazy_toml = g:rc_dir . '01dein.toml'
+  let s:lazy_ddc = g:rc_dir . '01ddc.toml'
   " TOML を読み込み、キャッシュしておく
  call dein#load_toml(s:toml,      {'lazy': 0})
  call dein#load_toml(s:lazy_toml, {'lazy': 1})
+ call dein#load_toml(s:lazy_ddc, {'lazy': 1})
   " 設定終了
   call dein#end()
   call dein#save_state()
