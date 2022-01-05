@@ -1,0 +1,285 @@
+[[plugins]]
+repo = 'Shougo/pum.vim'
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+depends = ['pum.vim']
+on_event = ['InsertEnter']
+hook_source = '''
+" Customize global settings
+  call ddc#custom#patch_global('autocompleteevents', [
+      \ 'insertenter', 'textchangedi', 'textchangedp',
+      \ 'cmdlineenter', 'cmdlinechanged',
+      \ ])
+call ddc#custom#patch_global('completionMenu', 'pum.vim')
+
+call ddc#custom#patch_global('sources', [
+      \'vim-lsp',
+      \'neosnippet',
+      \'around'
+      \])
+
+call ddc#custom#patch_global('sourceOptions', {
+      \  '_': {
+      \    'matchers': ['matcher_head'],
+      \    'sorters': ['sorter_rank'],
+      \    'converters': ['converter_remove_overlap'],
+      \  },
+      \  'around': {
+      \  'mark': 'A',
+      \  'matchers':['matcher_head','matcher_length'],
+      \  },
+      \  'neosnippet': {'mark':'N','dup': v:true},
+      \  'cmdline': {
+      \  'mark': 'cmdline',
+      \  'forceCompletionPattern': '\S/\S*',
+      \  },
+      \  'cmdline-history': {'mark': 'history'},
+      \  'vim-lsp':{'mark':'LSP', 'dup':v:true},
+      \  'skkeleton': {
+      \    'mark': 'skkeleton',
+      \    'matchers': ['skkeleton'],
+      \    'sorters': [],
+      \    'minAutoCompleteLength': 2,
+      \  },
+      \ 'rtags': {
+      \   'mark': 'R',
+      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
+      \ },
+      \ 'file': {
+      \   'mark': 'F',
+      \   'isVolatile': v:true,
+      \   'minAutoCompleteLength': 1000,
+      \   'forceCompletionPattern': '\S/\S*'
+      \ },
+      \ 'rg': {
+      \   'mark': 'rg',
+      \   'matchers': ['matcher_head', 'matcher_length'],
+      \   'minAutoCompleteLength': 4,
+      \ },
+      \ }
+      \)
+
+
+
+"" Use ddc.
+call ddc#enable()
+
+inoremap <silent><expr> <TAB>
+      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#manual_complete()
+inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
+inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+call ddc#custom#patch_global('autoCompleteEvents', [
+    \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
+    \ 'CmdlineEnter', 'CmdlineChanged',
+    \ ])
+
+nnoremap :       <Cmd>call CommandlinePre()<CR>:
+
+function! CommandlinePre() abort
+  " Note: It disables default command line completion!
+  cnoremap <expr> <Tab>
+  \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+  \ ddc#manual_complete()
+  cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+  cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+  " Overwrite sources
+  let s:prev_buffer_config = ddc#custom#get_buffer()
+  call ddc#custom#patch_buffer('sources',
+          \ ['cmdline', 'cmdline-history', 'around'])
+
+  autocmd User DDCCmdlineLeave ++once call CommandlinePost()
+
+  " Enable command line completion
+  call ddc#enable_cmdline_completion()
+  call ddc#enable()
+endfunction
+function! CommandlinePost() abort
+  " Restore sources
+  call ddc#custom#set_buffer(s:prev_buffer_config)
+  cunmap <Tab>
+endfunction
+'''
+hook_add = '''
+  nnoremap :       <Cmd>call CommandlinePre(':')<CR>:
+  nnoremap ?       <Cmd>call CommandlinePre('/')<CR>?
+
+  function! CommandlinePre(mode) abort
+    call dein#source('ddc.vim')
+
+    " Note: It disables default command line completion!
+    cnoremap <expr> <Tab>
+    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+    \ ddc#manual_complete()
+    cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+    set wildchar=<C-t>
+    "set cmdheight=1
+
+    " Overwrite sources
+    let s:prev_buffer_config = ddc#custom#get_buffer()
+    if a:mode ==# ':'
+      call ddc#custom#patch_buffer('sources',
+              \ ['cmdline', 'cmdline-history', 'around'])
+      call ddc#custom#patch_buffer('keywordPattern', '[0-9a-zA-Z_:#]*')
+    else
+      call ddc#custom#patch_buffer('sources',
+              \ ['around', 'line'])
+    endif
+
+    autocmd MyAutoCmd User DDCCmdlineLeave ++once call CommandlinePost()
+
+    " Enable command line completion
+    call ddc#enable_cmdline_completion()
+    call ddc#enable()
+  endfunction
+  function! CommandlinePost() abort
+    " Restore sources
+    call ddc#custom#set_buffer(s:prev_buffer_config)
+    silent! cunmap <Tab>
+    set wildchar=<Tab>
+
+    "try
+    "  set cmdheight=0
+    "catch
+    "  set cmdheight=1
+    "endtry
+  endfunction
+'''
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+on_source = ['ddc.vim']
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+on_source = ['ddc.vim']
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+on_source = ['ddc.vim']
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = ['vim', 'toml', 'markdown']
+depends = 'ddc.vim'
+hook_source = '''
+  call ddc#custom#patch_filetype(
+          \ ['vim'], 'sources', has('nvim') ?
+          \ ['necovim', 'around', 'deoppet', 'file'] :
+          \ ['necovim', 'around', 'file']
+          \ )
+'''
+
+[[plugins]]
+repo = 'matsui54/ddc-buffer'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'shun/ddc-vim-lsp'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'vim-skk/skkeleton'
+on_map = {ic = '<Plug>(skkeleton-toggle)'}
+depends = ['ddc.vim']
+hook_add = '''
+imap <C-j> <Plug>(skkeleton-toggle)
+cmap <C-j> <Plug>(skkeleton-toggle)
+'''
+hook_source='''
+     call skkeleton#config({
+      \ 'eggLikeNewline': v:true,
+      \ 'globalJisyo':"~/.eskk/SKK-JISYO.L",
+      \ })
+     call skkeleton#register_kanatable('rom', {
+       \ "z\<Space>": ["\u3000", ''],
+       \ 'hh': ['お', 'h'],
+       \ 'jj': 'escape',
+       \ 'z,': ['―', ''],
+       \ })
+
+"Q: I want to enable "skkeleton" source when "skkeleton" is enabled only.
+
+"A: >
+  autocmd User skkeleton-enable-pre call s:skkeleton_pre()
+  function! s:skkeleton_pre() abort
+    " Overwrite sources
+    let s:prev_buffer_config = ddc#custom#get_buffer()
+    call ddc#custom#patch_buffer('sources', ['skkeleton'])
+  endfunction
+  autocmd User skkeleton-disable-pre call s:skkeleton_post()
+  function! s:skkeleton_post() abort
+    " Restore sources
+    call ddc#custom#set_buffer(s:prev_buffer_config)
+  endfunction
+'''
+[[plugins]]
+repo = 'Shougo/ddc-cmdline'
+on_source = ['ddc.vim']
+[[plugins]]
+repo = 'Shougo/ddc-cmdline-history'
+on_source = ['ddc.vim']
+[[plugins]]
+repo = 'LumaKernel/ddc-file'
+on_source = 'ddc.vim'
+[[plugins]]
+repo = 'Shougo/ddc-omni'
+[[plugins]]
+repo = 'Shougo/ddc-rg'
+on_source = 'ddc.vim'
+[[plugins]]
+repo = 'Shougo/ddc-matcher_length'
+on_source = 'ddc.vim'
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-line'
+on_source = 'ddc.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-rtags'
+on_ft = ['c', 'cpp']
+
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_event = 'InsertEnter'
+hook_add = '''
+let g:neosnippet#snippets_directory = "~/.cache/vim/snippet"
+'''
+hook_source = '''
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+imap <expr><TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ neosnippet#expandable_or_jumpable() ?
+      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+on_source = ['neosnippet.vim']
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip-integ'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_source = ['neosnippet.vim']
+hook_add = '''
+  let g:neosnippet#enable_snipmate_compatibility = 1
+'''
