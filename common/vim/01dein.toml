@@ -1,0 +1,562 @@
+#use for remote plugins{{{
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+on_event = 'VimEnter'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+on_event = 'VimEnter'
+#}}}
+#filetype highligt{{{
+#toml
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+#css
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = ['css']
+#html5
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = ['html']
+#ps1
+[[plugins]]
+repo = 'PProvost/vim-ps1'
+on_ft = ['ps1']
+#}}}
+#denite.nvim{{{
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_add = '''
+nnoremap [denite] <Nop>
+nmap <Leader>d [denite]
+nnoremap <silent> [denite]b :<C-u>Denite buffer -direction=topleft<CR>
+nnoremap <silent> [denite]l :<C-u>Denite file/old -direction=topleft<CR>
+nnoremap <silent> [denite]f :<C-u>Denite file file:new -direction=topleft<CR>
+nnoremap <silent> [denite]d :<C-u>Denite dein -direction=topleft<CR>
+nnoremap <silent> [denite]ma :<C-u>Denite mark -direction=topleft <CR>
+nnoremap <silent> [denite]h :<C-u>Denite help -direction=topleft <CR>
+'''
+[plugins.ftplugin]
+denite = '''
+nnoremap <silent><buffer><expr> q denite#do_map('quit')
+nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
+nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
+nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+'''
+
+[[plugins]]
+repo = 'Jagua/vim-denite-ghq'
+depends = ['denite.nvim']
+on_source = ['denite.nvim']
+hook_add = '''
+nnoremap <silent> [denite]g :<C-u>Denite ghq -direction=topleft <CR>
+'''
+
+[[plugins]]
+repo = 'delphinus/vim-denite-memo'
+if = '''has('unix')'''
+on_source = ['denite.nvim']
+hook_add = '''
+nnoremap <silent> [denite]me :<C-u>Denite memo memo:new -direction=topleft <CR>
+'''
+
+[[plugins]]
+repo = 'mirachan010/vim-denite-plugins'
+depends = ['denite.nvim']
+on_source = ['denite.nvim']
+hook_add='''
+nnoremap <silent> [denite]p :<C-u>Denite PluginsList -direction=topleft <CR>
+'''
+
+[[plugins]]
+repo = 'mirachan010/vim-pluginlist'
+depends = ['denite.nvim']
+on_source = ['vim-denite-plugins']
+#}}}
+#Defx.vim{{{
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
+
+[[plugins]]
+repo='Shougo/defx.nvim'
+on_cmd = ['Defx']
+hook_source = '''
+let g:defx_icons_enable_syntax_highlight = 1
+let g:defx_icons_column_length = 2
+let g:defx_icons_directory_icon = ''
+let g:defx_icons_mark_icon = '*'
+let g:defx_icons_copy_icon = ''
+let g:defx_icons_move_icon = ''
+let g:defx_icons_parent_icon = ''
+let g:defx_icons_default_icon = ''
+let g:defx_icons_directory_symlink_icon = ''
+" Options below are applicable only when using "tree" feature
+let g:defx_icons_root_opened_tree_icon = ''
+let g:defx_icons_nested_opened_tree_icon = ''
+let g:defx_icons_nested_closed_tree_icon = ''
+call defx#custom#option('_', {
+  \ 'winwidth': 40,
+  \ 'split': 'vertical',
+  \ 'direction': 'topleft',
+  \ 'show_ignored_files': 1,
+  \ 'buffer_name': 'exproler',
+  \ 'toggle': 1,
+  \ 'resume': 1,
+  \ 'columns': 'indent:icons:filename:git:mark',
+  \ })
+call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : '✹',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Ignored'   : '☒',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
+'''
+hook_add = '''
+autocmd FileType defx call s:defx_my_settings()
+
+function! s:defx_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+   \ defx#do_action('drop')
+  nnoremap <silent><buffer><expr> c
+  \ defx#do_action('copy')
+  nnoremap <silent><buffer><expr> m
+  \ defx#do_action('move')
+  nnoremap <silent><buffer><expr> p
+  \ defx#do_action('paste')
+  nnoremap <silent><buffer><expr> l
+  \ defx#do_action('drop')
+  nnoremap <silent><buffer><expr> t
+  \ defx#do_action('open','tabnew')
+  nnoremap <silent><buffer><expr> E
+  \ defx#do_action('drop', 'vsplit')
+  nnoremap <silent><buffer><expr> P
+  \ defx#do_action('drop', 'pedit')
+  nnoremap <silent><buffer><expr> o
+  \ defx#do_action('open_or_close_tree')
+  nnoremap <silent><buffer><expr> K
+  \ defx#do_action('new_directory')
+  nnoremap <silent><buffer><expr> N
+  \ defx#do_action('new_file')
+  nnoremap <silent><buffer><expr> M
+  \ defx#do_action('new_multiple_files')
+  nnoremap <silent><buffer><expr> C
+  \ defx#do_action('toggle_columns',
+  \                'mark:indent:icon:filename:type:size:time')
+  nnoremap <silent><buffer><expr> S
+  \ defx#do_action('toggle_sort', 'time')
+  nnoremap <silent><buffer><expr> d
+  \ defx#do_action('remove')
+  nnoremap <silent><buffer><expr> r
+  \ defx#do_action('rename')
+  nnoremap <silent><buffer><expr> !
+  \ defx#do_action('execute_command')
+  nnoremap <silent><buffer><expr> x
+  \ defx#do_action('execute_system')
+  nnoremap <silent><buffer><expr> yy
+  \ defx#do_action('yank_path')
+  nnoremap <silent><buffer><expr> .
+  \ defx#do_action('toggle_ignored_files')
+  nnoremap <silent><buffer><expr> ;
+  \ defx#do_action('repeat')
+  nnoremap <silent><buffer><expr> h
+  \ defx#do_action('cd', ['..'])
+  nnoremap <silent><buffer><expr> ~
+  \ defx#do_action('cd')
+  nnoremap <silent><buffer><expr> q
+  \ defx#do_action('quit')
+  nnoremap <silent><buffer><expr> <Space>
+  \ defx#do_action('toggle_select') . 'j'
+  nnoremap <silent><buffer><expr> *
+  \ defx#do_action('toggle_select_all')
+  nnoremap <silent><buffer><expr> j
+  \ line('.') == line('$') ? 'gg' : 'j'
+  nnoremap <silent><buffer><expr> k
+  \ line('.') == 1 ? 'G' : 'k'
+  nnoremap <silent><buffer><expr> <C-l>
+  \ defx#do_action('redraw')
+  nnoremap <silent><buffer><expr> <C-g>
+  \ defx#do_action('print')
+  nnoremap <silent><buffer><expr> cd
+  \ defx#do_action('change_vim_cwd')
+endfunction
+'''
+
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+on_source = ['defx.nvim']
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+on_source = ['defx.nvim']
+#}}}
+#emmet あんまりつかってない{{{
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html','css','java','javascript','php']
+hook_source = '''
+let g:user_emmet_leader_key = '<C-y>'
+let g:user_emmet_settings = {
+\    'variables' : {
+\        'lang' : 'ja',
+\    },
+\    'html' : {
+\        'filters' : 'html',
+\        'indentation' : ' ',
+\        'expandos' : {
+\            'ol': 'ol>li',
+\            'list': 'ul>li*3',
+\        },
+\        'default_attributes': {
+\            'a': {'href': ''},
+\            'link': [{'rel': 'stylesheet'}, {'href': ''}],
+\        },
+\        'aliases': {
+\            'bq': 'blockquote',
+\            'obj': 'object',
+\            'src': 'source',
+\        },
+\        'empty_elements': 'area,base,basefont,...,isindex,link,meta,...',
+\        'block_elements': 'address,applet,blockquote,...,li,link,map,...',
+\        'inline_elements': 'a,abbr,acronym,...',
+\        'empty_element_suffix': ' />',
+\    },
+\    'php' : {
+\        'extends' : 'html',
+\        'filters' : 'html,c',
+\    },
+\    'css' : {
+\        'filters' : 'fc',
+\    },
+\    'javascript' : {
+\        'snippets' : {
+\            'jq' : "\\$(function() {\n\t${cursor}${child}\n});",
+\            'jq:each' : "\\$.each(arr, function(index, item)\n\t${child}\n});",
+\            'fn' : "(function() {\n\t${cursor}\n})();",
+\            'tm' : "setTimeout(function() {\n\t${cursor}\n}, 100);",
+\        },
+\    },
+\    'java' : {
+\        'indentation' : '    ',
+\        'snippets' : {
+\            'main': "public static void main(String[] args) {\n\t|\n}",
+\            'println': "System.out.println(\"|\");",
+\            'class': "public class | {\n}\n",
+\        },
+\    },
+\}
+'''
+#}}}
+[[plugins]]
+repo = 'mattn/sonictemplate-vim'
+on_cmd = ['Template']
+hook_add = '''
+let g:sonictemplate_vim_template_dir = [
+\ '~\dotfiles\common\template'
+\]
+'''
+[[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'mattn/vim-mastodon'
+on_cmd = ['Mastodon']
+depends = ['webapi-vim']
+
+[[plugins]]
+repo = 'ka-tsu-mo/at-vim-coder'
+on_cmd = ['AtVimCoder']
+[[plugins]]
+repo = 'previm/previm'
+on_cmd = ['PrevimOpen']
+depends = ['open-browser.vim']
+hook_source = '''
+let g:previm_enable_realtime = 1
+'''
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+#To use grep in vim
+[[plugins]]
+repo = 'mhinz/vim-grepper'
+on_cmd = 'Grepper'
+on_map = '<plug>(GrepperOperator)'
+#make imgfiles
+[[plugins]]
+repo = 'skanehira/code2img.vim'
+on_cmd = ['Code2img']
+hook_source = '''
+let g:code2img_theme = 'monokai'
+let g:code2img_line_number = 1
+'''
+# use cheatsheet
+[[plugins]]
+repo='reireias/vim-cheatsheet'
+on_cmd = ['Cheat']
+hook_source = '''
+if has('unix')
+  let g:cheatsheet#cheat_file = '~/dotfiles/common/vim/plug_setting/cheatsheet.md'
+else
+  let g:cheatsheet#cheat_file = '~\\dotfiles\\common\\vim\\plug_setting\\cheatsheet.md'
+endif
+nmap <Leader>C <cmd>Cheat<CR>
+'''
+#Fern{{{
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+on_cmd = ['Fern', 'Ferndo']
+hook_add = '''
+noremap <silent><Leader>ff <Cmd>Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
+'''
+hook_source = '''
+function! s:init_fern() abort
+  "Use 'select' instead of 'edit' for default 'open' action
+  nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+  nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
+  nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+'''
+[[plugins]]
+repo = 'lambdalisue/fern-git-status.vim'
+on_source = ['fern.vim']
+[[plugins]]
+repo = 'yuki-yano/fern-preview.vim'
+on_source = ['fern.vim']
+#}}}
+#for Gina{{{
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+on_cmd = ['Gina']
+hook_add='''
+nnoremap [Git] <Nop>
+nmap <Leader>g [Git]
+nnoremap [Git]. <Cmd>Gina cd<CR>
+nnoremap [Git]b <Cmd>Gina branch -av<CR>
+nnoremap [Git]c <Cmd>Gina compare<CR>
+nnoremap [Git]d <Cmd>Gina diff<CR>
+nnoremap [Git]l <Cmd>Gina log --graph --all<CR>
+nnoremap [Git]s <Cmd>Gina status<CR>
+nnoremap [Git]y <Cmd>Gina browse --exact --yank :<CR>
+command! Amend  Gina commit --amend
+command! Blame  Gina blame
+command! Commit Gina commit
+command! -nargs=* Stash Gina stash <args>
+'''
+#}}}
+# reading-vimrc
+[[plugins]]
+repo = 'y0za/vim-reading-vimrc'
+on_cmd = ['ReadingVimrcLoad', 'ReadingVimrcList', 'ReadingVimNext']
+
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+on_source = 'ddc.vim'
+depends='denops.vim'
+hook_source='''
+call popup_preview#enable()
+'''
+
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+hook_add = '''
+'''
+hook_source = '''
+" Set default sources
+call ddu#custom#patch_global({
+    \ 'sources': [{'name': 'file', 'params': {}}],
+    \ })
+
+" Call default sources
+call ddu#start({})
+
+" Set buffer-name specific configuration
+call ddu#custom#patch_buffer('files', {
+    \ 'sources': [
+    \   {'name': 'file', 'params': {}},
+    \   {'name': 'file_old', 'params': {}},
+    \ ],
+    \ })
+
+" Specify buffer name
+call ddu#start({'buffer_name': 'files'})
+'''
+  
+# For vim-lsp{{{
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+on_event = ['BufRead']
+hook_add='''
+"---====setup vim-lsp==---
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_virtual_text_enabled = 1
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_warning = {'text': '‼'}
+let g:lsp_signs_information = {'text': 'i'}
+let g:lsp_signs_hint = {'text': '?'}
+
+nnoremap [Lsp] <Nop>
+nmap <Leader>l [Lsp]
+" 定義ジャンプ
+nnoremap [Lsp]<C-]> :<C-u>LspDefinition<CR>
+" 定義情報のホバー表示
+nnoremap [Lsp]k :<C-u>LspHover<CR>
+" 名前変更
+nnoremap [Lsp]r :<C-u>LspRename<CR>
+" 参照検索
+nnoremap [Lsp]n :<C-u>LspReferences<CR>
+" Lint結果をQuickFixで表示
+nnoremap [Lsp]d :<C-u>LspDocumentDiagnostics<CR>
+" テキスト整形
+nnoremap [Lsp]f :<C-u>LspDocumentFormat<CR>
+'''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+on_event = ['BufRead']
+merged = 0
+hook_add='''
+let g:lsp_settings_root_markers = [
+  \ '.git',
+  \ '.git/',
+  \ ]
+'''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-icons'
+on_event = ['BufRead']
+
+# }}}
+
+[[plugins]]
+repo = 'mattn/vim-findroot'
+on_event = ['BufRead']
+
+[[plugins]]
+repo = 'inside/vim-search-pulse'
+on_event = ['BufRead']
+[[plugins]]
+repo = 'machakann/vim-highlightedyank'
+on_event = ['BufRead']
+
+[[plugins]]
+repo = 'skanehira/denops-translate.vim'
+on_cmd = ['Translate']
+hook_add = '''
+xmap \tj :Translate<CR>
+xmap \te :Translate!<CR>
+'''
+
+[[plugins]]
+repo = 'skanehira/denops-germanium.vim'
+on_cmd = ['Germanium']
+hook_add = '''
+xmap \tj :Translate<CR>
+xmap \te :Translate!<CR>
+'''
+# undotree
+[[plugins]]
+repo = 'simnalamburt/vim-mundo'
+on_cmd = ['MundoToggle']
+
+# use for markdown
+[[plugins]]
+repo = 'godlygeek/tabular'
+on_ft = ['markdown', 'md']
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_event = ['BufRead']
+hook_add = '''
+    let g:loaded_indentLine = 1
+'''
+# easy to change word
+[[plugins]]
+repo = 'lambdalisue/reword.vim'
+on_event = ['BufRead']
+# it can easy to maeke "surround"
+[[plugins]]
+repo = 'tpope/vim-surround'
+on_event = ['BufRead']
+# it can easy to make "comment"
+[[plugins]]
+repo = 'tpope/vim-commentary'
+on_event = ['BufRead']
+# it can easy to repeate command
+[[plugins]]
+repo = 'tpope/vim-repeat'
+on_event = ['BufRead']
+#    }}}
+#    Easy action commands{{{
+# It can run and test in vim
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_event = ['BufRead']
+hook_add = '''
+nmap <Leader>r <Plug>(quickrun)
+vmap <Leader>r <Plug>(quickrun-op)
+'''
+
+[[plugins]]
+repo = 'wsdjeg/dein-ui.vim'
+on_cmd='DeinUpdate'
+#}}}
+[[plugins]]
+repo = 'hrsh7th/vim-searchx'
+on_func=['searchx#start()']
+hook_add='''
+" Overwrite / and ?.
+nnoremap ? <Cmd>call searchx#start({ 'dir': 0 })<CR>
+nnoremap / <Cmd>call searchx#start({ 'dir': 1 })<CR>
+xnoremap ? <Cmd>call searchx#start({ 'dir': 0 })<CR>
+xnoremap / <Cmd>call searchx#start({ 'dir': 1 })<CR>
+cnoremap ; <Cmd>call searchx#select()<CR>
+
+" Move to next/prev match.
+nnoremap N <Cmd>call searchx#prev_dir()<CR>
+nnoremap n <Cmd>call searchx#next_dir()<CR>
+xnoremap N <Cmd>call searchx#prev_dir()<CR>
+xnoremap n <Cmd>call searchx#next_dir()<CR>
+nnoremap <C-k> <Cmd>call searchx#prev()<CR>
+nnoremap <C-j> <Cmd>call searchx#next()<CR>
+xnoremap <C-k> <Cmd>call searchx#prev()<CR>
+xnoremap <C-j> <Cmd>call searchx#next()<CR>
+cnoremap <C-k> <Cmd>call searchx#prev()<CR>
+cnoremap <C-j> <Cmd>call searchx#next()<CR>
+
+" Clear highlights
+nnoremap <C-l> <Cmd>call searchx#clear()<CR>
+'''
+hook_source='''
+let g:searchx = {}
+
+" Auto jump if the recent input matches to any marker.
+let g:searchx.auto_accept = v:true
+
+" Marker characters.
+let g:searchx.markers = split('ABCDEFGHIJKLMNOPQRSTUVWXYZ', '.\zs')
+
+" Convert search pattern.
+function g:searchx.convert(input) abort
+  if a:input !~# '\k'
+    return '\V' .. a:input
+  endif
+  return join(split(a:input, ' '), '.\{-}')
+endfunction
+'''

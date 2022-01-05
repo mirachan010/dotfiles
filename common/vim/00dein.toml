@@ -72,3 +72,4 @@ repo = 'vim-denops/denops.vim'
 
 [[plugins]]
 repo='github/copilot.vim'
+
