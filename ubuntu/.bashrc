@@ -116,6 +116,8 @@ eval "$(anyenv init -)"
 TERM='xterm-256color'
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
+export DENO_INSTALL="/home/mira/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 session=`tmux ls|wc -l`
 if [[ -z "$TMUX" ]] ; then
