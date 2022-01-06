@@ -81,7 +81,6 @@ call ddc#custom#patch_global('autoCompleteEvents', [
 '''
 hook_add = '''
   nnoremap :       <Cmd>call CommandlinePre(':')<CR>:
-  nnoremap ?       <Cmd>call CommandlinePre('/')<CR>?
 
   function! CommandlinePre(mode) abort
     call dein#source('ddc.vim')
