@@ -143,12 +143,6 @@ hook_add = '''
     call ddc#custom#set_buffer(s:prev_buffer_config)
     silent! cunmap <Tab>
     set wildchar=<Tab>
-
-    "try
-    "  set cmdheight=0
-    "catch
-    "  set cmdheight=1
-    "endtry
   endfunction
 '''
 

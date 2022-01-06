@@ -31,16 +31,24 @@ if &runtimepath !~# '\dein.vim'
 endif
 " 設定開始
 if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+  let s:base_dir = fnamemodify(expand('<sfile>'), ':h') . '/'
+  let g:dein#inline_vimrcs = ['01main_rc.vim', '02keymapping_rc.vim']
+  call map(g:dein#inline_vimrcs, { _, val -> s:base_dir . val })
   " プラグインリストを収めた TOML ファイル
   " ~/.vim/rc/dein.toml,deinlazy.tomlを用意する
-  let s:toml      = g:rc_dir . '00dein.toml'
-  let s:lazy_toml = g:rc_dir . '01dein.toml'
-  let s:lazy_ddc = g:rc_dir . '01ddc.toml'
+  let s:dein_toml      = s:base_dir . '00dein.toml'
+  let s:dein_lazy_toml = s:base_dir . '01dein.toml'
+  let s:dein_ddc_toml  = s:base_dir . '01ddc.toml'
+  let s:dein_ft_toml   = s:base_dir . 'deinft.toml'
+  call dein#begin(s:dein_dir, [
+        \ expand('<sfile>'), s:dein_toml, s:dein_lazy_toml, s:dein_ddc_toml, s:dein_ft_toml
+        \ ])
   " TOML を読み込み、キャッシュしておく
- call dein#load_toml(s:toml,      {'lazy': 0})
- call dein#load_toml(s:lazy_toml, {'lazy': 1})
- call dein#load_toml(s:lazy_ddc, {'lazy': 1})
+  call dein#load_toml(s:dein_toml,      {'lazy': 0})
+  echo 'hello'
+  call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
+  call dein#load_toml(s:dein_ddc_toml,  {'lazy': 1})
+  call dein#load_toml(s:dein_ft_toml)
   " 設定終了
   call dein#end()
   call dein#save_state()

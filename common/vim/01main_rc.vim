@@ -19,7 +19,7 @@ endif
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
 let g:did_indent_on             = 1
-let g:did_load_filetypes        = 1
+"let g:did_load_filetypes        = 1
 " load ftplugin to set commentstring
 " let g:did_load_ftplugin         = 1
 let g:loaded_2html_plugin       = 1
