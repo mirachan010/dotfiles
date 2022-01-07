@@ -567,3 +567,11 @@ let g:context_filetype#ignore_patterns = {
     \ 'toml': ['^\s*#\s*'],
     \ }
 '''
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'  
+
+[[plugins]]
+repo='github/copilot.vim'
+on_cmd='Copilot'
+

@@ -67,9 +67,4 @@ let g:lightline.colorscheme = 'iceberg'
 [[plugins]]
 repo='cocopon/iceberg.vim'
 
-[[plugins]]
-repo = 'vim-denops/denops.vim'  
-
-[[plugins]]
-repo='github/copilot.vim'
 
