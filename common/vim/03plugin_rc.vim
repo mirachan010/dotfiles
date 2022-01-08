@@ -1,25 +1,14 @@
 "プラグインのインストール
 "プラグインの保存場所の設定{{{
-"nvim ( win unix )の組み合わせでのそれぞれの設定
-if has('nvim')
-  if has("win32")
-    let s:dein_dir = expand('~\AppData\Local\nvim\dein\')
-  elseif has("unix")
-    let s:dein_dir = expand('~/.cache/nvim/dein/')
-  endif
-elseif !has('nvim')
-  if has("win32")
-    let s:dein_dir = expand('~\.cache\vim\dein\')
-  elseif has("unix")
-    let s:dein_dir = expand('~/.cache/vim/dein/')
-  endif
-endif
+"( win unix )の組み合わせでのそれぞれの設定
 if has("win32")
     let g:rc_dir    = expand('~\dotfiles\common\vim\plug_setting\')
-    let s:dein_repo_dir = s:dein_dir . '\repos\github.com\Shougo\dein.vim'
+    let s:dein_dir = expand('~\.cache\vim\dein\')
+    let s:dein_repo_dir = s:dein_dir . 'repos\github.com\Shougo\dein.vim'
 elseif has("unix")
     let g:rc_dir    = expand('~/dotfiles/common/vim/plug_setting/')
-    let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+    let s:dein_dir = expand('~/.cache/vim/dein/')
+    let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim'
 endif"}}}
 "pluginのインストール{{{
 " dein.vim がなければ github から落としてくる
@@ -56,11 +45,11 @@ endif
 if dein#check_install()
   call dein#install()
 endif
-" もし、未アンインストールものものがあったらアンインストール
-let s:removed_plugins = dein#check_clean()
-if len(s:removed_plugins) > 0
-  call map(s:removed_plugins, "delete(v:val, 'rf')")
-  call dein#recache_runtimepath()
-endif"}}}
+"" もし、未アンインストールものものがあったらアンインストール
+"let s:removed_plugins = dein#check_clean()
+"if len(s:removed_plugins) > 0
+"  call map(s:removed_plugins, "delete(v:val, 'rf')")
+"  call dein#recache_runtimepath()
+"endif"}}}
 
-command! PlugUpdate call dein#check_update()
+"command! PlugUpdate call dein#check_update()

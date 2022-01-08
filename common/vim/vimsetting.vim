@@ -14,13 +14,9 @@ set runtimepath+=~/dotfiles/common/
 runtime! vim/03*_rc.vim
 call dein#remote_plugins()
 
-
 " Set Colors
 set termguicolors
 set background=dark
-
-colorscheme iceberg
-
 
 filetype plugin indent on
 syntax enable

@@ -4,67 +4,7 @@ hook_add = '''
   let g:dein#install_github_api_token=$GITHUB_OAUTH_TOKEN
 '''
 [[plugins]]
-repo = 'vim-jp/vimdoc-ja.git'
+repo = 'vim-jp/vimdoc-ja'
 hook_add = '''
     set helplang=ja,en
 '''
-# status line{{{
-#[[plugins]]
-#  repo = 'micchy326/lightline-lsp-progress'
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = '''
-let g:lightline={
-      \'active': {
-      \'left': [ ['mode', 'paste'],
-      \['readonly'],
-      \['filename', 'lsp_status']
-      \],
-      \'right':[
-      \['percent', 'time'],
-      \['fileformat', 'fileencoding', 'filetype'],
-      \],
-      \},
-      \'component_function': {
-      \  'filename': 'LightlineFilename',
-      \  'time':'NowTime',
-      \ },
-      \ 'component_type': {
-      \ },
-      \}
-
-function! NowTime() abort
-  return strftime("%H:%M")
-endfunction
-
-let g:lightline.tab_component_function = {
-      \'filename':'LightlineTabFilename',
-      \ 'modified': 'lightline#tab#modified',
-      \ 'readonly': 'lightline#tab#readonly',
-      \ 'tabnum': 'lightline#tab#tabnum'}
-
-let g:lightline.tab = {
-      \ 'active': ['tabnum', 'filename', 'modified'],
-      \ 'inactive': ['tabnum', 'filename', 'modified']
-      \ }
-
-function! LightlineFilename()
-  let filename = expand('%:t') !=# '' ? expand('%:t') : '[NoN]'
-  let modified = &modified ? ' +' : ''
-  return filename . modified
-endfunction
-
-function! LightlineTabFilename(n) abort
-  let buflist = tabpagebuflist(a:n)
-  let winnr = tabpagewinnr(a:n)
-  let _ = pathshorten(expand('#'.buflist[winnr - 1].':f'))
-  return _ !=# '' ? _ : '[No Name]'
-endfunction
-"set colorscheme for lightline
-let g:lightline.colorscheme = 'iceberg'
-'''
-# }}}
-[[plugins]]
-repo='cocopon/iceberg.vim'
-
-
