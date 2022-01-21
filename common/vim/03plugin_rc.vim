@@ -34,6 +34,7 @@ if dein#load_state(s:dein_dir)
   let s:dein_toml      = s:base_dir . '00dein.toml'
   let s:dein_lazy_toml = s:base_dir . '01dein.toml'
   let s:dein_ddc_toml  = s:base_dir . '01ddc.toml'
+  let s:dein_ddu_toml  = s:base_dir . '01ddu.toml'
   let s:dein_ft_toml   = s:base_dir . 'deinft.toml'
   call dein#begin(s:dein_dir, [
         \ expand('<sfile>'), s:dein_toml, s:dein_lazy_toml, s:dein_ddc_toml, s:dein_ft_toml
@@ -42,6 +43,7 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:dein_toml,      {'lazy': 0})
   call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
   call dein#load_toml(s:dein_ddc_toml,  {'lazy': 1})
+  call dein#load_toml(s:dein_ddu_toml,  {'lazy': 1})
   call dein#load_toml(s:dein_ft_toml)
   " 設定終了
   call dein#end()
