@@ -1,5 +1,6 @@
 
 hook_add = '''
+set expandtab tabstop=4 shiftwidth=4
 " Bash
 let g:is_bash = v:true
 
