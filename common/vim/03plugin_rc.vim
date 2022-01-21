@@ -2,14 +2,20 @@
 "プラグインの保存場所の設定{{{
 "( win unix )の組み合わせでのそれぞれの設定
 if has("win32")
-    let g:rc_dir    = expand('~\dotfiles\common\vim\plug_setting\')
     let s:dein_dir = expand('~\.cache\vim\dein\')
     let s:dein_repo_dir = s:dein_dir . 'repos\github.com\Shougo\dein.vim'
 elseif has("unix")
-    let g:rc_dir    = expand('~/dotfiles/common/vim/plug_setting/')
     let s:dein_dir = expand('~/.cache/vim/dein/')
     let s:dein_repo_dir = s:dein_dir . 'repos/github.com/Shougo/dein.vim'
 endif"}}}
+" In Windows, auto_recache is disabled.  It is too slow.
+let g:dein#auto_recache = !has('win32')
+
+let g:dein#lazy_rplugins = v:true
+let g:dein#install_progress_type = 'title'
+let g:dein#install_check_diff = v:true
+let g:dein#enable_notification = v:true
+
 "pluginのインストール{{{
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '\dein.vim'
