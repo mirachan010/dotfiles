@@ -16,9 +16,9 @@ endif
 "-----------------
 " Disable default plugins
 "-----------------
-let g:did_install_default_menus = 1
-let g:did_install_syntax_menu   = 1
-let g:did_indent_on             = 1
+"let g:did_install_default_menus = 1
+"let g:did_install_syntax_menu   = 1
+"let g:did_indent_on             = 1
 "let g:did_load_filetypes        = 1
 " load ftplugin to set commentstring
 " let g:did_load_ftplugin         = 1
@@ -51,7 +51,7 @@ set laststatus=2
 set showcmd
 set wildmenu
 set ttimeout        " time out for key codes
-set ttimeoutlen=10    " wait up to 100ms after Esc for special key
+set ttimeoutlen=20    " wait up to 100ms after Esc for special key
 set backspace=2
 set ambiwidth=double
 
