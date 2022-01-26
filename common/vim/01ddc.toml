@@ -215,14 +215,14 @@ on_ft = ['c', 'cpp']
 
 [[plugins]]
 repo = 'Shougo/neosnippet.vim'
-on_event = 'InsertEnter'
+on_source='ddc.vim'
 hook_add = '''
 let g:neosnippet#snippets_directory = "~/.cache/vim/snippet"
-'''
-hook_source = '''
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
+'''
+hook_source = '''
 "imap <expr><TAB>
 "      \ pumvisible() ? "\<C-n>" :
 "      \ neosnippet#expandable_or_jumpable() ?
@@ -237,15 +237,25 @@ on_source = ['neosnippet.vim']
 
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
-on_event = 'InsertEnter'
+on_source = ['neosnippet.vim']
 
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip-integ'
-on_event = 'InsertEnter'
+on_source = ['neosnippet.vim']
 
 [[plugins]]
 repo = 'honza/vim-snippets'
 on_source = ['neosnippet.vim']
 hook_add = '''
   let g:neosnippet#enable_snipmate_compatibility = 1
+'''
+[[plugins]]
+repo = 'matsui54/denops-signature_help'
+on_source = ['vim-lsp']
+depends = ['denops.vim']
+hook_add = '''
+let g:lsp_signature_help_enabled=0
+'''
+hook_source='''
+call signature_help#enable()
 '''

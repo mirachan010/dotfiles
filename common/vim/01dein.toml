@@ -372,6 +372,13 @@ on_cmd = ['ReadingVimrcLoad', 'ReadingVimrcList', 'ReadingVimNext']
 repo = 'matsui54/denops-popup-preview.vim'
 on_source = 'ddc.vim'
 depends='denops.vim'
+hook_add='''
+    inoremap <buffer> <expr><c-f> popup_preview#scroll(+4)
+    inoremap <buffer> <expr><c-d> popup_preview#scroll(-4)
+    let g:popup_preview_config = {
+        \'border':v:false,
+        \}
+'''
 hook_source='''
 call popup_preview#enable()
 '''
