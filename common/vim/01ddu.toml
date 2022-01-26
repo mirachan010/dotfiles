@@ -8,18 +8,18 @@ call ddu#custom#patch_global({
     \ })
 
 " Specify matcher.
+"\       'matchers': ['matcher_substring'],
 call ddu#custom#patch_global({
     \   'sourceOptions': {
     \     '_': {
-    \       'matchers': ['matcher_substring'],
+    \       'matchers': ['matcher_fzf'],
     \     },
     \   }
     \ })
 
-" Set default sources
-"call ddu#custom#patch_global({
-"    \ 'sources': [{'name': 'file', 'params': {}}],
-"    \ })
+call ddu#custom#patch_global({
+    \ 'sources': [{'name': 'file_rec', 'params': {}}],
+    \ })
 
 " Call default sources
 "call ddu#start({})
@@ -38,6 +38,7 @@ call ddu#custom#patch_global({
 " Specify source with params
 "call ddu#start([{'name': 'file_rec', 'params': {'path': expand('~')}}])
 '''
+
 [plugins.ftplugin]
 ddu-std='''
 nnoremap <buffer><silent> <CR>
@@ -49,7 +50,49 @@ nnoremap <buffer><silent> i
 nnoremap <buffer><silent> q
 \ <Cmd>call ddu#ui#std#do_map('quit')<CR>
 '''
+ddu-std-filter='''
+inoremap <buffer><silent> <CR>
+\ <Esc><Cmd>close<CR>
+nnoremap <buffer><silent> <CR>
+\ <Cmd>close<CR>
+'''
+
 [[plugins]]
 repo = 'Shougo/ddu-commands.vim'
 depends = 'ddu.vim'
 on_cmd = 'Ddu'
+
+[[plugins]]
+repo = 'Shougo/ddu-ui-std'
+on_source = 'ddu.vim'
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+on_source = 'ddu.vim'
+[[plugins]]
+repo = 'Shougo/ddu-filter-matcher_substring'
+on_source = 'ddu.vim'
+[[plugins]]
+repo = 'Shougo/ddu-source-file_rec'
+on_source = 'ddu.vim'
+[[plugins]]
+repo = 'Shougo/ddu-kind-file'
+on_source = 'ddu.vim'
+[[plugins]]
+repo = '4513ECHO/ddu-source-colorscheme'
+on_source = 'ddu.vim'
+[[plugins]]
+repo = '4513ECHO/vim-readme-viewer'
+on_source = 'ddu.vim'
+hook_add='''
+let g:readme_viwer#plugin_manager='dein.vim'
+'''
+[[plugins]]
+repo = 'yuki-yano/ddu-filter-fzf'
+on_source = 'ddu.vim'
+[[plugins]]
+repo = 'kuuote/ddu-source-mr'
+depends = 'mr.vim'
+on_source = 'ddu.vim'
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
+
