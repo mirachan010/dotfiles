@@ -1,42 +1,42 @@
 [[plugins]]
 repo='Shougo/ddu.vim'
 depends='denops.vim'
+on_source = 'denops.vim'
+hook_add='''
+  nnoremap <silent> / <Cmd>Ddu
+  \ -name=search line
+  \ -ui-param-startFilter=v:true<CR>
+  nnoremap <silent> * <Cmd>Ddu
+  \ -name=search line -input=`expand('<cword>')`
+  \ -ui-param-startFilter=v:false<CR>
+  nnoremap <silent> ;g <Cmd>Ddu
+  \ -name=search rg
+  \ -source-param-input=`input('Pattern: ')`<CR>
+  nnoremap <silent> n <Cmd>Ddu
+  \ -name=search -resume
+  \ -ui-param-startFilter=v:false<CR>
+'''
 hook_source='''
-" You must set the default ui in the first
-call ddu#custom#patch_global({
-    \ 'ui': 'std',
-    \ })
 
-" Specify matcher.
 "\       'matchers': ['matcher_substring'],
 call ddu#custom#patch_global({
+    \   'ui': 'std',
     \   'sourceOptions': {
     \     '_': {
     \       'matchers': ['matcher_fzf'],
     \     },
-    \   }
+    \   },
+    \   'sourceParams': {
+    \     'file_external': {
+    \       'cmd': ['git', 'ls-files', '-co', '--exclude-standard'],
+    \     }
+    \     }
     \ })
 
 call ddu#custom#patch_global({
     \ 'sources': [{'name': 'file_rec', 'params': {}}],
     \ })
 
-" Call default sources
-"call ddu#start({})
-
-" Set name specific configuration
-"call ddu#custom#patch_local('files', {
-"    \ 'sources': [
-"    \   {'name': 'file', 'params': {}},
-"    \   {'name': 'file_old', 'params': {}},
-"    \ ],
-"    \ })
-
-" Specify name
-"call ddu#start({'name': 'files'})
-
-" Specify source with params
-"call ddu#start([{'name': 'file_rec', 'params': {'path': expand('~')}}])
 '''
 
 [plugins.ftplugin]
@@ -50,7 +50,7 @@ nnoremap <buffer><silent> i
 nnoremap <buffer><silent> q
 \ <Cmd>call ddu#ui#std#do_map('quit')<CR>
 '''
-ddu-std-filter='''
+ddu-std-filter = '''
 inoremap <buffer><silent> <CR>
 \ <Esc><Cmd>close<CR>
 nnoremap <buffer><silent> <CR>
@@ -68,6 +68,19 @@ on_source = 'ddu.vim'
 [[plugins]]
 repo = 'Shougo/ddu-source-file'
 on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-file_old'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'Shougo/ddu-source-line'
+on_source = 'ddu.vim'
+
+[[plugins]]
+repo = 'matsui54/ddu-source-file_external'
+on_source = 'ddu.vim'
+
 [[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'
 on_source = 'ddu.vim'

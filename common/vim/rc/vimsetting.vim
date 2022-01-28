@@ -10,8 +10,8 @@ augroup MyAutoCmd
 augroup END
 
 " Read other files
-set runtimepath+=~/dotfiles/common/vim
-runtime! rc/03*_rc.vim
+set runtimepath+=~/dotfiles/common/
+runtime! vim/03*_rc.vim
 call dein#remote_plugins()
 
 " Set Colors
