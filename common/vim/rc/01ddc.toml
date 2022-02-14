@@ -159,7 +159,7 @@ cmap <C-j> <Plug>(skkeleton-toggle)
 hook_source='''
      call skkeleton#config({
       \ 'eggLikeNewline': v:true,
-      \ 'globalJisyo':"~/.eskk/SKK-JISYO.L",
+      \ 'globalJisyo':"~/.skk/SKK-JISYO.L",
       \ })
      call skkeleton#register_kanatable('rom', {
        \ "z\<Space>": ["\u3000", ''],
