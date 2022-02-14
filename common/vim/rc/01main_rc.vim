@@ -3,7 +3,7 @@ scriptencoding=utf-8
 "WinとUbuntuの決定的に分かれるところ
 if has("win32")
   let s:undo_path = expand('C:\users\mira\.cache\vim\undo\')
-    let g:python3_host_prog = 'C:\Python39\python.exe'
+    let g:python3_host_prog = 'C:\Users\mira\AppData\Local\Programs\Python\Python310\python.exe'
 elseif has("unix")
   let s:undo_path = expand('~/.cache/vim/undo')
   let g:python3_host_prog = '~/.anyenv/envs/pyenv/shims/python3'
