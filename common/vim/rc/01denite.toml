@@ -1,0 +1,56 @@
+#denite.nvim{{{
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+on_cmd = 'Denite'
+hook_add = '''
+nnoremap [denite] <Nop>
+nmap <Leader>d [denite]
+nnoremap <silent> [denite]b :<C-u>Denite buffer -direction=topleft<CR>
+nnoremap <silent> [denite]l :<C-u>Denite file/old -direction=topleft<CR>
+nnoremap <silent> [denite]f :<C-u>Denite file file:new -direction=topleft<CR>
+nnoremap <silent> [denite]d :<C-u>Denite dein -direction=topleft<CR>
+nnoremap <silent> [denite]ma :<C-u>Denite mark -direction=topleft <CR>
+nnoremap <silent> [denite]h :<C-u>Denite help -direction=topleft <CR>
+'''
+[plugins.ftplugin]
+denite = '''
+nnoremap <silent><buffer><expr> q denite#do_map('quit')
+nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
+nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
+nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+setl cursorline
+setl cursorlineopt=both
+
+'''
+
+[[plugins]]
+repo = 'Jagua/vim-denite-ghq'
+depends = ['denite.nvim']
+on_source = ['denite.nvim']
+hook_add = '''
+nnoremap <silent> [denite]g :<C-u>Denite ghq -direction=topleft <CR>
+'''
+
+[[plugins]]
+repo = 'delphinus/vim-denite-memo'
+if = '''has('unix')'''
+on_source = ['denite.nvim']
+hook_add = '''
+nnoremap <silent> [denite]me :<C-u>Denite memo memo:new -direction=topleft <CR>
+'''
+
+[[plugins]]
+repo = 'mirachan010/vim-denite-plugins'
+depends = ['denite.nvim']
+on_source = ['denite.nvim']
+hook_add='''
+nnoremap <silent> [denite]p :<C-u>Denite PluginsList -direction=topleft <CR>
+'''
+
+[[plugins]]
+repo = 'mirachan010/vim-pluginlist'
+depends = ['denite.nvim']
+on_source = ['vim-denite-plugins']
+#}}}
