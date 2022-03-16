@@ -236,7 +236,7 @@ hook_source = '''
 if has('unix')
   let g:cheatsheet#cheat_file = '~/dotfiles/common/vim/plug_setting/cheatsheet.md'
 else
-  let g:cheatsheet#cheat_file = '~\\dotfiles\\common\\vim\\plug_setting\\cheatsheet.md'
+  let g:cheatsheet#cheat_file = '~\\dotfiles\\common\\vim\\rc\\cheatsheet.md'
 endif
 nmap <Leader>C <cmd>Cheat<CR>
 '''
