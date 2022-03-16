@@ -52,7 +52,7 @@ set showcmd
 set wildmenu
 set ttimeout        " time out for key codes
 set ttimeoutlen=20    " wait up to 100ms after Esc for special key
-set backspace=2
+set backspace=indent,eol,start
 set ambiwidth=double
 
 set wrap
@@ -98,6 +98,8 @@ set updatetime=100
 
 set clipboard+=unnamedplus,unnamed
 set synmaxcol=0
+
+set noshowmode
 
 " Auto mkdir
 " https://vim-jp.org/vim-users-jp/2011/02/20/Hack-202.html
