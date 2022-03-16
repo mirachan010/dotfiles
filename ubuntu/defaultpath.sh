@@ -5,6 +5,7 @@ RUBYPATH=$(which ruby)
 YN=0
 if [ -e ~/.localvimpath ]; then
     source ~/.localvimpath
+    echo Read localpath
 else
     echo Read defaultpaths
     echo if you settings you need to write ~/.localvimpath
