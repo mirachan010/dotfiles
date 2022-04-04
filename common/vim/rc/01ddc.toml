@@ -1,7 +1,9 @@
 [[plugins]]
 repo = 'Shougo/pum.vim'
+if='v:version>=802'
 [[plugins]]
 repo = 'Shougo/ddc.vim'
+if='v:versionlong>=8023452'
 depends = ['context_filetype.vim', 'denops.vim', 'pum.vim']
 on_event = ['InsertEnter']
 hook_source = '''
@@ -112,9 +114,12 @@ hook_add = '''
   endfunction
   function! CommandlinePost() abort
     " Restore sources
-    call ddc#custom#set_buffer(s:prev_buffer_config)
-    silent! cunmap <Tab>
-    set wildchar=<Tab>
+    if exists('b:prev_buffer_config')
+      call ddc#custom#set_buffer(b:prev_buffer_config)
+      unlet b:prev_buffer_config
+    else
+      call ddc#custom#set_buffer({})
+    endif
   endfunction
 '''
 

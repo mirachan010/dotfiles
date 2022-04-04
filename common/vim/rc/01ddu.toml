@@ -80,7 +80,7 @@ call ddu#custom#patch_global({
     \     },
     \   }
     \ })
-	call ddu#custom#patch_local('file', {
+	call ddu#custom#patch_local('files', {
 	    \ 'sources': [
 	    \   {'name': 'file', 'params': {}},
 	    \   {'name': 'file_old', 'params': {}},

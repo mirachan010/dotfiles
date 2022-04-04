@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'vim-denops/denops.vim'
-if = 'v:versionlong >= 8012424'
+if = 'v:versionlong >= 8023452'
 #use for remote plugins{{{
 [[plugins]]
 repo = 'roxma/nvim-yarp'
