@@ -53,7 +53,7 @@ set wildmenu
 set ttimeout        " time out for key codes
 set ttimeoutlen=20    " wait up to 100ms after Esc for special key
 set backspace=indent,eol,start
-set ambiwidth=double
+set ambiwidth=single
 
 set wrap
 "set whichwarp="b,s,h,l,<,>,[,]"
