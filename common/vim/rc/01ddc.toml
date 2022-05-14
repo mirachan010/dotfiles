@@ -1,118 +1,120 @@
 [[plugins]]
 repo = 'Shougo/pum.vim'
 if='v:version>=802'
+
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 if='v:versionlong>=8023452'
 depends = ['context_filetype.vim', 'denops.vim', 'pum.vim']
-on_event = ['InsertEnter']
+on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
-" Customize global settings
+  " Customize global settings
+  inoremap <silent><expr> <C-x><C-f> ddc#manual_complete('path')
   call ddc#custom#patch_global('autocompleteevents', [
-      \ 'insertenter', 'textchangedi', 'textchangedp',
-      \ 'cmdlineenter', 'cmdlinechanged',
-      \ ])
-call ddc#custom#patch_global('completionMenu', 'pum.vim')
-
-call ddc#custom#patch_global('sources', [
-      \'vim-lsp',
-      \'neosnippet',
-      \'around'
-      \])
-
-call ddc#custom#patch_global('sourceOptions', {
-      \  '_': {
-      \    'matchers': ['matcher_head'],
-      \    'sorters': ['sorter_rank'],
-      \    'converters': ['converter_remove_overlap'],
-      \  },
-      \  'around': {
-      \  'mark': 'A',
-      \  'matchers':['matcher_head','matcher_length'],
-      \  },
-      \  'neosnippet': {'mark':'N','dup': v:true},
-      \  'cmdline': {
-      \  'mark': 'cmdline',
-      \  'forceCompletionPattern': '\S/\S*',
-      \  },
-      \  'cmdline-history': {'mark': 'history'},
-      \  'vim-lsp':{'mark':'LSP', 'dup':v:true},
-      \  'skkeleton': {
-      \    'mark': 'skkeleton',
-      \    'matchers': ['skkeleton'],
-      \    'sorters': [],
-      \    'minAutoCompleteLength': 2,
-      \  },
-      \ 'rtags': {
-      \   'mark': 'R',
-      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
-      \ },
-      \ 'file': {
-      \   'mark': 'F',
-      \   'isVolatile': v:true,
-      \   'minAutoCompleteLength': 1000,
-      \   'forceCompletionPattern': '\S/\S*'
-      \ },
-      \ 'rg': {
-      \   'mark': 'rg',
-      \   'matchers': ['matcher_head', 'matcher_length'],
-      \   'minAutoCompleteLength': 4,
-      \ },
-      \ }
-      \)
-
-
-
-
-inoremap <silent><expr> <TAB>
-      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-      \ '<TAB>' : ddc#manual_complete()
-inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
-inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
-inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
-inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
-call ddc#custom#patch_global('autoCompleteEvents', [
-    \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
-    \ 'CmdlineEnter', 'CmdlineChanged',
+    \ 'insertenter', 'textchangedi', 'textchangedp',
+    \ 'cmdlineenter', 'cmdlinechanged',
     \ ])
+  call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
-"" Use ddc.
-call ddc#enable()
+  call ddc#custom#patch_global('sources', [
+    \'vim-lsp',
+    \'neosnippet',
+    \'around'
+    \])
+
+  call ddc#custom#patch_global('sourceOptions', {
+    \'_': {
+    \  'matchers': ['matcher_head'],
+    \  'sorters': ['sorter_rank'],
+    \  'converters': ['converter_remove_overlap'],
+    \},
+    \'around': {
+    \'mark': 'A',
+    \'matchers':['matcher_head','matcher_length'],
+    \},
+    \'neosnippet': {'mark':'N','dup': v:true},
+    \'cmdline': {
+    \'mark': 'cmdline',
+    \'forceCompletionPattern': '\S/\S*',
+    \},
+    \'cmdline-history': {'mark': 'history'},
+    \'vim-lsp':{'mark':'LSP', 'dup':v:true},
+    \'skkeleton': {
+    \  'mark': 'skkeleton',
+    \  'matchers': ['skkeleton'],
+    \  'sorters': [],
+    \  'minAutoCompleteLength': 2,
+    \},
+    \'rtags': {
+    \  'mark': 'R',
+    \  'forceCompletionPattern': '\.\w*|:\w*|->\w*'
+    \},
+    \'file': {
+    \  'mark': 'F',
+    \  'isVolatile': v:true,
+    \  'minAutoCompleteLength': 1000,
+    \  'forceCompletionPattern': '\S/\S*'
+    \},
+    \'rg': {
+    \  'mark': 'rg',
+    \  'matchers': ['matcher_head', 'matcher_length'],
+    \  'minAutoCompleteLength': 4,
+    \},
+  \})
+
+  " For insert mode completion
+  inoremap <silent><expr> <TAB>
+  \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+  \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+  \ '<TAB>' : ddc#manual_complete()
+  inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
+  inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
+  inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+  inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+  inoremap <silent><expr> <C-l>   ddc#map#extend()
+  " For command line mode completion
+  cnoremap <expr> <Tab>
+  \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+  \ exists('b:ddc_cmdline_completion') ? ddc#manual_complete() : "\<Tab>"
+  cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  cnoremap <C-c>   <Cmd>call pum#map#cancel()<CR>
+  cnoremap <C-o>   <Cmd>call pum#map#confirm()<CR>
+  call ddc#enable()
 '''
+
 hook_add = '''
   nnoremap :       <Cmd>call CommandlinePre(':')<CR>:
-
+  nnoremap ?       <Cmd>call CommandlinePre('/')<CR>?
   function! CommandlinePre(mode) abort
-    call dein#source('ddc.vim')
-
     " Note: It disables default command line completion!
-    cnoremap <expr> <Tab>
-    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-    \ ddc#manual_complete()
-    cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
     set wildchar=<C-t>
-    "set cmdheight=1
+
+    cnoremap <expr><buffer> <Tab>
+    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+    \ exists('b:ddc_cmdline_completion') ? ddc#manual_complete() : "\<C-t>"
 
     " Overwrite sources
-    let s:prev_buffer_config = ddc#custom#get_buffer()
+    if !exists('b:prev_buffer_config')
+      let b:prev_buffer_config = ddc#custom#get_buffer()
+    endif
     if a:mode ==# ':'
-      call ddc#custom#patch_buffer('sources',
-              \ ['cmdline', 'cmdline-history', 'around'])
+      call ddc#custom#patch_buffer('cmdlineSources',
+              \ ['cmdline-history', 'cmdline', 'around'])
       call ddc#custom#patch_buffer('keywordPattern', '[0-9a-zA-Z_:#]*')
     else
-      call ddc#custom#patch_buffer('sources',
+      call ddc#custom#patch_buffer('cmdlineSources',
               \ ['around', 'line'])
     endif
 
     autocmd MyAutoCmd User DDCCmdlineLeave ++once call CommandlinePost()
+    autocmd MyAutoCmd InsertEnter <buffer> ++once call CommandlinePost()
 
-    " Enable command line completion
     call ddc#enable_cmdline_completion()
-    call ddc#enable()
   endfunction
   function! CommandlinePost() abort
+    silent! cunmap <buffer> <Tab>
+
     " Restore sources
     if exists('b:prev_buffer_config')
       call ddc#custom#set_buffer(b:prev_buffer_config)
@@ -120,6 +122,8 @@ hook_add = '''
     else
       call ddc#custom#set_buffer({})
     endif
+
+    set wildchar=<Tab>
   endfunction
 '''
 
