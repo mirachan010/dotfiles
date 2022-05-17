@@ -87,10 +87,16 @@ call ddu#custom#patch_global({
     \     },
     \   }
     \ })
-	call ddu#custom#patch_local('files', {
+	call ddu#custom#patch_local('file', {
+        \ 'ui':'filter',
+        \ 'actionOptions':{
+        \   'narrow':{
+        \      'quit': v:false,
+        \    },
+        \ },
 	    \ 'sources': [
 	    \   {'name': 'file', 'params': {}},
-	    \   {'name': 'file_old', 'params': {}},
+	    \   {'name': 'file_rec', 'params': {}},
 	    \ ],
 	    \ })
 
