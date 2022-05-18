@@ -161,7 +161,18 @@ on_cmd = 'Ddu'
 repo = 'Shougo/ddu-ui-ff'
 on_source = 'ddu.vim'
 
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+on_source = 'ddu.vim'
+
 # source{{{
+[[plugins]]
+repo = 'lambdalisue/mr.vim'
+on_source = 'ddu-source-mr'
+[[plugins]]
+repo = 'kuuote/ddu-source-mr'
+on_source = 'ddu.vim'
+depends=['ddu-source-mr']
 [[plugins]]
 repo = 'Shougo/ddu-source-file'
 on_source = 'ddu.vim'
