@@ -4,7 +4,7 @@ repo = 'Shougo/denite.nvim'
 on_cmd = 'Denite'
 hook_add = '''
 nnoremap [denite] <Nop>
-nmap <Leader>d [denite]
+nmap <Leader>D [denite]
 nnoremap <silent> [denite]b :<C-u>Denite buffer -direction=topleft<CR>
 nnoremap <silent> [denite]l :<C-u>Denite file/old -direction=topleft<CR>
 nnoremap <silent> [denite]f :<C-u>Denite file file:new -direction=topleft<CR>
