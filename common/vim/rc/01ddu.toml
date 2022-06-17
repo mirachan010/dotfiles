@@ -28,12 +28,12 @@ hook_add = '''
 
 nnoremap <SID>[ddu] <Nop>
 nmap <Leader>d <SID>[ddu]
-nnoremap <silent> <SID>[ddu]b  :<C-u>Ddu buffer<CR>
-nnoremap <silent> <SID>[ddu]l  :<C-u>Ddu mr<CR>
-nnoremap <silent> <SID>[ddu]f  :<C-u>Ddu file file:new<CR>
-nnoremap <silent> <SID>[ddu]d  :<C-u>Ddu dein<CR>
-nnoremap <silent> <SID>[ddu]ma :<C-u>Ddu mark<CR>
-nnoremap <silent> <SID>[ddu]h  :<C-u>Ddu help<CR>
+nnoremap <script> <SID>[ddu]b  :<C-u>Ddu buffer<CR>
+nnoremap <script> <SID>[ddu]l  :<C-u>Ddu mr<CR>
+nnoremap <script> <SID>[ddu]f  :<C-u>Ddu file file:new<CR>
+nnoremap <script> <SID>[ddu]d  :<C-u>Ddu dein<CR>
+nnoremap <script> <SID>[ddu]ma :<C-u>Ddu mark<CR>
+nnoremap <script> <SID>[ddu]h  :<C-u>Ddu help<CR>
 '''
 hook_source = '''
 call ddu#custom#patch_global({

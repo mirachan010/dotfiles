@@ -1,7 +1,11 @@
 "長い一行が回ってきたときでもノーマルモードでhjklで快適に過ごすため
 "あとちょっとのついで
-noremap k gk
-noremap j gj
+nmap gj gj<SID>g
+nmap gk gk<SID>g
+nnoremap <script> <SID>gj gj<SID>g
+nnoremap <script> <SID>gk gk<SID>g
+nmap <SID>g <Nop>
+
 noremap H <NOP>
 noremap L <NOP>
 noremap H ^
