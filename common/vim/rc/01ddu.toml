@@ -30,14 +30,14 @@ nnoremap <SID>[ddu] <Nop>
 nmap <Leader>d <SID>[ddu]
 nnoremap <script> <SID>[ddu]b  :<C-u>Ddu buffer<CR>
 nnoremap <script> <SID>[ddu]l  :<C-u>Ddu mr<CR>
-nnoremap <script> <SID>[ddu]f  :<C-u>Ddu file file:new<CR>
+nnoremap <script> <SID>[ddu]f  :<C-u>Ddu -name=files -ui=filer file<CR>
 nnoremap <script> <SID>[ddu]d  :<C-u>Ddu dein<CR>
 nnoremap <script> <SID>[ddu]ma :<C-u>Ddu mark<CR>
 nnoremap <script> <SID>[ddu]h  :<C-u>Ddu help<CR>
 '''
 hook_source = '''
 call ddu#custom#patch_global({
-    \   'ui': 'ff',
+    \ 'ui':'ff',
     \   'sourceOptions': {
     \     '_': {
     \       'ignoreCase': v:true,
@@ -85,20 +85,23 @@ call ddu#custom#patch_global({
     \     'matcher_substring': {
     \       'highlightMatched': 'Search',
     \     },
-    \   }
+    \   },
+    \   'uiOptions':{'filer':{'toggle': v:true}},
+    \   'uiParms':{'filer':{'split':'vertical','toggle': v:true}},
     \ })
-	call ddu#custom#patch_local('file', {
-        \ 'ui':'filter',
-        \ 'actionOptions':{
-        \   'narrow':{
-        \      'quit': v:false,
-        \    },
-        \ },
-	    \ 'sources': [
-	    \   {'name': 'file', 'params': {}},
-	    \   {'name': 'file_rec', 'params': {}},
-	    \ ],
-	    \ })
+call ddu#custom#patch_local('files', {
+    \ 'ui':'filer',
+    \ 'sourceOptions':{
+    \    '_':{
+    \      'columns':['filename'],
+    \    },
+    \  },
+    \  'kindOptions':{
+    \    'file':{
+    \      'defaultAction':'open',
+    \    },
+    \  }
+    \})
 
 "call ddu#custom#action('kind', 'file', 'test',
 "    \ { args -> execute('let g:foo = 1') })
@@ -151,6 +154,37 @@ inoremap <buffer><silent> <CR>
 nnoremap <buffer><silent> <CR>
 \ <Cmd>close<CR>
 '''
+ddu-filer = '''
+nnoremap <buffer><silent> <CR>
+      \ <Cmd>call ddu#ui#filer#do_action('itemAction')<CR>
+nnoremap <buffer><silent> <Space>
+      \ <Cmd>call ddu#ui#filer#do_action('toggleSelectItem')<CR>
+nnoremap <buffer> o
+      \ <Cmd>call ddu#ui#filer#do_action('expandItem',
+      \ {'mode': 'toggle'})<CR>
+nnoremap <buffer><silent> q
+      \ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
+nnoremap <buffer> >
+\ <Cmd>call ddu#ui#filer#do_action('updateOptions', {
+\   'sourceOptions': {
+\     '_': {
+\       'matchers': ToggleHidden(),
+\     },
+\   },
+\ })<CR>
+
+function! ToggleHidden()
+  let current = ddu#custom#get_current(b:ddu_ui_name)
+  let source_options = get(current, 'sourceOptions', {})
+  let source_options_all = get(source_options, '_', {})
+  let matchers = get(source_options_all, 'matchers', [])
+  return empty(matchers) ? ['matcher_hidden'] : []
+endfunction
+'''
+
+[[plugins]]
+repo = 'Shougo/ddu-column-filename'
+on_source='ddu.vim'
 
 [[plugins]]
 repo = 'Shougo/ddu-commands.vim'
@@ -164,11 +198,77 @@ on_source = 'ddu.vim'
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
 on_source = 'ddu.vim'
+[plugins.ftplugin]
+ddu-filer = '''
+nnoremap <buffer> <Space>
+\ <Cmd>call ddu#ui#filer#do_action('toggleSelectItem')<CR>
+nnoremap <buffer> q
+\ <Cmd>call ddu#ui#filer#do_action('quit')<CR>
+nnoremap <buffer> o
+\ <Cmd>call ddu#ui#filer#do_action('expandItem',
+\ {'mode': 'toggle'})<CR>
+nnoremap <buffer> O
+\ <Cmd>call ddu#ui#filer#do_action('collapseItem')<CR>
+nnoremap <buffer> c
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'copy'})<CR>
+nnoremap <buffer> d
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'delete'})<CR>
+nnoremap <buffer> m
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'move'})<CR>
+nnoremap <buffer> r
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'rename'})<CR>
+nnoremap <buffer> x
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'executeSystem'})<CR>
+nnoremap <buffer> p
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'paste'})<CR>
+nnoremap <buffer> K
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'newDirectory'})<CR>
+nnoremap <buffer> N
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'newFile'})<CR>
+nnoremap <buffer> ~
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'narrow', 'params': {'path': expand('~')}})<CR>
+nnoremap <buffer> h
+\ <Cmd>call ddu#ui#filer#do_action('itemAction',
+\ {'name': 'narrow', 'params': {'path': ".."}})<CR>
+nnoremap <buffer> >
+\ <Cmd>call ddu#ui#filer#do_action('updateOptions', {
+\   'sourceOptions': {
+\     '_': {
+\       'matchers': ToggleHidden(),
+\     },
+\   },
+\ })<CR>
+nnoremap <buffer><expr> <CR>
+\ ddu#ui#filer#is_directory() ?
+\ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
+\ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
+nnoremap <buffer><expr> l
+\ ddu#ui#filer#is_directory() ?
+\ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
+\ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open'})<CR>"
+function! ToggleHidden()
+  let current = ddu#custom#get_current(b:ddu_ui_name)
+  let source_options = get(current, 'sourceOptions', {})
+  let source_options_all = get(source_options, '_', {})
+  let matchers = get(source_options_all, 'matchers', [])
+  return empty(matchers) ? ['matcher_hidden'] : []
+endfunction
+'''
 
 # source{{{
 [[plugins]]
 repo = 'lambdalisue/mr.vim'
-on_source = 'ddu-source-mr'
+on_source = ['ddu-source-mr','ddu.vim']
+
 [[plugins]]
 repo = 'kuuote/ddu-source-mr'
 on_source = 'ddu.vim'

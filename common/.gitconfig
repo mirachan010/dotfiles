@@ -21,3 +21,5 @@
 	fontui = -family Cica -size 16 -weight normal -slant roman -underline 0 -overstrike 0
 	fontdiff = -family Cica -size 16 -weight normal -slant roman -underline 0 -overstrike 0
 	encoding = utf-8
+[credential "https://huggingface.co"]
+	provider = generic

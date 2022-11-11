@@ -2,12 +2,26 @@
 repo = 'Shougo/pum.vim'
 if='v:version>=802'
 
+# UI{{{
+[[plugins]]
+repo = 'Shougo/ddc-ui-native'
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+[[plugins]]
+repo = 'Shougo/ddc-ui-inline'
+[[plugins]]
+repo = 'Shougo/ddc-ui-none'
+#}}}
+
 [[plugins]]
 repo = 'Shougo/ddc.vim'
-if='v:versionlong>=8023452'
 depends = ['context_filetype.vim', 'denops.vim', 'pum.vim']
 on_event = ['InsertEnter', 'CursorHold']
 hook_source = '''
+  "dependsにならべたくなかった
+  call dein#source('ddc-ui-pum')
+  call ddc#custom#patch_global('ui', 'pum')
+
   " Customize global settings
   inoremap <silent><expr> <C-x><C-f> ddc#manual_complete('path')
   call ddc#custom#patch_global('autocompleteevents', [
@@ -16,10 +30,12 @@ hook_source = '''
     \ ])
   call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
+
   call ddc#custom#patch_global('sources', [
     \'vim-lsp',
     \'neosnippet',
-    \'around'
+    \'around',
+    \'file'
     \])
 
   call ddc#custom#patch_global('sourceOptions', {
@@ -62,11 +78,12 @@ hook_source = '''
     \},
   \})
 
+
   " For insert mode completion
   inoremap <silent><expr> <TAB>
-  \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-  \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-  \ '<TAB>' : ddc#manual_complete()
+        \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+        \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+        \ '<TAB>' : ddc#map#manual_complete()
   inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
   inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
   inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
@@ -76,7 +93,8 @@ hook_source = '''
   " For command line mode completion
   cnoremap <expr> <Tab>
   \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-  \ exists('b:ddc_cmdline_completion') ? ddc#manual_complete() : "\<Tab>"
+  \ exists('b:ddc_cmdline_completion') ?
+  \ ddc#manual_complete() : nr2char(&wildcharm)
   cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
   cnoremap <C-c>   <Cmd>call pum#map#cancel()<CR>
   cnoremap <C-o>   <Cmd>call pum#map#confirm()<CR>
@@ -91,8 +109,11 @@ hook_add = '''
     set wildchar=<C-t>
 
     cnoremap <expr><buffer> <Tab>
-    \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-    \ exists('b:ddc_cmdline_completion') ? ddc#manual_complete() : "\<C-t>"
+    \ pum#visible() ?
+    \  '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+    \ exists('b:ddc_cmdline_completion') ?
+    \   ddc#map#manual_complete() : "\<C-t>"
+
 
     " Overwrite sources
     if !exists('b:prev_buffer_config')
@@ -194,18 +215,15 @@ hook_source='''
   endfunction
 '''
 [[plugins]]
-repo = 'Shougo/ddc-cmdline'
+repo = 'Shougo/ddc-source-cmdline'
 on_source = ['ddc.vim']
 [[plugins]]
-repo = 'Shougo/ddc-cmdline-history'
+repo = 'Shougo/ddc-source-cmdline-history'
 on_source = ['ddc.vim']
 [[plugins]]
-repo = 'LumaKernel/ddc-file'
-on_source = 'ddc.vim'
+repo = 'Shougo/ddc-source-omni'
 [[plugins]]
-repo = 'Shougo/ddc-omni'
-[[plugins]]
-repo = 'Shougo/ddc-rg'
+repo = 'Shougo/ddc-source-rg'
 on_source = 'ddc.vim'
 [[plugins]]
 repo = 'Shougo/ddc-matcher_length'
@@ -215,11 +233,31 @@ repo = 'Shougo/ddc-converter_remove_overlap'
 on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-line'
+repo = 'LumaKernel/ddc-source-file'
+on_source = 'ddc.vim'
+on_ft = ['ps1', 'dosbatch', 'autohotkey', 'registry']
+depends = 'ddc.vim'
+hook_source = '''
+call ddc#custom#patch_filetype(
+    \ ['ps1', 'dosbatch', 'autohotkey', 'registry'], {
+    \ 'sourceOptions': {
+    \   'file': {
+    \     'forceCompletionPattern': '\S\\\S*',
+    \   },
+    \ },
+    \ 'sourceParams': {
+    \   'file': {
+    \     'mode': 'win32',
+    \   },
+    \ }})
+'''
+    
+[[plugins]]
+repo = 'Shougo/ddc-source-line'
 on_source = 'ddc.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc-rtags'
+repo = 'Shougo/ddc-source-rtags'
 on_ft = ['c', 'cpp']
 
 
