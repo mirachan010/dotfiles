@@ -36,7 +36,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-on_event=['VimEnter']
+on_event=['CursorHold']
 depends = ['iceberg.vim']
 hook_add = '''
 let g:lightline={
