@@ -186,7 +186,7 @@ on_cmd = ['ReadingVimrcLoad', 'ReadingVimrcList', 'ReadingVimNext']
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 depends = ['vim-lsp-settings', 'vim-lsp-icons']
-on_ft=['python','go', 'toml', 'vim', 'markdown', 'c','cpp']
+on_ft=['python', 'go', 'toml', 'vim', 'markdown', 'c','cpp']
 hook_add='''
 "---====setup vim-lsp==---
 let g:lsp_signs_enabled = 1
