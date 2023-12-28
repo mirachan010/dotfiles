@@ -1,0 +1,9 @@
+[[plugins]]
+repo = 'Shougo/dpp.vim'
+hook_add = '''
+'''
+[[plugins]]
+repo = 'lifepillar/vim-colortemplate'
+
+[[plugins]]
+repo = 'rbtnn/vim-ambiwidth'
