@@ -12,10 +12,10 @@ augroup END
 " Read other files
 set runtimepath+=~/dotfiles/common/vim
 runtime! rc/03*_rc.vim
-call dein#remote_plugins()
+"call dein#remote_plugins()
 
 " Set Colors
-set termguicolors
+" set termguicolors
 set background=dark
 
 filetype plugin indent on

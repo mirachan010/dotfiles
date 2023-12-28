@@ -1,1 +1,1 @@
-Guifont Cica:h14
+Guifont Cica:h18

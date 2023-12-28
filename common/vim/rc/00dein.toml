@@ -14,3 +14,5 @@ repo = 'lifepillar/vim-colortemplate'
 [[plugins]]
 repo = 'rbtnn/vim-ambiwidth'
 
+[[plugins]]
+repo = '~/vim-treesitter'

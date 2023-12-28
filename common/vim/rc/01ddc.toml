@@ -24,11 +24,11 @@ hook_source = '''
 
   " Customize global settings
   inoremap <silent><expr> <C-x><C-f> ddc#manual_complete('path')
-  call ddc#custom#patch_global('autocompleteevents', [
-    \ 'insertenter', 'textchangedi', 'textchangedp',
-    \ 'cmdlineenter', 'cmdlinechanged',
-    \ ])
-  call ddc#custom#patch_global('completionMenu', 'pum.vim')
+"  call ddc#custom#patch_global('autocompleteevents', [
+"    \ 'insertenter', 'textchangedi', 'textchangedp',
+"    \ 'cmdlineenter', 'cmdlinechanged',
+"    \ ])
+  " call ddc#custom#patch_global('completionMenu', 'pum.vim')
 
 
   call ddc#custom#patch_global('sources', [
@@ -121,7 +121,7 @@ hook_add = '''
     endif
     if a:mode ==# ':'
       call ddc#custom#patch_buffer('cmdlineSources',
-              \ ['cmdline-history', 'cmdline', 'around'])
+              \ ['cmdline', 'cmdline-history', 'around'])
       call ddc#custom#patch_buffer('keywordPattern', '[0-9a-zA-Z_:#]*')
     else
       call ddc#custom#patch_buffer('cmdlineSources',
@@ -199,9 +199,6 @@ hook_source='''
        \ 'z,': ['―', ''],
        \ })
 
-"Q: I want to enable "skkeleton" source when "skkeleton" is enabled only.
-
-"A: >
   autocmd User skkeleton-enable-pre call s:skkeleton_pre()
   function! s:skkeleton_pre() abort
     " Overwrite sources
