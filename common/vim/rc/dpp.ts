@@ -31,7 +31,6 @@ export class Config extends BaseConfig {
     const inlineVimrcs = [
       "$BASE_DIR/01main_rc.vim",
       "$BASE_DIR/02keymappings_rc.vim",
-      "$BASE_DIR/03plugin_rc.vim",
       "$BASE_DIR/04filetype_rc.vim",
     ];
     if (hasNvim) {

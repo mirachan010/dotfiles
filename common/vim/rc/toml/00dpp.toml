@@ -1,5 +1,6 @@
 [[plugins]]
 repo = 'Shougo/dpp.vim'
+depends = ['vim-denops/denops.vim']
 hook_add = '''
 '''
 [[plugins]]
@@ -7,3 +8,19 @@ repo = 'lifepillar/vim-colortemplate'
 
 [[plugins]]
 repo = 'rbtnn/vim-ambiwidth'
+
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+if = 'v:versionlong >= 8023452'
+[[plugins]]
+repo = 'Shougo/dpp-ext-installer'
+on_source = ['Shougo/dpp.vim']
+[[plugins]]
+repo = 'Shougo/dpp-ext-toml'
+on_source = ['Shougo/dpp.vim']
+[[plugins]]
+repo = 'Shougo/dpp-ext-packspec'
+on_source = ['Shougo/dpp.vim']
+[[plugins]]
+repo = 'Shougo/dpp-protocol-git'
+on_source = ['Shougo/dpp.vim']
