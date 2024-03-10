@@ -1,6 +1,7 @@
 [user]
-	email = mirachan010@gmail.com
+	email = mira@mirachan.net
 	name = mirachan010
+	signingKey = 990C3ED5D544D6E32CED869FA01340F8B78B4EA8
 [color]
     ui = true
 [color "status"]
@@ -28,3 +29,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[safe]
+	directory = D:/tools/SwichBot
+[gpg]
+	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
+[commit]
+	gpgsign = true
