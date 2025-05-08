@@ -11,3 +11,4 @@ mkdir %APPDATA%\..\..\Documents\WindowsPowerShell\
 mklink %APPDATA%\..\..\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 %APPDATA%\..\..\dotfiles\windows\Microsoft.PowerShell_profile.ps1
 mkdir %APPDATA%\..\..\Documents\PowerShell\
 mklink %APPDATA%\..\..\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 %APPDATA%\..\..\dotfiles\windows\Microsoft.PowerShell_profile.ps1
+mklink %APPDATA%\..\..\Documents\PowerShell\profile.ps1 %APPDATA%\..\..\dotfiles\windows\Microsoft.PowerShell_profile.ps1

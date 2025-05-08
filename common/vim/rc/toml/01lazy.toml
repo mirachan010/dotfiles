@@ -124,7 +124,9 @@ nmap <Leader>C <cmd>Cheat<CR>
 repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern', 'Ferndo']
 hook_add = '''
-noremap <silent><Leader>ff <Cmd>Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
+nnoremap [Fern] <Nop>
+nmap <Leader>f [Fern]
+noremap [Fern]f <Cmd>Fern . -stay -drawer -keep -toggle -reveal=% -width=40<CR>
 '''
 hook_source = '''
 function! s:init_fern() abort

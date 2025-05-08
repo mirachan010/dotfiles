@@ -63,6 +63,7 @@ export class Config extends BaseConfig {
     for (
       const tomlFile of [
         "$BASE_DIR/toml/00dpp.toml",
+        "$BASE_DIR/toml/01looks.toml",
       ]
     ) {
       const toml = await args.dpp.extAction(

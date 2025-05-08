@@ -1,7 +1,7 @@
 "GUI Setting
 "GUI Looks{{{
 "set font size
-set guifont=Cica:h19:qDRAFT
+set guifont=HackGen_Console_NF:h20:cANSI:qDRAFT
 "Set Gui 
 "T use toolbar
 "m use menu

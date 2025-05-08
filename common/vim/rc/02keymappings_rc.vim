@@ -32,6 +32,7 @@ noremap [vim] <Nop>
 nmap <Leader>v [vim]
 nnoremap  [vim]e :e ++enc=<CR>
 nnoremap  [vim]t :%retab!<CR>
+nnoremap  [vim]v :e ~/.vimrc
 
 "if in nomalmode save file
 inoremap <silent> jj <ESC>:<C-u>w<CR>

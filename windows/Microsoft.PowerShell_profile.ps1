@@ -9,8 +9,8 @@ Set-Item Env:Path $ENV:Path";C:\Program Files\Git\cmd"
 function cpython()
 {
     resetpython
-    Set-Item ENV:Path $ENV:Path";C:\Users\mira\AppData\Local\Programs\Python\Python312\Scripts\;"
-    Set-Item ENV:Path $ENV:Path";C:\Users\mira\AppData\Local\Programs\Python\Python312\;"
+    Set-Item ENV:Path $ENV:Path";C:\Users\mira\AppData\Local\Programs\Python\Python311\Scripts\;"
+    Set-Item ENV:Path $ENV:Path";C:\Users\mira\AppData\Local\Programs\Python\Python311\;"
 }
 
 function ppython()
@@ -22,8 +22,8 @@ function ppython()
 }
 
 function resetpython(){
-    Set-Item ENV:Path $ENV:Path.Replace(";C:\Users\mira\AppData\Local\Programs\Python\Python312\Scripts\", "")
-    Set-Item ENV:Path $ENV:Path.Replace(";C:\Users\mira\AppData\Local\Programs\Python\Python312\", "")
+    Set-Item ENV:Path $ENV:Path.Replace(";C:\Users\mira\AppData\Local\Programs\Python\Python311\Scripts\", "")
+    Set-Item ENV:Path $ENV:Path.Replace(";C:\Users\mira\AppData\Local\Programs\Python\Python311\", "")
     Set-Item ENV:Path $ENV:Path.Replace(";C:\Users\mira\.pyenv\pyenv-win\bin", "")
     Set-Item ENV:Path $ENV:Path.Replace(";C:\Users\mira\.pyenv\pyenv-win\shims", "")
     Set-Item ENV:Path $ENV:Path.Replace(";C:\users\mira\.pyenv\pyenv-win\versions\3.12.1\Scripts", "")

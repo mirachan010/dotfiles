@@ -14,7 +14,7 @@
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 [ghq]
-	root = /home/mira/git
+	root = ~/ghq
 [init]
 	defaultBranch = master
 [gui]
@@ -33,5 +33,3 @@
 	directory = D:/tools/SwichBot
 [gpg]
 	program = C:\\Program Files (x86)\\GnuPG\\bin\\gpg.exe
-[commit]
-	gpgsign = true
